@@ -1,0 +1,13 @@
+<script lang="ts">
+</script>
+
+<header class="p-4 sm:p-6 lg:px-8 sticky top-0 z-40 bg-neutral-900/50 backdrop-blur-sm border-b border-neutral-800">
+	<div class="flex justify-between items-center max-w-7xl mx-auto">
+		<a href="/" class="text-xl font-bold uppercase tracking-wide text-gray-100">Carbonatik</a>
+		<nav class="flex items-center gap-4">
+			<a href="#features" class="text-sm text-gray-400 hover:text-white transition-colors">Features</a>
+			<a href="#contact" class="text-sm text-gray-400 hover:text-white transition-colors">Contact</a>
+			
+		</nav>
+	</div>
+</header>
