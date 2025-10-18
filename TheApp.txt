@@ -1,4 +1,4 @@
-# Context file generated on: Monday, October 13, 2025 at 11:21:56 AM GMT+5:30
+# Context file generated on: Saturday, October 18, 2025 at 6:31:59 AM GMT+5:30
 ---
 
 # Project File Layout
@@ -33,6 +33,11 @@
 │       ├── +layout.svelte
 │       └── +page.svelte
 ├── static
+│   ├── images
+│   │   ├── CarbonatikJustLogoImage (2).svg
+│   │   ├── logo-icon.svg
+│   │   ├── logo.png
+│   │   └── logo.svg
 │   └── robots.txt
 ├── svelte.config.js
 ├── tailwind.config.cjs
@@ -243,15 +248,24 @@ export {};
 # File: src/lib/components/landing/Header.svelte
 
 <script lang="ts">
+	// No import needed for static assets
 </script>
 
-<header class="p-4 sm:p-6 lg:px-8 sticky top-0 z-40 bg-neutral-900/50 backdrop-blur-sm border-b border-neutral-800">
+<header
+	class="p-4 sm:p-6 lg:px-8 sticky top-0 z-40 bg-neutral-900/50 backdrop-blur-sm border-b border-neutral-800"
+>
 	<div class="flex justify-between items-center max-w-7xl mx-auto">
-		<a href="/" class="text-xl font-bold uppercase tracking-wide text-gray-100">Carbonatik</a>
+		<a href="/" class="flex items-center gap-3 text-xl font-bold uppercase tracking-wide text-gray-100">
+			<img src="/images/logo.svg" alt="Carbonatik logo" class="h-6 w-auto" />
+			<span>Carbonatik</span>
+		</a>
 		<nav class="flex items-center gap-4">
-			<a href="#features" class="text-sm text-gray-400 hover:text-white transition-colors">Features</a>
-			<a href="#contact" class="text-sm text-gray-400 hover:text-white transition-colors">Contact</a>
-			
+			<a href="#features" class="text-sm text-gray-400 hover:text-white transition-colors"
+				>Features</a
+			>
+			<a href="#contact" class="text-sm text-gray-400 hover:text-white transition-colors"
+				>Contact</a
+			>
 		</nav>
 	</div>
 </header>
