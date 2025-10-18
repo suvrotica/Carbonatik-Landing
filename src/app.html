@@ -1,13 +1,30 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico" sizes="any" />
 
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="Carbonatik LLC" />
+    <meta property="og:description" content="A mining company based out of Florida, US" />
+    <meta property="og:image" content="images/logo.png" />
+    <meta property="og:url" content="https://carbonatik.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="Carbonatik LLC" />
+    <meta name="twitter:title" content="Carbonatik LLC" />
+    <meta name="twitter:description" content="A mining company based out of Florida, US" />
+    <meta name="twitter:image" content="images/logo.png" />
+
     %sveltekit.head%
-  </head>
-  <body data-sveltekit-preload-data="hover">
+</head>
+
+<body data-sveltekit-preload-data="hover">
     <div style="display: contents">%sveltekit.body%</div>
-  </body>
+</body>
+
 </html>
