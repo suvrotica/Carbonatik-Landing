@@ -6,6 +6,6 @@
 	const href = $derived(`/products/${slug}`);
 </script>
 
-<a {href} class="font-semibold text-sky-400 hover:text-sky-300 hover:underline decoration-sky-400/50">
+<a {href} >
 	{name}
 </a>

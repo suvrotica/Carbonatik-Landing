@@ -10,6 +10,66 @@ body {
 }
 
 /* Carbonatik-specific namespaced styles */
+
+.prose {
+    @apply text-neutral-400 font-light;
+}
+
+h1,
+h2,
+h3 {
+    @apply font-bold  text-neutral-400  tracking-tight;
+}
+h1 {@apply pt-10 pb-4 text-4xl;}
+h2 {@apply pt-8 pb-4 text-3xl;}
+h3 {@apply pt-4 pb-4 text-2xl;}
+
+a {
+    @apply font-semibold text-neutral-400 hover:text-neutral-300 no-underline hover:underline decoration-neutral-400/50;
+}
+
+.prose strong {
+    @apply font-semibold text-neutral-200;
+}
+
+
+/* Custom styles for components embedded in Markdown */
+.leadership-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 my-10;
+}
+
+.leadership-grid .name {
+    @apply font-bold text-lg text-neutral-200;
+}
+
+.leadership-grid .title {
+    @apply text-sm text-neutral-500;
+}
+
+.contact-card {
+    @apply mt-16 rounded-lg border border-neutral-800 bg-neutral-900 p-8 text-center;
+}
+
+.contact-card h3 {
+    @apply text-2xl font-bold text-neutral-100;
+}
+
+.contact-card p {
+    @apply my-4 max-w-2xl mx-auto;
+}
+
+.contact-card .contact-details {
+    @apply flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center text-sky-400 font-medium;
+}
+
+.contact-card .contact-details a:hover {
+    @apply underline;
+}
+
 .carbonatik-section {
     @apply px-4 py-2 sm:py-4;
+}
+
+.carbonatik-text-highlighted {
+    @apply font-semibold text-neutral-100 hover:text-neutral-300 hover:underline decoration-neutral-400/50;
 }

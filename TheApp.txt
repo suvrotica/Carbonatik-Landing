@@ -1,4 +1,4 @@
-# Context file generated on: Sunday, October 19, 2025 at 7:12:14 AM GMT+5:30
+# Context file generated on: Sunday, October 19, 2025 at 1:21:03 PM GMT+5:30
 ---
 
 # Project File Layout
@@ -27,6 +27,7 @@
 │   │   │   │   ├── CallToAction.svelte
 │   │   │   │   ├── CoreProducts.svelte
 │   │   │   │   ├── Footer.svelte
+│   │   │   │   ├── GlobalOperations.svelte
 │   │   │   │   ├── Header.svelte
 │   │   │   │   ├── Hero.svelte
 │   │   │   │   └── Mission.svelte
@@ -69,7 +70,7 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
-		"prepare": "svelte-kit sync || echo ''",
+		"prepare": "svelte-kit sync",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
@@ -79,11 +80,10 @@
 	"devDependencies": {
 		"@eslint/compat": "^1.4.0",
 		"@eslint/js": "^9.36.0",
-		"@sveltejs/adapter-auto": "^6.1.0",
+		"@sveltejs/enhanced-img": "^0.8.4",
 		"@sveltejs/kit": "^2.43.2",
 		"@sveltejs/vite-plugin-svelte": "^6.2.0",
 		"@tailwindcss/typography": "^0.5.19",
-		"@types/node": "^22",
 		"eslint": "^9.36.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.12.4",
@@ -91,8 +91,6 @@
 		"mdsvex": "^0.12.6",
 		"prettier": "^3.6.2",
 		"prettier-plugin-svelte": "^3.4.0",
-		"rehype-katex-svelte": "^1.2.0",
-		"shiki": "^3.13.0",
 		"svelte": "^5.39.5",
 		"svelte-check": "^4.3.2",
 		"typescript": "^5.9.2",
@@ -110,29 +108,24 @@
 # File: svelte.config.js
 
 // svelte.config.js
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-vercel'; // Changed from @sveltejs/adapter-auto
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex } from 'mdsvex';
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
 	extensions: ['.md'],
-	// Add your Shiki and KaTeX configurations here if needed
-	// Example for Shiki:
-	// highlight: {
-	//   highlighter: async (code, lang = 'text') => { ... }
-	// }
 };
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	extensions: ['.svelte', '.md'], // Add .md to SvelteKit's recognized extensions
+	extensions: ['.svelte', '.md'],
 	preprocess: [
-		mdsvex(mdsvexOptions), // mdsvex runs first
+		mdsvex(mdsvexOptions),
 		vitePreprocess()
 	],
 	kit: {
-		adapter: adapter()
+		adapter: adapter() // This now correctly uses the Vercel adapter
 	}
 };
 
@@ -143,11 +136,14 @@ export default config;
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
+import { enhancedImages } from '@sveltejs/enhanced-img'; // Hypothetical import for enhanced images
 
 export default defineConfig({
   plugins: [
-    tailwindcss(),
-    sveltekit(),
+    enhancedImages(),    // 1. Enhanced Images (as per instructions)
+    tailwindcss(),       // 2. Tailwind CSS
+    sveltekit(),         // 3. SvelteKit
+    // devtoolsJson()    // 4. Devtools JSON (if needed)
   ],
 });
 
@@ -158,10 +154,15 @@ module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   darkMode: ['selector', '[data-theme="dark"]'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        // Adding a custom gold/amber color for brand consistency
+        'carbon-gold': '#ffc700' 
+      }
+    },
   },
   plugins: [
-    require('@tailwindcss/typography'), // Add this line
+    require('@tailwindcss/typography'),
   ],
 }
 
@@ -202,9 +203,70 @@ body {
 }
 
 /* Carbonatik-specific namespaced styles */
+
+.prose {
+    @apply text-neutral-400 font-light;
+}
+
+h1,
+h2,
+h3 {
+    @apply font-bold  text-neutral-400  tracking-tight;
+}
+h1 {@apply pt-10 pb-4 text-4xl;}
+h2 {@apply pt-8 pb-4 text-3xl;}
+h3 {@apply pt-4 pb-4 text-2xl;}
+
+a {
+    @apply font-semibold text-neutral-400 hover:text-neutral-300 no-underline hover:underline decoration-neutral-400/50;
+}
+
+.prose strong {
+    @apply font-semibold text-neutral-200;
+}
+
+
+/* Custom styles for components embedded in Markdown */
+.leadership-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 my-10;
+}
+
+.leadership-grid .name {
+    @apply font-bold text-lg text-neutral-200;
+}
+
+.leadership-grid .title {
+    @apply text-sm text-neutral-500;
+}
+
+.contact-card {
+    @apply mt-16 rounded-lg border border-neutral-800 bg-neutral-900 p-8 text-center;
+}
+
+.contact-card h3 {
+    @apply text-2xl font-bold text-neutral-100;
+}
+
+.contact-card p {
+    @apply my-4 max-w-2xl mx-auto;
+}
+
+.contact-card .contact-details {
+    @apply flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center text-sky-400 font-medium;
+}
+
+.contact-card .contact-details a:hover {
+    @apply underline;
+}
+
 .carbonatik-section {
     @apply px-4 py-2 sm:py-4;
 }
+
+.carbonatik-text-highlighted {
+    @apply font-semibold text-neutral-100 hover:text-neutral-300 hover:underline decoration-neutral-400/50;
+}
+
 
 # File: src/app.d.ts
 
@@ -263,7 +325,7 @@ export {};
 
 <section class="carbonatik-section not-prose">
      <div class="contact-card max-w-4xl mx-auto">
-        <h3>For Business Inquiries & Sales</h3>
+        <h2 >For Business Inquiries & Sales</h2>
         <p>Contact our Business Development team to discuss your mineral requirements or to learn more about our available inventory.</p>
         <div class="contact-details">
             <a href="mailto:info@carbonatik.com">info@carbonatik.com</a>
@@ -279,29 +341,33 @@ export {};
 </script>
 
 <section class="carbonatik-section prose prose-invert max-w-4xl mx-auto">
-    <h2>Our Core Products</h2>
-    <br>
+    <h2 >Our Core Minerals</h2>
     <p>
-        Our portfolio is centered around high-quality minerals sourced from rich deposits in Sri Lanka, vital for modern technology and industry.
+        Our portfolio is centered around high-purity minerals vital for modern technology and industry, sourced from rich deposits in Sri Lanka and strategic partnerships.
     </p>
-    <br>
-    <ul class="not-prose grid grid-cols-1 md:grid-cols-2 gap-4 list-none p-0">
+    <ul class="not-prose grid grid-cols-1 md:grid-cols-2 gap-4 list-none p-0 mt-6">
         <li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
-            <h3 class="font-bold text-lg text-amber-300">Graphite</h3>
+            <h3 >Graphite</h3>
             <p class="text-sm text-neutral-400">
-                World’s purest <ProductLink name="Vein Graphite" /> & <ProductLink name="Flake Graphite" />, exceeding 99% carbon content. We have <strong>1,000 tons</strong> ready for immediate sale. 
+                Sourced from Sri Lanka, including a forthcoming 99-year lease on the historic KGLL mines. We offer the world’s purest <ProductLink name="Vein Graphite" />, exceeding 99% carbon content. <strong>1,000 tons</strong> are ready for immediate sale.
             </p>
         </li>
         <li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
-            <h3 class="font-bold text-lg text-amber-300">Mica & Quartz</h3>
+            <h3 >Copper & Gold</h3>
             <p class="text-sm text-neutral-400">
-                Premium <ProductLink name="Gold Mica" /> for insulation and ultra-high purity <ProductLink name="Quartz" /> for semiconductors. 
+                Secured access to 12 mining licenses in Tanzania for copper and gold. We also supply high-grade **Copper Cathodes** from our contracted smelters in the DRC.
             </p>
         </li>
-         <li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
-            <h3 class="font-bold text-lg text-amber-300">Granite & Gems</h3>
+        <li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
+            <h3 >Mica, Quartz & Granite</h3>
             <p class="text-sm text-neutral-400">
-                Unique, high-quality <ProductLink name="Ruby Granite" /> for luxury construction and ethically sourced precious gemstones. 
+                Premium Sri Lankan <ProductLink name="Gold Mica" />, ultra-high purity <ProductLink name="Quartz" />, and unique <ProductLink name="Ruby Granite" /> for luxury applications.
+            </p>
+        </li>
+        <li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
+            <h3 >Monazite & Gemstones</h3>
+            <p class="text-sm text-neutral-400">
+                Ethically sourced precious gemstones and access to Monazite mining sites in Sri Lanka, crucial for rare-earth elements.
             </p>
         </li>
     </ul>
@@ -331,6 +397,29 @@ export {};
 		</div>
 	</div>
 </footer>
+
+# File: src/lib/components/landing/GlobalOperations.svelte
+
+<section class="carbonatik-section prose prose-invert max-w-4xl mx-auto">
+    <h2 class="carbonatik-h2-highlighted">Global Operations & Logistics</h2>
+    <p>
+        Our strategic presence across key continents—from the Americas to Africa and Asia—is supported by a robust logistical network. With registered entities in the <span class="carbonatik-text-highlighted">USA, India, Sri Lanka, Tanzania, and Zambia</span>, we ensure seamless global supply chains.
+    </p>
+    <ul class="not-prose grid grid-cols-1 md:grid-cols-2 gap-4 list-none p-0 mt-6">
+        <li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
+            <h3 class="font-bold text-lg text-amber-300">DRC Copper Supply</h3>
+            <p class="text-sm text-neutral-400">
+                Through contracts with 7 smelters in the DRC, we have a secured supply capacity of up to <span class="carbonatik-text-highlighted">30,000 tons per month</span> of high-grade copper cathodes.
+            </p>
+        </li>
+        <li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
+            <h3 class="font-bold text-lg text-amber-300">Logistical Fleet</h3>
+            <p class="text-sm text-neutral-400">
+                Our contracted fleet of over <span class="carbonatik-text-highlighted">1200 trucks</span> in Zambia and Tanzania ensures reliable transport from DRC to our bonded warehouse at Kapiri, Zambia.
+            </p>
+        </li>
+    </ul>
+</section>
 
 # File: src/lib/components/landing/Header.svelte
 
@@ -412,7 +501,7 @@ export {};
 	const href = $derived(`/products/${slug}`);
 </script>
 
-<a {href} class="font-semibold text-sky-400 hover:text-sky-300 hover:underline decoration-sky-400/50">
+<a {href} >
 	{name}
 </a>
 
@@ -476,21 +565,21 @@ export const theme = $derived(currentTheme);
 <script lang="ts">
 	import Hero from '$lib/components/landing/Hero.svelte';
 	import CoreProducts from '$lib/components/landing/CoreProducts.svelte';
-	import Mission from '$lib/components/landing/Mission.svelte';
+	import GlobalOperations from '$lib/components/landing/GlobalOperations.svelte'; // New component
 	import CallToAction from '$lib/components/landing/CallToAction.svelte';
 </script>
 
 <svelte:head>
-	<title>Carbonatik: Pioneering Sustainable Mining</title>
+	<title>Carbonatik: Powering Tomorrow with Ethically Sourced Minerals</title>
 	<meta
 		name="description"
-		content="Carbonatik is redefining the mining industry with sustainable, ethical, and technologically advanced resource extraction of high-value minerals like graphite, mica, and quartz."
+		content="Carbonatik is a global leader in sustainable mining and supply of high-purity industrial minerals including graphite, copper cathodes, mica, and quartz."
 	/>
 </svelte:head>
 
 <Hero />
 <CoreProducts />
-<Mission />
+<GlobalOperations />
 <CallToAction />
 
 # File: src/routes/about/+layout.svelte
@@ -521,58 +610,15 @@ export const theme = $derived(currentTheme);
 	/* Reference the main app.css to use @apply and get theme context */
 	@reference '../../app.css';
 
-	/*
-	  Use :global() to style the elements generated by mdsvex,
-	  which are not directly visible to the Svelte compiler.
-	*/
-	:global(.prose) {
-		@apply text-neutral-400 font-light;
-	}
-
-	:global(.prose h1, .prose h2, .prose h3) {
-		@apply text-neutral-100 font-semibold tracking-tight;
-	}
-
-	:global(.prose strong) {
-		@apply font-semibold text-neutral-200;
-	}
-
-	:global(.prose a) {
-		@apply text-sky-400 no-underline hover:underline;
-	}
-
-	/* Custom styles for components embedded in Markdown */
-	:global(.leadership-grid) {
-		@apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 my-10;
-	}
-	:global(.leadership-grid .name) {
-		@apply font-bold text-lg text-neutral-200;
-	}
-	:global(.leadership-grid .title) {
-		@apply text-sm text-neutral-500;
-	}
-	:global(.contact-card) {
-		@apply mt-16 rounded-lg border border-neutral-800 bg-neutral-900 p-8 text-center;
-	}
-	:global(.contact-card h3) {
-		@apply text-2xl font-bold text-neutral-100;
-	}
-	:global(.contact-card p) {
-		@apply my-4 max-w-2xl mx-auto;
-	}
-	:global(.contact-card .contact-details) {
-		@apply flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center text-sky-400 font-medium;
-	}
-	:global(.contact-card .contact-details a:hover) {
-		@apply underline;
-	}
+	
 </style>
 
 # File: src/routes/about/+page.md
 
 ---
-title: "About Carbonatik: Leading the Future of Sustainable Mining"
-description: "Learn about Carbonatik, our mission to pioneer sustainable mining, our leadership team, and our expertise in ethically sourcing high-purity graphite, mica, quartz, and granite."
+title: "About Carbonatik: A Global Leader in Sustainable Resource Management"
+description: "Learn about Carbonatik's global operations, our mission to pioneer sustainable mining, and our extensive portfolio of ethically sourced minerals including high-purity graphite, copper, gold, mica, and quartz."
+keywords: "sustainable mining, ethical minerals, vein graphite, copper cathodes, gold mica, global logistics, Carbonatik LLC"
 ---
 
 <script>
@@ -580,64 +626,28 @@ description: "Learn about Carbonatik, our mission to pioneer sustainable mining,
 </script>
 
 # Who is CARBONATIK
----
 
-<br>
+**CARBONATIK**—an acronym for **CARBON** **A**ssociated **T**echnologies **I**nnovation and **K**nowledge—is a premier global mining and resource management company. We are redefining the industry through our unwavering commitment to sustainability, ethical practices, and technological advancement.
 
-**CARBONATIK**—an acronym for **CARBON** **A**ssociated **T**echnologies **I**nnovation and **K**nowledge—was founded on a simple yet powerful principle: the future of mining must be sustainable, ethical, and technologically advanced. We are a premier mining company redefining the industry through our unwavering commitment to environmental stewardship, community partnership, and the responsible extraction of high-value minerals.
+## Our Global Operations
 
-<br>
+Carbonatik operates through a network of registered and fully compliant entities across the globe, ensuring a robust international presence:
+- **USA:** Carbonatik LLC & Carbonatik Global Corporation
+- **India:** Carbonatik Private Limited
+- **Sri Lanka:** Carbonatik Private Limited
+- **Tanzania:** Carbonatik Tanzania Limited
+- **Zambia:** Carbonatik Minerals Limited
 
-## Our Mission and Vision
----
+## Our Assets & Capabilities
 
-<br>
+### Mineral Rights & Mining Sites
+- **Sri Lanka:** We hold rights to extensive mining sites for <ProductLink name="Graphite" />, <ProductLink name="Gold Mica" />, <ProductLink name="Quartz" />, <ProductLink name="Granite" />, and **Monazite**. We are finalizing a **99-year lease** on the historic, 150-year-old KGLL government graphite mines.
+- **Tanzania:** Through our local equity partner, we control **12 mining licenses** for high-demand **Copper** and **Gold** deposits, ready for operational launch.
 
-**Our Mission:** To be a global leader in the sustainable mining sector, delivering superior quality minerals to the world while creating lasting value for our stakeholders, communities, and the environment.
-
-<br>
-
-**Our Vision:** We envision a world where resource extraction and environmental preservation coexist harmoniously. Through innovation, we aim to demonstrate that the materials powering modern technology can be sourced in a way that respects our planet.
-
-<br>
-
-## What We Do: Our Business Model
----
-
-<br>
-
-Carbonatik is a business-to-business (B2B) supplier of high-purity industrial minerals and gemstones. Our business model is centered on:
-
-<br>
-
-1.  **Exploration & Mining:** We identify and develop mineral-rich sites, with a current focus on our operations in Sri Lanka, using advanced and environmentally-conscious techniques.
-2.  **Processing & Purification:** Mined materials undergo minimal, efficient processing to meet the stringent purity requirements of our global clients.
-3.  **Global Sales & Distribution:** We sell high-grade minerals directly to manufacturers and industrial clients, handling all logistics for reliable, on-time delivery.
-
-<br>
-
-## Our Core Products
----
-
-<br>
-
-Our portfolio is centered around a diverse range of high-quality minerals sourced primarily from our rich deposits in Sri Lanka:
-
-* <ProductLink name="Vein Graphite" /> & <ProductLink name="Flake Graphite" />: We are a leading supplier of the world’s purest natural graphite, with carbon content often exceeding 99%. 
-
-<br>
-
-<strong class="text-amber-300 font-bold block mt-2">We currently have 1,000 tons of high-purity vein graphite ready for immediate sale.</strong>
----
-
-<br>
-
-* <ProductLink name="Gold Mica" /> (Phlogopite): Our premium Sri Lankan mica is prized for its exceptional thermal and electrical insulation properties.
-* <ProductLink name="Quartz" />: We extract ultra-high purity quartz, a vital component for the semiconductor and solar panel manufacturing industries.
-* <ProductLink name="Ruby Granite" /> & Premium Granite: Our quarries produce a variety of unique, high-quality granites used in luxury construction.
-* **Gemstones:** We ethically source a range of precious gemstones from our licensed operational sites.
-
-<br>
+### Supply Chain & Logistics
+- **DRC Copper Cathodes:** We maintain contracts with **7 smelters and manufacturers** in the Democratic Republic of Congo, securing a total supply capacity of up to **30,000 tons per month** of copper cathodes.
+- **Transportation Fleet:** Our logistics are supported by a contracted fleet of over **1,200 trucks** in Zambia and Tanzania, ensuring efficient transport from the DRC to our warehousing facilities.
+- **Bonded Warehousing:** We currently operate from the DSM Corridor bonded warehouse at Kapiri, Zambia, facilitating secure storage and global distribution.
 
 ## Our Leadership Team
 ---
@@ -666,24 +676,9 @@ Our portfolio is centered around a diverse range of high-quality minerals source
 
 ## Our Commitment to Quality and Standards
 ---
-
-<br>
-
 Trust and quality are the cornerstones of our business. Carbonatik rigorously adheres to **ASTM International standards** across all extraction and processing operations. This commitment ensures that our products consistently meet and exceed the demanding specifications of our global clientele.
 
-<br>
-
-## Join Us on Our Journey
 ---
-
-<br>
-
-We are more than a mining company; we are partners in building a sustainable future. Whether you are a potential customer, a prospective partner, or an industry peer, we invite you to connect with us.
-
-<br>
-
----
-
 <div class="contact-card not-prose">
     <h3>For Business Inquiries & Sales</h3>
     <p>Please contact our Business Development team to discuss your mineral requirements or to learn more about our available inventory.</p>
