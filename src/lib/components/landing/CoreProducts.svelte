@@ -3,29 +3,33 @@
 </script>
 
 <section class="carbonatik-section prose prose-invert max-w-4xl mx-auto">
-    <h2>Our Core Products</h2>
-    <br>
+    <h2>Our Core Minerals</h2>
     <p>
-        Our portfolio is centered around high-quality minerals sourced from rich deposits in Sri Lanka, vital for modern technology and industry.
+        Our portfolio is centered around high-purity minerals vital for modern technology and industry, sourced from rich deposits in Sri Lanka and strategic partnerships.
     </p>
-    <br>
-    <ul class="not-prose grid grid-cols-1 md:grid-cols-2 gap-4 list-none p-0">
+    <ul class="not-prose grid grid-cols-1 md:grid-cols-2 gap-4 list-none p-0 mt-6">
         <li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
             <h3 class="font-bold text-lg text-amber-300">Graphite</h3>
             <p class="text-sm text-neutral-400">
-                World’s purest <ProductLink name="Vein Graphite" /> & <ProductLink name="Flake Graphite" />, exceeding 99% carbon content. We have <strong>1,000 tons</strong> ready for immediate sale. 
+                Sourced from Sri Lanka, including a forthcoming 99-year lease on the historic KGLL mines. We offer the world’s purest <ProductLink name="Vein Graphite" />, exceeding 99% carbon content. <strong>1,000 tons</strong> are ready for immediate sale.
             </p>
         </li>
         <li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
-            <h3 class="font-bold text-lg text-amber-300">Mica & Quartz</h3>
+            <h3 class="font-bold text-lg text-amber-300">Copper & Gold</h3>
             <p class="text-sm text-neutral-400">
-                Premium <ProductLink name="Gold Mica" /> for insulation and ultra-high purity <ProductLink name="Quartz" /> for semiconductors. 
+                Secured access to 12 mining licenses in Tanzania for copper and gold. We also supply high-grade **Copper Cathodes** from our contracted smelters in the DRC.
             </p>
         </li>
-         <li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
-            <h3 class="font-bold text-lg text-amber-300">Granite & Gems</h3>
+        <li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
+            <h3 class="font-bold text-lg text-amber-300">Mica, Quartz & Granite</h3>
             <p class="text-sm text-neutral-400">
-                Unique, high-quality <ProductLink name="Ruby Granite" /> for luxury construction and ethically sourced precious gemstones. 
+                Premium Sri Lankan <ProductLink name="Gold Mica" />, ultra-high purity <ProductLink name="Quartz" />, and unique <ProductLink name="Ruby Granite" /> for luxury applications.
+            </p>
+        </li>
+        <li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
+            <h3 class="font-bold text-lg text-amber-300">Monazite & Gemstones</h3>
+            <p class="text-sm text-neutral-400">
+                Ethically sourced precious gemstones and access to Monazite mining sites in Sri Lanka, crucial for rare-earth elements.
             </p>
         </li>
     </ul>
