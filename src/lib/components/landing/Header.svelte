@@ -1,5 +1,5 @@
 <script lang="ts">
-	// No import needed for static assets
+	// Script block for any future logic
 </script>
 
 <header
@@ -11,12 +11,12 @@
 			<span>Carbonatik</span>
 		</a>
 		<nav class="flex items-center gap-4">
-			<a href="#features" class="text-sm text-gray-400 hover:text-white transition-colors"
-				>Features</a
-			>
-			<a href="#contact" class="text-sm text-gray-400 hover:text-white transition-colors"
-				>Contact</a
-			>
+			<a href="/" class="text-sm text-gray-400 hover:text-white transition-colors">
+				Home
+			</a>
+			<a href="/about" class="text-sm text-gray-400 hover:text-white transition-colors">
+				About
+			</a>
 		</nav>
 	</div>
 </header>

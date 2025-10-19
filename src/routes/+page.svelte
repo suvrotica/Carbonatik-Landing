@@ -1,13 +1,9 @@
-<script>
-	import Header from '$lib/components/landing/Header.svelte';
+<script lang="ts">
 	import Hero from '$lib/components/landing/Hero.svelte';
-	import Footer from '$lib/components/landing/Footer.svelte';
 </script>
 
-<Header />
+<Hero />
 
-<main class="flex flex-col flex-grow">
-	<Hero />
-</main>
-
-<Footer />
+<div class="text-center my-12">
+	<a href="/about" class="text-lg text-sky-400 hover:underline">Learn More About Us</a>
+</div>
