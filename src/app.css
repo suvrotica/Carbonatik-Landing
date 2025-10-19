@@ -3,14 +3,13 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-/* Default light theme and dark mode overrides */
+/* Default theme */
 body {
     @apply min-h-screen bg-neutral-100 text-neutral-900;
     @apply dark:bg-neutral-950 dark:text-neutral-400;
 }
 
 /* Carbonatik-specific namespaced styles */
-.carbonatik-cta {
-    @apply bg-yellow-500 text-black;
-    @apply dark:bg-yellow-400 dark:text-black;
+.carbonatik-section {
+    @apply px-4 py-2 sm:py-4;
 }
