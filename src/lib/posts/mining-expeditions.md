@@ -1,5 +1,5 @@
 ---
-title: "Showcase: Our Sri Lanka Expedition in Photos"
+title: "Showcase: Our Expedition in Photos"
 date: "2025-10-20"
 summary: "A visual journey through our operations"
 ---
