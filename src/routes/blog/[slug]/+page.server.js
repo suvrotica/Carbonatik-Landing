@@ -3,10 +3,13 @@ import { error } from '@sveltejs/kit';
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
 	try {
-		const post = await import(`../../../lib/posts/${params.slug}.md`);
+		const postModule = await import(`../../../lib/posts/${params.slug}.md`);
+		// Wrap the returned data in a 'post' object for better structure
 		return {
-			metadata: post.metadata,
-			slug: params.slug
+			post: {
+				metadata: postModule.metadata,
+				slug: params.slug
+			}
 		};
 	} catch (e) {
 		error(404, 'Post not found');

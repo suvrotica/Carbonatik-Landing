@@ -59,7 +59,9 @@ Carbonatik operates through a network of registered and fully compliant entities
 
 ## Our Commitment to Quality and Standards
 ---
+
 Trust and quality are the cornerstones of our business. Carbonatik rigorously adheres to **ASTM International standards** across all extraction and processing operations. This commitment ensures that our products consistently meet and exceed the demanding specifications of our global clientele.
+
 ---
 <div class="contact-card">
     <h3>For Business Inquiries & Sales</h3>

@@ -1,22 +1,22 @@
 <script>
 	let { data } = $props();
-
-	// Create a promise that dynamically imports the component
-	const post_promise = import(`../../../lib/posts/${data.slug}.md`);
+	// Update to use the nested 'post' object
+	const post_promise = import(`../../../lib/posts/${data.post.slug}.md`);
 </script>
 
 <svelte:head>
-	<title>{data.metadata.title} | Carbonatik Blog</title>
-	<meta name="description" content={data.metadata.summary} />
+	<title>{data.post.metadata.title} | Carbonatik Blog</title>
+	<meta name="description" content={data.post.metadata.summary} />
 </svelte:head>
 
 <article class="rich-text-content px-4 py-16 sm:py-24">
-	<h1>{data.metadata.title}</h1>
+	<h1>{data.post.metadata.title}</h1>
 	<p class="text-neutral-500 italic mb-8">
-		Published on {new Date(data.metadata.date).toLocaleDateString('en-US', {
+		Published on {new Date(data.post.metadata.date + 'T12:00:00Z').toLocaleDateString('en-US', {
 			year: 'numeric',
 			month: 'long',
-			day: 'numeric'
+			day: 'numeric',
+			timeZone: 'UTC'
 		})}
 	</p>
 
