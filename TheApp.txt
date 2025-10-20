@@ -1,4 +1,4 @@
-# Context file generated on: Monday, October 20, 2025 at 11:23:07 AM GMT+5:30
+# Context file generated on: Monday, October 20, 2025 at 11:50:31 AM GMT+5:30
 ---
 
 # Project File Layout
@@ -34,11 +34,15 @@
 │   │   │   ├── leadership
 │   │   │   │   └── PersonProfile.svelte
 │   │   │   ├── ProductLink.svelte
-│   │   │   └── team
-│   │   │       └── StaffProfile.svelte
+│   │   │   ├── team
+│   │   │   │   └── StaffProfile.svelte
+│   │   │   └── VideoPlayer.svelte
 │   │   ├── data
 │   │   │   └── team.js
 │   │   ├── index.ts
+│   │   ├── posts
+│   │   │   ├── hello-world.md
+│   │   │   └── our-sri-lanka-project.md
 │   │   └── theme.svelte.ts
 │   └── routes
 │       ├── +layout.svelte
@@ -46,6 +50,12 @@
 │       ├── about
 │       │   ├── +layout.svelte
 │       │   └── +page.md
+│       ├── blog
+│       │   ├── +page.server.js
+│       │   ├── +page.svelte
+│       │   └── [slug]
+│       │       ├── +page.server.js
+│       │       └── +page.svelte
 │       └── team
 │           ├── +page.server.js
 │           ├── +page.svelte
@@ -63,7 +73,9 @@
 │   │   ├── logo.png
 │   │   ├── logo.svg
 │   │   └── whatsapp.png
-│   └── robots.txt
+│   ├── robots.txt
+│   └── videos
+│       └── office.mp4
 ├── svelte.config.js
 ├── tailwind.config.js
 ├── TheApp.txt
@@ -281,6 +293,40 @@ body {
 .staff-strengths-grid { @apply grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4; }
 .strength-item { @apply flex items-center gap-3; }
 
+
+
+/* Blog Grid Page */
+.blog-grid-container { @apply max-w-7xl mx-auto px-4 py-8; }
+.blog-grid-container h1 { @apply text-4xl font-bold text-center mb-8; }
+.blog-grid { @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6; }
+
+.blog-post-card {
+	@apply flex flex-col gap-2 bg-neutral-900 rounded-xl border border-neutral-800 p-6 transition-all duration-300 hover:border-carbon-gold hover:scale-[1.02] no-underline;
+}
+.blog-post-title {
+	@apply text-xl font-bold text-neutral-100 leading-tight;
+}
+.blog-post-date {
+	@apply text-xs text-neutral-500;
+}
+.blog-post-summary {
+	@apply text-sm text-neutral-400 font-light flex-grow;
+}
+.blog-post-readmore {
+	@apply text-sm font-semibold text-carbon-gold mt-2;
+}
+
+/* Video Player */
+.video-player-container {
+	@apply my-8;
+}
+.video-player {
+	@apply w-full rounded-lg border border-neutral-800 bg-black aspect-video;
+}
+.video-caption {
+	@apply mt-2 text-center text-sm text-neutral-500 italic;
+}
+
 # File: src/app.d.ts
 
 // See https://svelte.dev/docs/kit/types#app.d.ts
@@ -473,6 +519,9 @@ export {};
 			<a href="/team" class="text-sm text-gray-400 hover:text-white transition-colors">
 				Team
 			</a>
+			<a href="/blog" class="text-sm text-gray-400 hover:text-white transition-colors">
+				Blog
+			</a>
 		</nav>
 	</div>
 </header>
@@ -634,6 +683,32 @@ export {};
 	{/if}
 </article>
 
+# File: src/lib/components/VideoPlayer.svelte
+
+<script lang="ts">
+	let {
+		src,
+		caption,
+		trackSrc
+	}: {
+		src: string;
+		caption?: string;
+		trackSrc?: string;
+	} = $props();
+</script>
+
+<figure class="video-player-container">
+	<video controls {src} class="video-player" muted={!trackSrc}>
+		{#if trackSrc}
+			<track kind="captions" srclang="en" src={trackSrc} />
+		{/if}
+		Your browser does not support the video tag.
+	</video>
+	{#if caption}
+		<figcaption class="video-caption">{caption}</figcaption>
+	{/if}
+</figure>
+
 # File: src/lib/data/team.js
 
 export const teamMembers = [
@@ -770,6 +845,45 @@ export const teamMembers = [
 
 // place files you want to import through the `$lib` alias in this folder.
 
+
+# File: src/lib/posts/hello-world.md
+
+---
+title: "Hello World: Carbonatik's First Post"
+date: "2025-10-20"
+summary: "This is the first post on the Carbonatik blog. We're excited to share our journey and insights into the world of sustainable mining."
+---
+
+<script>
+    import VideoPlayer from '$lib/components/VideoPlayer.svelte';
+</script>
+
+Welcome to our new blog! Here, we'll discuss industry trends, company news, and the innovative technologies we're pioneering.
+
+### Our office in Palm Beach Florida
+
+<VideoPlayer src="/videos/office.mp4" caption="A brief tour of our new office." />
+
+# File: src/lib/posts/our-sri-lanka-project.md
+
+---
+title: "Deep Dive: The Sri Lanka Graphite Project"
+date: "2025-10-22"
+summary: "A closer look at our historic 99-year lease on the KGLL mines and what it means for the future of high-purity vein graphite."
+---
+
+<script>
+    import VideoPlayer from '$lib/components/VideoPlayer.svelte';
+</script>
+
+### A Historic Opportunity
+
+The acquisition of the KGLL mines is a significant milestone for Carbonatik. These mines are renowned for producing the world's purest **Vein Graphite**.
+
+-   Purity exceeding 99% carbon content.
+-   Immediate availability of **1,000 tons** for sale.
+
+We are committed to revitalizing these historic sites with modern, sustainable practices.
 
 # File: src/lib/theme.svelte.ts
 
@@ -942,6 +1056,125 @@ Trust and quality are the cornerstones of our business. Carbonatik rigorously ad
         <a href="tel:+19545521251">+1 (954) 552-1251</a>
     </div>
 </div>
+
+# File: src/routes/blog/+page.server.js
+
+/**
+ * @typedef {Object} PostMeta
+ * @property {string} title
+ * @property {string} date
+ * @property {string} summary
+ */
+
+/**
+ * @typedef {Object} Post
+ * @property {string} slug
+ * @property {string} title
+ * @property {string} date
+ * @property {string} summary
+ */
+
+/** @type {import('./$types').PageServerLoad} */
+export async function load() {
+	const posts_modules = import.meta.glob('/src/lib/posts/*.md', { eager: true });
+
+	/** @type {Post[]} */
+	const posts = Object.entries(posts_modules).map(([filepath, module]) => {
+		const slug = filepath.split('/').pop()?.split('.').shift() ?? '';
+		
+		// This cast tells TypeScript the shape of the imported module's metadata
+		const metadata = /** @type {{ metadata: PostMeta }} */ (module).metadata;
+		
+		return {
+			slug,
+			...metadata
+		};
+	});
+
+	posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+	return {
+		posts
+	};
+}
+
+# File: src/routes/blog/+page.svelte
+
+<script>
+	let { data } = $props();
+</script>
+
+<svelte:head>
+	<title>Carbonatik Blog</title>
+	<meta name="description" content="News, updates, and insights from the Carbonatik team." />
+</svelte:head>
+
+<section class="carbonatik-section">
+	<div class="blog-grid-container">
+		<h1>Our Blog</h1>
+		<div class="blog-grid">
+			{#each data.posts as post (post.slug)}
+				<a href={`/blog/${post.slug}`} class="blog-post-card">
+					<h2 class="blog-post-title">{post.title}</h2>
+					<p class="blog-post-date">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+					<p class="blog-post-summary">{post.summary}</p>
+					<span class="blog-post-readmore">Read More &rarr;</span>
+				</a>
+			{/each}
+		</div>
+	</div>
+</section>
+
+# File: src/routes/blog/[slug]/+page.server.js
+
+import { error } from '@sveltejs/kit';
+
+/** @type {import('./$types').PageServerLoad} */
+export async function load({ params }) {
+	try {
+		const post = await import(`../../../lib/posts/${params.slug}.md`);
+		return {
+			metadata: post.metadata,
+			slug: params.slug
+		};
+	} catch (e) {
+		error(404, 'Post not found');
+	}
+}
+
+# File: src/routes/blog/[slug]/+page.svelte
+
+<script>
+	let { data } = $props();
+
+	// Create a promise that dynamically imports the component
+	const post_promise = import(`../../../lib/posts/${data.slug}.md`);
+</script>
+
+<svelte:head>
+	<title>{data.metadata.title} | Carbonatik Blog</title>
+	<meta name="description" content={data.metadata.summary} />
+</svelte:head>
+
+<article class="rich-text-content px-4 py-16 sm:py-24">
+	<h1>{data.metadata.title}</h1>
+	<p class="text-neutral-500 italic mb-8">
+		Published on {new Date(data.metadata.date).toLocaleDateString('en-US', {
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric'
+		})}
+	</p>
+
+	{#await post_promise}
+		<p>Loading post...</p>
+	{:then module}
+		{@const Component = module.default}
+		<Component />
+	{:catch error}
+		<p class="text-red-500">Error loading post: {error.message}</p>
+	{/await}
+</article>
 
 # File: src/routes/team/+page.server.js
 

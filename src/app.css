@@ -126,3 +126,36 @@ body {
 .video-caption {
 	@apply mt-2 text-center text-sm text-neutral-500 italic;
 }
+
+
+/* Pinterest-style Image Gallery */
+.gallery-container {
+	@apply my-8;
+}
+.gallery-container {
+	/* The 'columns' property makes the direct children participate in the masonry layout. */
+	/* We want the images to be in columns, but the figcaption to be full-width *after* them. */
+	/* So, we will wrap the images in a div and apply columns to that div. */
+	@apply relative; /* Add relative positioning to the container if needed for absolute positioning of caption, though not strictly required for this fix */
+}
+
+/* New wrapper for images to apply column layout */
+.gallery-images-wrapper {
+	@apply columns-2 md:columns-3 lg:columns-4 gap-4;
+}
+
+.gallery-item {
+	@apply mb-4 break-inside-avoid rounded-lg overflow-hidden shadow-lg bg-neutral-900;
+}
+.gallery-item img {
+	@apply block w-full h-auto;
+}
+.gallery-caption {
+	/* Remove col-span-full as it's not applicable to direct children of a column container in the way we want */
+	/* Instead, ensure it's a block element that naturally takes full width */
+	@apply mt-4 text-center text-sm text-neutral-500 italic;
+}
+.gallery-loading,
+.gallery-error {
+	@apply text-center text-neutral-400 col-span-full; /* col-span-full is fine here if these are direct children of a column container that isn't the image wrapper */
+}
