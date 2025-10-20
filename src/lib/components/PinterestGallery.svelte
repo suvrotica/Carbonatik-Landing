@@ -6,7 +6,7 @@
 	let loading = $state(true);
 
 	$effect(() => {
-		// This effect runs on the client after the component mounts
+		// This code now runs safely on the client-side after the component is mounted.
 		loading = true;
 		error = null;
 
