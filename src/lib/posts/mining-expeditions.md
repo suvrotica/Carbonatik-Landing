@@ -14,3 +14,8 @@ At Carbonatik, our work takes us to incredible locations around the globe. Our r
 
 <PinterestGallery galleryId="mining-expedition" caption="Scenes from Carbonatik on the field" />
 
+### The Heart of Our Copper Operations
+
+Building on our strategic presence in Tanzania, where we control **12 mining licenses** for high-demand Copper and Gold deposits, we are excited to offer a glimpse into the heart of our operations. This gallery showcases the rich potential of the region and the dedicated work of our teams on the ground.
+
+<PinterestGallery galleryId="tanzania-copper" caption="Scenes from our copper expedition in Tanzania" />

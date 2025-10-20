@@ -1,4 +1,4 @@
-# Context file generated on: Monday, October 20, 2025 at 11:50:31 AM GMT+5:30
+# Context file generated on: Monday, October 20, 2025 at 3:08:16 PM GMT+5:30
 ---
 
 # Project File Layout
@@ -33,6 +33,7 @@
 │   │   │   │   └── Mission.svelte
 │   │   │   ├── leadership
 │   │   │   │   └── PersonProfile.svelte
+│   │   │   ├── PinterestGallery.svelte
 │   │   │   ├── ProductLink.svelte
 │   │   │   ├── team
 │   │   │   │   └── StaffProfile.svelte
@@ -42,7 +43,10 @@
 │   │   ├── index.ts
 │   │   ├── posts
 │   │   │   ├── hello-world.md
+│   │   │   ├── mining-expeditions.md
 │   │   │   └── our-sri-lanka-project.md
+│   │   ├── server
+│   │   │   └── galleries.server.ts
 │   │   └── theme.svelte.ts
 │   └── routes
 │       ├── +layout.svelte
@@ -50,6 +54,10 @@
 │       ├── about
 │       │   ├── +layout.svelte
 │       │   └── +page.md
+│       ├── api
+│       │   └── gallery
+│       │       └── [galleryId]
+│       │           └── +server.ts
 │       ├── blog
 │       │   ├── +page.server.js
 │       │   ├── +page.svelte
@@ -67,6 +75,14 @@
 │   │   ├── brendan-t-fitzpatrick-president.jpg
 │   │   ├── CarbonatikJustLogoImage (2).svg
 │   │   ├── favicon.ico
+│   │   ├── galleries
+│   │   │   └── mining-expedition
+│   │   │       ├── WhatsApp Image 2025-10-19 at 1.53.26 PM (1).jpeg
+│   │   │       ├── WhatsApp Image 2025-10-19 at 1.53.26 PM (2).jpeg
+│   │   │       ├── WhatsApp Image 2025-10-19 at 1.53.26 PM (3).jpeg
+│   │   │       ├── WhatsApp Image 2025-10-19 at 1.53.26 PM (4).jpeg
+│   │   │       ├── WhatsApp Image 2025-10-19 at 1.53.26 PM (5).jpeg
+│   │   │       └── WhatsApp Image 2025-10-19 at 1.53.26 PM.jpeg
 │   │   ├── joseph-kamalesh-swaminathan-ceo - Copy.jpg
 │   │   ├── joseph-kamalesh-swaminathan-ceo.jpg
 │   │   ├── logo-icon.svg
@@ -110,6 +126,7 @@
 		"@sveltejs/enhanced-img": "^0.8.4",
 		"@sveltejs/kit": "^2.43.2",
 		"@sveltejs/vite-plugin-svelte": "^6.2.0",
+		"@types/node": "^24.8.1",
 		"eslint": "^9.36.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.12.4",
@@ -327,6 +344,39 @@ body {
 	@apply mt-2 text-center text-sm text-neutral-500 italic;
 }
 
+
+/* Pinterest-style Image Gallery */
+.gallery-container {
+	@apply my-8;
+}
+.gallery-container {
+	/* The 'columns' property makes the direct children participate in the masonry layout. */
+	/* We want the images to be in columns, but the figcaption to be full-width *after* them. */
+	/* So, we will wrap the images in a div and apply columns to that div. */
+	@apply relative; /* Add relative positioning to the container if needed for absolute positioning of caption, though not strictly required for this fix */
+}
+
+/* New wrapper for images to apply column layout */
+.gallery-images-wrapper {
+	@apply columns-2 md:columns-3 lg:columns-4 gap-4;
+}
+
+.gallery-item {
+	@apply mb-4 break-inside-avoid rounded-lg overflow-hidden shadow-lg bg-neutral-900;
+}
+.gallery-item img {
+	@apply block w-full h-auto;
+}
+.gallery-caption {
+	/* Remove col-span-full as it's not applicable to direct children of a column container in the way we want */
+	/* Instead, ensure it's a block element that naturally takes full width */
+	@apply mt-4 text-center text-sm text-neutral-500 italic;
+}
+.gallery-loading,
+.gallery-error {
+	@apply text-center text-neutral-400 col-span-full; /* col-span-full is fine here if these are direct children of a column container that isn't the image wrapper */
+}
+
 # File: src/app.d.ts
 
 // See https://svelte.dev/docs/kit/types#app.d.ts
@@ -353,7 +403,7 @@ export {};
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" sizes="any" />
+    <link rel="icon" href="/images/favicon.ico" sizes="any" />
     <!-- Open Graph (Facebook, LinkedIn, WhatsApp etc.) -->
     <meta property="og:title" content="Carbonatik LLC" />
     <meta property="og:description" content="A mining company based out of Florida, US" />
@@ -616,6 +666,36 @@ export {};
 	{/each}
 </article>
 
+# File: src/lib/components/PinterestGallery.svelte
+
+<script lang="ts">
+	let { galleryId, caption }: { galleryId: string; caption?: string } = $props();
+
+	const imageListPromise = fetch(`/api/gallery/${galleryId}`).then((res) => {
+		if (!res.ok) {
+			throw new Error('Failed to fetch gallery images.');
+		}
+		return res.json();
+	});
+</script>
+
+<figure class="gallery-container">
+	{#await imageListPromise}
+		<p class="gallery-loading">Loading gallery...</p>
+	{:then imageUrls}
+		{#each imageUrls as src, i}
+			<div class="gallery-item">
+				<img {src} alt={`Gallery image ${i + 1} for ${galleryId}`} loading="lazy" />
+			</div>
+		{/each}
+	{:catch error}
+		<p class="gallery-error">Could not load gallery: {error.message}</p>
+	{/await}
+	{#if caption}
+		<figcaption class="gallery-caption">{caption}</figcaption>
+	{/if}
+</figure>
+
 # File: src/lib/components/ProductLink.svelte
 
 <script lang="ts">
@@ -864,6 +944,26 @@ Welcome to our new blog! Here, we'll discuss industry trends, company news, and 
 
 <VideoPlayer src="/videos/office.mp4" caption="A brief tour of our new office." />
 
+# File: src/lib/posts/mining-expeditions.md
+
+---
+title: "Showcase: Our Expedition in Photos"
+date: "2025-10-20"
+summary: "A visual journey through our operations"
+---
+
+<script>
+    import PinterestGallery from '$lib/components/PinterestGallery.svelte';
+</script>
+
+### A Visual Journey
+
+At Carbonatik, our work takes us to incredible locations around the globe. Our recent expedition to the mines in was particularly noteworthy, not just for the high-purity minerals we are sourcing, but for the stunning landscapes and the dedicated people we work with and some other pictures noteworthy.
+
+<PinterestGallery galleryId="mining-expedition" caption="Scenes from Carbonatik on the field" />
+
+
+
 # File: src/lib/posts/our-sri-lanka-project.md
 
 ---
@@ -884,6 +984,47 @@ The acquisition of the KGLL mines is a significant milestone for Carbonatik. The
 -   Immediate availability of **1,000 tons** for sale.
 
 We are committed to revitalizing these historic sites with modern, sustainable practices.
+
+# File: src/lib/server/galleries.server.ts
+
+// src/lib/server/galleries.server.ts
+
+// This uses Vite's glob import feature to find all images at build time.
+// It's eager, meaning the modules are imported right away.
+// `query: '?url'` tells Vite to process the asset and give us its final URL.
+// `import: 'default'` specifies that we want the default export (the URL string).
+const allImageModules = import.meta.glob('/static/images/galleries/**/*.+(jpeg|jpg|png|gif|webp|svg)', {
+	eager: true,
+	query: '?url',
+	import: 'default'
+});
+
+const galleries = new Map<string, string[]>();
+
+for (const imagePath in allImageModules) {
+	// Cast the module's default export to a string
+	const url = allImageModules[imagePath] as string;
+
+	// The path will be like '/static/images/galleries/sri-lanka-expedition/image.jpg'
+	const pathParts = imagePath.split('/');
+	const galleryId = pathParts[4]; // The gallery name is the 5th part of the path
+
+	if (!galleries.has(galleryId)) {
+		galleries.set(galleryId, []);
+	}
+	// Add the public URL to the map
+	galleries.get(galleryId)?.push(url);
+}
+
+/**
+ * Retrieves the image URLs for a given gallery ID.
+ * This function reads from the map created at build time.
+ * @param {string} galleryId - The ID of the gallery.
+ * @returns {string[] | undefined} An array of image URLs or undefined if not found.
+ */
+export function getGalleryImages(galleryId: string): string[] | undefined {
+	return galleries.get(galleryId);
+}
 
 # File: src/lib/theme.svelte.ts
 
@@ -1056,6 +1197,23 @@ Trust and quality are the cornerstones of our business. Carbonatik rigorously ad
         <a href="tel:+19545521251">+1 (954) 552-1251</a>
     </div>
 </div>
+
+# File: src/routes/api/gallery/[galleryId]/+server.ts
+
+// src/routes/api/gallery/[galleryId]/+server.ts
+import { json, error } from '@sveltejs/kit';
+import { getGalleryImages } from '$lib/server/galleries.server';
+
+/** @type {import('./$types').RequestHandler} */
+export function GET({ params }) {
+	const imageUrls = getGalleryImages(params.galleryId);
+
+	if (!imageUrls) {
+		error(404, 'Gallery not found');
+	}
+
+	return json(imageUrls);
+}
 
 # File: src/routes/blog/+page.server.js
 
