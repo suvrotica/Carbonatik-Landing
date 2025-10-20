@@ -1,5 +1,10 @@
 /* src/app.css */
 @import "tailwindcss";
+@import "tailwindcss/theme.css";
+
+@theme {
+  --color-carbon-gold: #ffc700;
+}
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
@@ -9,67 +14,81 @@ body {
     @apply dark:bg-neutral-950 dark:text-neutral-400;
 }
 
-/* Carbonatik-specific namespaced styles */
-
-.prose {
-    @apply text-neutral-400 font-light;
+/* --- NEW: Replacement for 'prose' --- */
+.rich-text-content {
+    @apply max-w-4xl mx-auto;
 }
-
-h1,
-h2,
-h3 {
-    @apply font-bold  text-neutral-400  tracking-tight;
+.rich-text-content h1, .rich-text-content h2, .rich-text-content h3, .rich-text-content h4 {
+    @apply font-bold text-neutral-100 tracking-tight mb-4 mt-8;
 }
-h1 {@apply pt-10 pb-4 text-4xl;}
-h2 {@apply pt-8 pb-4 text-3xl;}
-h3 {@apply pt-4 pb-4 text-2xl;}
+.rich-text-content h1 { @apply text-4xl; }
+.rich-text-content h2 { @apply text-3xl; }
+.rich-text-content h3 { @apply text-2xl; }
+.rich-text-content p { @apply text-neutral-400 font-light leading-relaxed my-4; }
+.rich-text-content a { @apply text-carbon-gold hover:underline; }
+.rich-text-content ul, .rich-text-content ol { @apply my-4 pl-6 space-y-2; }
+.rich-text-content li { @apply text-neutral-400; }
+.rich-text-content ul { @apply list-disc; }
+.rich-text-content ol { @apply list-decimal; }
+.rich-text-content strong { @apply font-semibold text-neutral-200; }
+.rich-text-content code { @apply bg-neutral-800 text-sm rounded px-1 py-0.5; }
+.rich-text-content blockquote { @apply border-l-4 border-neutral-700 pl-4 italic text-neutral-500 my-6; }
+/* --- END NEW --- */
 
-a {
-    @apply font-semibold text-neutral-400 hover:text-neutral-300 no-underline hover:underline decoration-neutral-400/50;
-}
 
-.prose strong {
-    @apply font-semibold text-neutral-200;
-}
-
-
-/* Custom styles for components embedded in Markdown */
+/* Custom styles for components */
 .leadership-grid {
     @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 my-10;
 }
-
-.leadership-grid .name {
-    @apply font-bold text-lg text-neutral-200;
-}
-
-.leadership-grid .title {
-    @apply text-sm text-neutral-500;
-}
+.leadership-grid .name { @apply font-bold text-lg text-neutral-200; }
+.leadership-grid .title { @apply text-sm text-neutral-500; }
 
 .contact-card {
     @apply mt-16 rounded-lg border border-neutral-800 bg-neutral-900 p-8 text-center;
 }
-
-.contact-card h3 {
-    @apply text-2xl font-bold text-neutral-100;
-}
-
-.contact-card p {
-    @apply my-4 max-w-2xl mx-auto;
-}
-
+.contact-card h3 { @apply text-2xl font-bold text-neutral-100; }
+.contact-card p { @apply my-4 max-w-2xl mx-auto; }
 .contact-card .contact-details {
     @apply flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center text-sky-400 font-medium;
 }
+.contact-card .contact-details a:hover { @apply underline; }
 
-.contact-card .contact-details a:hover {
-    @apply underline;
-}
-
-.carbonatik-section {
-    @apply px-4 py-2 sm:py-4;
-}
-
+.carbonatik-section { @apply px-4 py-2 sm:py-4; }
 .carbonatik-text-highlighted {
     @apply font-semibold text-neutral-100 hover:text-neutral-300 hover:underline decoration-neutral-400/50;
 }
+
+/* Old Leadership Profile Styles (can be removed if not used elsewhere) */
+.person-profile { @apply py-12 sm:py-16; }
+.person-profile-header { @apply flex flex-col sm:flex-row items-center gap-6 sm:gap-8 pb-8 mb-8 border-b border-neutral-800; }
+.person-profile-image { @apply w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-neutral-700 shadow-lg; }
+.person-profile-name { @apply text-4xl sm:text-5xl font-black text-neutral-100 tracking-tighter m-0 p-0; }
+.person-profile-jobtitle { @apply text-xl text-carbon-gold font-semibold mt-1; }
+.person-profile-section h2 { @apply text-2xl font-bold text-neutral-200 border-b border-neutral-800 pb-2 mb-4; }
+.person-profile-list { @apply list-disc list-inside space-y-3 pl-2; }
+.person-profile-list li::marker { @apply text-carbon-gold; }
+.person-profile-list strong { @apply text-neutral-100; }
+
+/* Team Grid Page */
+.team-grid-container { @apply max-w-7xl mx-auto px-4 py-8; }
+.team-grid-container h1 { @apply text-4xl font-bold text-center mb-8; }
+.team-grid { @apply grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-4 sm:gap-6; }
+.team-member-card { @apply flex flex-col gap-3 text-center pb-4 bg-neutral-900 rounded-xl transition-transform duration-300 hover:scale-105; }
+.team-member-photo-wrapper { @apply p-4; }
+.team-member-photo { @apply w-full bg-center bg-no-repeat aspect-square bg-cover rounded-full border-2 border-neutral-700; }
+.team-member-name { @apply text-white text-base font-medium leading-normal; }
+.team-member-title { @apply text-neutral-400 text-sm font-normal leading-normal; }
+
+/* Staff Profile Page */
+.staff-profile-header { @apply flex flex-col items-center text-center gap-4 mb-10; }
+.staff-profile-image { @apply w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-neutral-700 shadow-lg; }
+.staff-profile-name { @apply text-4xl sm:text-5xl font-black text-neutral-100 tracking-tighter m-0 p-0; }
+.staff-profile-title { @apply text-xl text-carbon-gold font-semibold mt-1; }
+.staff-profile-section { @apply bg-neutral-900 p-6 rounded-xl border border-neutral-800 my-6; }
+.staff-profile-section h2 { @apply text-carbon-gold text-xl font-bold leading-tight tracking-[-0.015em] pb-3 mt-0 border-b border-neutral-700; }
+.staff-expertise-grid { @apply grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4; }
+.expertise-item { @apply flex flex-col items-center text-center; }
+.expertise-item h3 { @apply font-bold text-neutral-100 mt-2 mb-1 text-lg; }
+.expertise-item p { @apply text-sm text-neutral-400/80 m-0; }
+.staff-strengths-grid { @apply grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4; }
+.strength-item { @apply flex items-center gap-3; }

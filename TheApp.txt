@@ -1,4 +1,4 @@
-# Context file generated on: Sunday, October 19, 2025 at 1:21:03 PM GMT+5:30
+# Context file generated on: Monday, October 20, 2025 at 8:50:14 AM GMT+5:30
 ---
 
 # Project File Layout
@@ -31,17 +31,30 @@
 │   │   │   │   ├── Header.svelte
 │   │   │   │   ├── Hero.svelte
 │   │   │   │   └── Mission.svelte
-│   │   │   └── ProductLink.svelte
+│   │   │   ├── leadership
+│   │   │   │   └── PersonProfile.svelte
+│   │   │   ├── ProductLink.svelte
+│   │   │   └── team
+│   │   │       └── StaffProfile.svelte
+│   │   ├── data
+│   │   │   └── team.js
 │   │   ├── index.ts
 │   │   └── theme.svelte.ts
 │   └── routes
 │       ├── +layout.svelte
 │       ├── +page.svelte
-│       └── about
-│           ├── +layout.svelte
-│           └── +page.md
+│       ├── about
+│       │   ├── +layout.svelte
+│       │   └── +page.md
+│       └── team
+│           ├── +page.server.js
+│           ├── +page.svelte
+│           └── [slug]
+│               ├── +page.server.js
+│               └── +page.svelte
 ├── static
 │   ├── images
+│   │   ├── brendan-t-fitzpatrick-president.jpg
 │   │   ├── CarbonatikJustLogoImage (2).svg
 │   │   ├── favicon.ico
 │   │   ├── logo-icon.svg
@@ -50,7 +63,7 @@
 │   │   └── whatsapp.png
 │   └── robots.txt
 ├── svelte.config.js
-├── tailwind.config.cjs
+├── tailwind.config.js
 ├── TheApp.txt
 ├── tsconfig.json
 └── vite.config.ts
@@ -83,7 +96,6 @@
 		"@sveltejs/enhanced-img": "^0.8.4",
 		"@sveltejs/kit": "^2.43.2",
 		"@sveltejs/vite-plugin-svelte": "^6.2.0",
-		"@tailwindcss/typography": "^0.5.19",
 		"eslint": "^9.36.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.12.4",
@@ -147,25 +159,6 @@ export default defineConfig({
   ],
 });
 
-# File: tailwind.config.cjs
-
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ['./src/**/*.{html,js,svelte,ts}'],
-  darkMode: ['selector', '[data-theme="dark"]'],
-  theme: {
-    extend: {
-      colors: {
-        // Adding a custom gold/amber color for brand consistency
-        'carbon-gold': '#ffc700' 
-      }
-    },
-  },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
-}
-
 # File: tsconfig.json
 
 {
@@ -193,6 +186,11 @@ module.exports = {
 
 /* src/app.css */
 @import "tailwindcss";
+@import "tailwindcss/theme.css";
+
+@theme {
+  --color-carbon-gold: #ffc700;
+}
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
@@ -202,71 +200,84 @@ body {
     @apply dark:bg-neutral-950 dark:text-neutral-400;
 }
 
-/* Carbonatik-specific namespaced styles */
-
-.prose {
-    @apply text-neutral-400 font-light;
+/* --- NEW: Replacement for 'prose' --- */
+.rich-text-content {
+    @apply max-w-4xl mx-auto;
 }
-
-h1,
-h2,
-h3 {
-    @apply font-bold  text-neutral-400  tracking-tight;
+.rich-text-content h1, .rich-text-content h2, .rich-text-content h3, .rich-text-content h4 {
+    @apply font-bold text-neutral-100 tracking-tight mb-4 mt-8;
 }
-h1 {@apply pt-10 pb-4 text-4xl;}
-h2 {@apply pt-8 pb-4 text-3xl;}
-h3 {@apply pt-4 pb-4 text-2xl;}
+.rich-text-content h1 { @apply text-4xl; }
+.rich-text-content h2 { @apply text-3xl; }
+.rich-text-content h3 { @apply text-2xl; }
+.rich-text-content p { @apply text-neutral-400 font-light leading-relaxed my-4; }
+.rich-text-content a { @apply text-carbon-gold hover:underline; }
+.rich-text-content ul, .rich-text-content ol { @apply my-4 pl-6 space-y-2; }
+.rich-text-content li { @apply text-neutral-400; }
+.rich-text-content ul { @apply list-disc; }
+.rich-text-content ol { @apply list-decimal; }
+.rich-text-content strong { @apply font-semibold text-neutral-200; }
+.rich-text-content code { @apply bg-neutral-800 text-sm rounded px-1 py-0.5; }
+.rich-text-content blockquote { @apply border-l-4 border-neutral-700 pl-4 italic text-neutral-500 my-6; }
+/* --- END NEW --- */
 
-a {
-    @apply font-semibold text-neutral-400 hover:text-neutral-300 no-underline hover:underline decoration-neutral-400/50;
-}
 
-.prose strong {
-    @apply font-semibold text-neutral-200;
-}
-
-
-/* Custom styles for components embedded in Markdown */
+/* Custom styles for components */
 .leadership-grid {
     @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 my-10;
 }
-
-.leadership-grid .name {
-    @apply font-bold text-lg text-neutral-200;
-}
-
-.leadership-grid .title {
-    @apply text-sm text-neutral-500;
-}
+.leadership-grid .name { @apply font-bold text-lg text-neutral-200; }
+.leadership-grid .title { @apply text-sm text-neutral-500; }
 
 .contact-card {
     @apply mt-16 rounded-lg border border-neutral-800 bg-neutral-900 p-8 text-center;
 }
-
-.contact-card h3 {
-    @apply text-2xl font-bold text-neutral-100;
-}
-
-.contact-card p {
-    @apply my-4 max-w-2xl mx-auto;
-}
-
+.contact-card h3 { @apply text-2xl font-bold text-neutral-100; }
+.contact-card p { @apply my-4 max-w-2xl mx-auto; }
 .contact-card .contact-details {
     @apply flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center text-sky-400 font-medium;
 }
+.contact-card .contact-details a:hover { @apply underline; }
 
-.contact-card .contact-details a:hover {
-    @apply underline;
-}
-
-.carbonatik-section {
-    @apply px-4 py-2 sm:py-4;
-}
-
+.carbonatik-section { @apply px-4 py-2 sm:py-4; }
 .carbonatik-text-highlighted {
     @apply font-semibold text-neutral-100 hover:text-neutral-300 hover:underline decoration-neutral-400/50;
 }
 
+/* Old Leadership Profile Styles (can be removed if not used elsewhere) */
+.person-profile { @apply py-12 sm:py-16; }
+.person-profile-header { @apply flex flex-col sm:flex-row items-center gap-6 sm:gap-8 pb-8 mb-8 border-b border-neutral-800; }
+.person-profile-image { @apply w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-neutral-700 shadow-lg; }
+.person-profile-name { @apply text-4xl sm:text-5xl font-black text-neutral-100 tracking-tighter m-0 p-0; }
+.person-profile-jobtitle { @apply text-xl text-carbon-gold font-semibold mt-1; }
+.person-profile-section h2 { @apply text-2xl font-bold text-neutral-200 border-b border-neutral-800 pb-2 mb-4; }
+.person-profile-list { @apply list-disc list-inside space-y-3 pl-2; }
+.person-profile-list li::marker { @apply text-carbon-gold; }
+.person-profile-list strong { @apply text-neutral-100; }
+
+/* Team Grid Page */
+.team-grid-container { @apply max-w-7xl mx-auto px-4 py-8; }
+.team-grid-container h1 { @apply text-4xl font-bold text-center mb-8; }
+.team-grid { @apply grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-4 sm:gap-6; }
+.team-member-card { @apply flex flex-col gap-3 text-center pb-4 bg-neutral-900 rounded-xl transition-transform duration-300 hover:scale-105; }
+.team-member-photo-wrapper { @apply p-4; }
+.team-member-photo { @apply w-full bg-center bg-no-repeat aspect-square bg-cover rounded-full border-2 border-neutral-700; }
+.team-member-name { @apply text-white text-base font-medium leading-normal; }
+.team-member-title { @apply text-neutral-400 text-sm font-normal leading-normal; }
+
+/* Staff Profile Page */
+.staff-profile-header { @apply flex flex-col items-center text-center gap-4 mb-10; }
+.staff-profile-image { @apply w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-neutral-700 shadow-lg; }
+.staff-profile-name { @apply text-4xl sm:text-5xl font-black text-neutral-100 tracking-tighter m-0 p-0; }
+.staff-profile-title { @apply text-xl text-carbon-gold font-semibold mt-1; }
+.staff-profile-section { @apply bg-neutral-900 p-6 rounded-xl border border-neutral-800 my-6; }
+.staff-profile-section h2 { @apply text-carbon-gold text-xl font-bold leading-tight tracking-[-0.015em] pb-3 mt-0 border-b border-neutral-700; }
+.staff-expertise-grid { @apply grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4; }
+.expertise-item { @apply flex flex-col items-center text-center; }
+.expertise-item h3 { @apply font-bold text-neutral-100 mt-2 mb-1 text-lg; }
+.expertise-item p { @apply text-sm text-neutral-400/80 m-0; }
+.staff-strengths-grid { @apply grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4; }
+.strength-item { @apply flex items-center gap-3; }
 
 # File: src/app.d.ts
 
@@ -337,41 +348,49 @@ export {};
 # File: src/lib/components/landing/CoreProducts.svelte
 
 <script lang="ts">
-    import ProductLink from '$lib/components/ProductLink.svelte';
+	import ProductLink from '$lib/components/ProductLink.svelte';
 </script>
 
-<section class="carbonatik-section prose prose-invert max-w-4xl mx-auto">
-    <h2 >Our Core Minerals</h2>
-    <p>
-        Our portfolio is centered around high-purity minerals vital for modern technology and industry, sourced from rich deposits in Sri Lanka and strategic partnerships.
-    </p>
-    <ul class="not-prose grid grid-cols-1 md:grid-cols-2 gap-4 list-none p-0 mt-6">
-        <li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
-            <h3 >Graphite</h3>
-            <p class="text-sm text-neutral-400">
-                Sourced from Sri Lanka, including a forthcoming 99-year lease on the historic KGLL mines. We offer the world’s purest <ProductLink name="Vein Graphite" />, exceeding 99% carbon content. <strong>1,000 tons</strong> are ready for immediate sale.
-            </p>
-        </li>
-        <li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
-            <h3 >Copper & Gold</h3>
-            <p class="text-sm text-neutral-400">
-                Secured access to 12 mining licenses in Tanzania for copper and gold. We also supply high-grade **Copper Cathodes** from our contracted smelters in the DRC.
-            </p>
-        </li>
-        <li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
-            <h3 >Mica, Quartz & Granite</h3>
-            <p class="text-sm text-neutral-400">
-                Premium Sri Lankan <ProductLink name="Gold Mica" />, ultra-high purity <ProductLink name="Quartz" />, and unique <ProductLink name="Ruby Granite" /> for luxury applications.
-            </p>
-        </li>
-        <li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
-            <h3 >Monazite & Gemstones</h3>
-            <p class="text-sm text-neutral-400">
-                Ethically sourced precious gemstones and access to Monazite mining sites in Sri Lanka, crucial for rare-earth elements.
-            </p>
-        </li>
-    </ul>
+<section class="carbonatik-section rich-text-content">
+	<h2>Our Core Minerals</h2>
+	<p>
+		Our portfolio is centered around high-purity minerals vital for modern technology and industry,
+		sourced from rich deposits in Sri Lanka and strategic partnerships.
+	</p>
+	<ul class="grid grid-cols-1 md:grid-cols-2 gap-4 list-none p-0 mt-6">
+		<li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
+			<h3>Graphite</h3>
+			<p class="text-sm text-neutral-400">
+				Sourced from Sri Lanka, including a forthcoming 99-year lease on the historic KGLL mines. We
+				offer the world’s purest <ProductLink name="Vein Graphite" />, exceeding 99% carbon content.
+				<strong>1,000 tons</strong> are ready for immediate sale.
+			</p>
+		</li>
+		<li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
+			<h3>Copper & Gold</h3>
+			<p class="text-sm text-neutral-400">
+				Secured access to 12 mining licenses in Tanzania for copper and gold. We also supply
+				high-grade **Copper Cathodes** from our contracted smelters in the DRC.
+			</p>
+		</li>
+		<li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
+			<h3>Mica, Quartz & Granite</h3>
+			<p class="text-sm text-neutral-400">
+				Premium Sri Lankan <ProductLink name="Gold Mica" />, ultra-high purity <ProductLink
+					name="Quartz"
+				/>, and unique <ProductLink name="Ruby Granite" /> for luxury applications.
+			</p>
+		</li>
+		<li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
+			<h3>Monazite & Gemstones</h3>
+			<p class="text-sm text-neutral-400">
+				Ethically sourced precious gemstones and access to Monazite mining sites in Sri Lanka,
+				crucial for rare-earth elements.
+			</p>
+		</li>
+	</ul>
 </section>
+
 
 # File: src/lib/components/landing/Footer.svelte
 
@@ -400,26 +419,33 @@ export {};
 
 # File: src/lib/components/landing/GlobalOperations.svelte
 
-<section class="carbonatik-section prose prose-invert max-w-4xl mx-auto">
-    <h2 class="carbonatik-h2-highlighted">Global Operations & Logistics</h2>
-    <p>
-        Our strategic presence across key continents—from the Americas to Africa and Asia—is supported by a robust logistical network. With registered entities in the <span class="carbonatik-text-highlighted">USA, India, Sri Lanka, Tanzania, and Zambia</span>, we ensure seamless global supply chains.
-    </p>
-    <ul class="not-prose grid grid-cols-1 md:grid-cols-2 gap-4 list-none p-0 mt-6">
-        <li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
-            <h3 class="font-bold text-lg text-amber-300">DRC Copper Supply</h3>
-            <p class="text-sm text-neutral-400">
-                Through contracts with 7 smelters in the DRC, we have a secured supply capacity of up to <span class="carbonatik-text-highlighted">30,000 tons per month</span> of high-grade copper cathodes.
-            </p>
-        </li>
-        <li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
-            <h3 class="font-bold text-lg text-amber-300">Logistical Fleet</h3>
-            <p class="text-sm text-neutral-400">
-                Our contracted fleet of over <span class="carbonatik-text-highlighted">1200 trucks</span> in Zambia and Tanzania ensures reliable transport from DRC to our bonded warehouse at Kapiri, Zambia.
-            </p>
-        </li>
-    </ul>
+<section class="carbonatik-section rich-text-content">
+	<h2 class="carbonatik-h2-highlighted">Global Operations & Logistics</h2>
+	<p>
+		Our strategic presence across key continents—from the Americas to Africa and Asia—is supported
+		by a robust logistical network. With registered entities in the <span
+			class="carbonatik-text-highlighted">USA, India, Sri Lanka, Tanzania, and Zambia</span
+		>, we ensure seamless global supply chains.
+	</p>
+	<ul class="grid grid-cols-1 md:grid-cols-2 gap-4 list-none p-0 mt-6">
+		<li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
+			<h3 class="font-bold text-lg text-amber-300">DRC Copper Supply</h3>
+			<p class="text-sm text-neutral-400">
+				Through contracts with 7 smelters in the DRC, we have a secured supply capacity of up to <span
+					class="carbonatik-text-highlighted">30,000 tons per month</span
+				> of high-grade copper cathodes.
+			</p>
+		</li>
+		<li class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
+			<h3 class="font-bold text-lg text-amber-300">Logistical Fleet</h3>
+			<p class="text-sm text-neutral-400">
+				Our contracted fleet of over <span class="carbonatik-text-highlighted">1200 trucks</span> in
+				Zambia and Tanzania ensures reliable transport from DRC to our bonded warehouse at Kapiri, Zambia.
+			</p>
+		</li>
+	</ul>
 </section>
+
 
 # File: src/lib/components/landing/Header.svelte
 
@@ -441,6 +467,9 @@ export {};
 			</a>
 			<a href="/about" class="text-sm text-gray-400 hover:text-white transition-colors">
 				About
+			</a>
+			<a href="/team" class="text-sm text-gray-400 hover:text-white transition-colors">
+				Team
 			</a>
 		</nav>
 	</div>
@@ -484,12 +513,57 @@ export {};
 
 # File: src/lib/components/landing/Mission.svelte
 
-<section class="carbonatik-section prose prose-invert max-w-4xl mx-auto">
-    <h2>Our Mission</h2>
-    <p>
-        To lead the global mining sector in sustainability, delivering superior quality minerals while creating lasting value for our stakeholders, communities, and the environment. We envision a world where resource extraction and environmental preservation coexist harmoniously. 
-    </p>
+<section class="carbonatik-section rich-text-content">
+	<h2>Our Mission</h2>
+	<p>
+		To lead the global mining sector in sustainability, delivering superior quality minerals while
+		creating lasting value for our stakeholders, communities, and the environment. We envision a
+		world where resource extraction and environmental preservation coexist harmoniously.
+	</p>
 </section>
+
+
+# File: src/lib/components/leadership/PersonProfile.svelte
+
+<script lang="ts">
+	type Section = {
+		title: string;
+		items: string[];
+	};
+
+	let {
+		name,
+		title,
+		imageUrl,
+		sections
+	}: {
+		name: string;
+		title: string;
+		imageUrl: string;
+		sections: Section[];
+	} = $props();
+</script>
+
+<article class="person-profile">
+	<header class="person-profile-header">
+		<img src={imageUrl} alt={`Portrait of ${name}`} class="person-profile-image" />
+		<div>
+			<h1 class="person-profile-name">{name}</h1>
+			<p class="person-profile-jobtitle">{title}</p>
+		</div>
+	</header>
+
+	{#each sections as section}
+		<section class="person-profile-section">
+			<h2>{section.title}</h2>
+			<ul class="person-profile-list">
+				{#each section.items as item}
+					<li>{@html item}</li>
+				{/each}
+			</ul>
+		</section>
+	{/each}
+</article>
 
 # File: src/lib/components/ProductLink.svelte
 
@@ -504,6 +578,117 @@ export {};
 <a {href} >
 	{name}
 </a>
+
+# File: src/lib/components/team/StaffProfile.svelte
+
+<script>
+	let { member } = $props();
+</script>
+
+
+<article class="rich-text-content py-12 sm:py-16">
+	<header class="staff-profile-header">
+		<img src={member.imageUrl} alt={`Portrait of ${member.name}`} class="staff-profile-image" />
+		<div>
+			<h1 class="staff-profile-name">{member.name}</h1>
+			<p class="staff-profile-title">{member.title}</p>
+		</div>
+	</header>
+
+	{#if member.introduction}
+	<section class="staff-profile-section">
+		<h2>Introduction</h2>
+		{#each member.introduction as paragraph}
+			<p>{paragraph}</p>
+		{/each}
+	</section>
+	{/if}
+
+	{#if member.expertise?.length}
+	<section class="staff-profile-section">
+		<h2>Expertise and Impact</h2>
+		<div class="staff-expertise-grid">
+			{#each member.expertise as item}
+				<div class="expertise-item">
+					<h3>{item.skill}</h3>
+					<p>{item.description}</p>
+				</div>
+			{/each}
+		</div>
+	</section>
+	{/if}
+	
+	{#if member.strengths?.length}
+	<section class="staff-profile-section">
+		<h2>Core Strengths</h2>
+		<div class="staff-strengths-grid">
+			{#each member.strengths as item}
+				<div class="strength-item">
+					<p>{item.text}</p>
+				</div>
+			{/each}
+		</div>
+	</section>
+	{/if}
+</article>
+
+# File: src/lib/data/team.js
+
+export const teamMembers = [
+	{
+		slug: 'brendan-fitzpatrick',
+		name: 'Brendan Fitzpatrick',
+		title: 'President',
+		imageUrl: '/images/brendan-t-fitzpatrick-president.jpg',
+		introduction: [
+			"Brendan Fitzpatrick, Carbonatik's esteemed President, is the driving force behind our company's mission to transform the mining landscape through groundbreaking, eco-conscious practices.",
+			'His leadership is crucial in striking the delicate balance between meeting global mineral demands and upholding stringent environmental standards.'
+		],
+		expertise: [
+			{
+				icon: 'terminal', // Using Material Symbols names as placeholders
+				skill: 'Strategic Orchestrator',
+				description: 'Works in lockstep with CEO Joseph Kamalesh Swaminathan to craft Carbonatik\'s grand vision.'
+			},
+			{
+				icon: 'lightbulb',
+				skill: 'Eco-Innovation Champion',
+				description: 'Leads the charge in developing and deploying mining methodologies that prioritize environmental integrity.'
+			}
+		],
+		strengths: [
+			{ icon: 'groups', text: 'Science-Business Alchemist' },
+			{ icon: 'psychology', text: 'Green Mining Advocate' },
+			{ icon: 'forum', text: 'Team Synergy' },
+			{ icon: 'rocket_launch', text: 'Perpetual Evolution' }
+		]
+	},
+	{
+		slug: 'joseph-kamalesh-swaminathan',
+		name: 'Joseph Kamalesh Swaminathan',
+		title: 'Chairman & Chief Executive Officer',
+		imageUrl: '/images/placeholder-male-1.jpg' // Placeholder image
+	},
+	{
+		slug: 'anand-malaimegam',
+		name: 'Anand Malaimegam',
+		title: 'Chief Operating Officer',
+		imageUrl: '/images/placeholder-male-2.jpg' // Placeholder image
+	},
+	{
+		slug: 'segar-muthumurugesu',
+		name: 'Segar Muthumurugesu',
+		title: 'Chief Product Officer',
+		imageUrl: '/images/placeholder-male-3.jpg' // Placeholder image
+	},
+	{
+		slug: 'jessica-theis',
+		name: 'Jessica Theis',
+		title: 'VP, Business Development',
+		imageUrl: '/images/placeholder-female-1.jpg' // Placeholder image
+	}
+	// Add other team members here when their full profiles are ready
+];
 
 # File: src/lib/index.ts
 
@@ -587,30 +772,25 @@ export const theme = $derived(currentTheme);
 <script lang="ts">
 	import { page } from '$app/state';
 	import type { Snippet } from 'svelte';
-
 	let { children }: { children: Snippet } = $props();
-
-	// Safely access metadata from the page data, defaulting to an empty object to prevent errors.
 	const metadata = $derived(page.data.metadata || {});
 </script>
 
 <svelte:head>
 	<title>{metadata.title ?? 'About Carbonatik'}</title>
-	<meta name="description" content={metadata.description ?? 'Learn more about Carbonatik.'} />
+	<meta name="description" content={metadata.description ??
+'Learn more about Carbonatik.'} />
 	{#if metadata.keywords}
 		<meta name="keywords" content={metadata.keywords} />
 	{/if}
 </svelte:head>
 
-<article class="prose prose-invert max-w-4xl mx-auto px-4 py-16 sm:py-24">
+<article class="rich-text-content px-4 py-16 sm:py-24">
 	{@render children()}
 </article>
 
 <style lang="postcss">
-	/* Reference the main app.css to use @apply and get theme context */
 	@reference '../../app.css';
-
-	
 </style>
 
 # File: src/routes/about/+page.md
@@ -651,25 +831,25 @@ Carbonatik operates through a network of registered and fully compliant entities
 
 ## Our Leadership Team
 ---
-<div class="leadership-grid not-prose">
+<div class="leadership-grid">
     <div>
-        <p class="name">Joseph Kamalesh Swaminathan</p>
-        <p class="title">Chairman & Chief Executive Officer</p>
-    </div>
-    <div>
-        <p class="name">Brendan Fitzpatrick</p>
+        <a href="/team/brendan-fitzpatrick" class="name">Brendan Fitzpatrick</a>
         <p class="title">President</p>
     </div>
     <div>
-        <p class="name">Anand Malaimegam</p>
+        <a href="/team/joseph-kamalesh-swaminathan" class="name">Joseph Kamalesh Swaminathan</a>
+        <p class="title">Chairman & Chief Executive Officer</p>
+    </div>
+    <div>
+        <a href="/team/anand-malaimegam" class="name">Anand Malaimegam</a>
         <p class="title">Chief Operating Officer</p>
     </div>
     <div>
-        <p class="name">Segar Muthumurugesu</p>
+        <a href="/team/segar-muthumurugesu" class="name">Segar Muthumurugesu</a>
         <p class="title">Chief Product Officer</p>
     </div>
     <div>
-        <p class="name">Jessica Theis</p>
+        <a href="/team/jessica-theis" class="name">Jessica Theis</a>
         <p class="title">VP, Business Development</p>
     </div>
 </div>
@@ -677,9 +857,8 @@ Carbonatik operates through a network of registered and fully compliant entities
 ## Our Commitment to Quality and Standards
 ---
 Trust and quality are the cornerstones of our business. Carbonatik rigorously adheres to **ASTM International standards** across all extraction and processing operations. This commitment ensures that our products consistently meet and exceed the demanding specifications of our global clientele.
-
 ---
-<div class="contact-card not-prose">
+<div class="contact-card">
     <h3>For Business Inquiries & Sales</h3>
     <p>Please contact our Business Development team to discuss your mineral requirements or to learn more about our available inventory.</p>
     <div class="contact-details">
@@ -687,3 +866,85 @@ Trust and quality are the cornerstones of our business. Carbonatik rigorously ad
         <a href="tel:+19545521251">+1 (954) 552-1251</a>
     </div>
 </div>
+
+# File: src/routes/team/+page.server.js
+
+import { teamMembers } from '$lib/data/team.js';
+
+/** @type {import('./$types').PageServerLoad} */
+export function load() {
+	// We only need a subset of data for the grid view
+	const teamGridData = teamMembers.map(({ slug, name, title, imageUrl }) => ({
+		slug,
+		name,
+		title,
+		imageUrl
+	}));
+
+	return {
+		team: teamGridData
+	};
+}
+
+# File: src/routes/team/+page.svelte
+
+<script>
+	let { data } = $props();
+</script>
+
+<svelte:head>
+	<title>Our Team | Carbonatik</title>
+	<meta name="description" content="Meet the leadership team at Carbonatik, pioneering a brighter, greener future in sustainable mining." />
+</svelte:head>
+
+<section class="carbonatik-section">
+	<div class="team-grid-container">
+		<h1>Our Team</h1>
+		<div class="team-grid">
+			{#each data.team as member (member.slug)}
+				<a href={`/team/${member.slug}`} class="team-member-card">
+					<div class="team-member-photo-wrapper">
+						<div class="team-member-photo" style="background-image: url({member.imageUrl});"></div>
+					</div>
+					<div>
+						<p class="team-member-name">{member.name}</p>
+						<p class="team-member-title">{member.title}</p>
+					</div>
+				</a>
+			{/each}
+		</div>
+	</div>
+</section>
+
+# File: src/routes/team/[slug]/+page.server.js
+
+import { error } from '@sveltejs/kit';
+import { teamMembers } from '$lib/data/team.js';
+
+/** @type {import('./$types').PageServerLoad} */
+export function load({ params }) {
+	const member = teamMembers.find((m) => m.slug === params.slug);
+
+	if (!member) {
+		error(404, 'Team member not found');
+	}
+
+	return {
+		member
+	};
+}
+
+# File: src/routes/team/[slug]/+page.svelte
+
+<script>
+	import StaffProfile from '$lib/components/team/StaffProfile.svelte';
+
+	let { data } = $props();
+</script>
+
+<svelte:head>
+	<title>{data.member.name} | Carbonatik</title>
+	<meta name="description" content={`Learn more about ${data.member.name}, ${data.member.title} at Carbonatik.`} />
+</svelte:head>
+
+<StaffProfile member={data.member} />

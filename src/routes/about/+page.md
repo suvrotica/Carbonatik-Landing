@@ -34,25 +34,25 @@ Carbonatik operates through a network of registered and fully compliant entities
 
 ## Our Leadership Team
 ---
-<div class="leadership-grid not-prose">
+<div class="leadership-grid">
     <div>
-        <p class="name">Brendan Fitzpatrick</p>
+        <a href="/team/brendan-fitzpatrick" class="name">Brendan Fitzpatrick</a>
         <p class="title">President</p>
     </div>
     <div>
-        <p class="name">Joseph Kamalesh Swaminathan</p>
+        <a href="/team/joseph-kamalesh-swaminathan" class="name">Joseph Kamalesh Swaminathan</a>
         <p class="title">Chairman & Chief Executive Officer</p>
     </div>
     <div>
-        <p class="name">Anand Malaimegam</p>
+        <a href="/team/anand-malaimegam" class="name">Anand Malaimegam</a>
         <p class="title">Chief Operating Officer</p>
     </div>
     <div>
-        <p class="name">Segar Muthumurugesu</p>
+        <a href="/team/segar-muthumurugesu" class="name">Segar Muthumurugesu</a>
         <p class="title">Chief Product Officer</p>
     </div>
     <div>
-        <p class="name">Jessica Theis</p>
+        <a href="/team/jessica-theis" class="name">Jessica Theis</a>
         <p class="title">VP, Business Development</p>
     </div>
 </div>
@@ -60,9 +60,8 @@ Carbonatik operates through a network of registered and fully compliant entities
 ## Our Commitment to Quality and Standards
 ---
 Trust and quality are the cornerstones of our business. Carbonatik rigorously adheres to **ASTM International standards** across all extraction and processing operations. This commitment ensures that our products consistently meet and exceed the demanding specifications of our global clientele.
-
 ---
-<div class="contact-card not-prose">
+<div class="contact-card">
     <h3>For Business Inquiries & Sales</h3>
     <p>Please contact our Business Development team to discuss your mineral requirements or to learn more about our available inventory.</p>
     <div class="contact-details">
