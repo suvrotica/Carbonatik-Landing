@@ -36,12 +36,12 @@ Carbonatik operates through a network of registered and fully compliant entities
 ---
 <div class="leadership-grid not-prose">
     <div>
-        <p class="name">Joseph Kamalesh Swaminathan</p>
-        <p class="title">Chairman & Chief Executive Officer</p>
-    </div>
-    <div>
         <p class="name">Brendan Fitzpatrick</p>
         <p class="title">President</p>
+    </div>
+    <div>
+        <p class="name">Joseph Kamalesh Swaminathan</p>
+        <p class="title">Chairman & Chief Executive Officer</p>
     </div>
     <div>
         <p class="name">Anand Malaimegam</p>
