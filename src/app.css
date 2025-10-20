@@ -92,3 +92,37 @@ body {
 .expertise-item p { @apply text-sm text-neutral-400/80 m-0; }
 .staff-strengths-grid { @apply grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4; }
 .strength-item { @apply flex items-center gap-3; }
+
+
+
+/* Blog Grid Page */
+.blog-grid-container { @apply max-w-7xl mx-auto px-4 py-8; }
+.blog-grid-container h1 { @apply text-4xl font-bold text-center mb-8; }
+.blog-grid { @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6; }
+
+.blog-post-card {
+	@apply flex flex-col gap-2 bg-neutral-900 rounded-xl border border-neutral-800 p-6 transition-all duration-300 hover:border-carbon-gold hover:scale-[1.02] no-underline;
+}
+.blog-post-title {
+	@apply text-xl font-bold text-neutral-100 leading-tight;
+}
+.blog-post-date {
+	@apply text-xs text-neutral-500;
+}
+.blog-post-summary {
+	@apply text-sm text-neutral-400 font-light flex-grow;
+}
+.blog-post-readmore {
+	@apply text-sm font-semibold text-carbon-gold mt-2;
+}
+
+/* Video Player */
+.video-player-container {
+	@apply my-8;
+}
+.video-player {
+	@apply w-full rounded-lg border border-neutral-800 bg-black aspect-video;
+}
+.video-caption {
+	@apply mt-2 text-center text-sm text-neutral-500 italic;
+}

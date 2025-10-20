@@ -20,6 +20,9 @@
 			<a href="/team" class="text-sm text-gray-400 hover:text-white transition-colors">
 				Team
 			</a>
+			<a href="/blog" class="text-sm text-gray-400 hover:text-white transition-colors">
+				Blog
+			</a>
 		</nav>
 	</div>
 </header>
