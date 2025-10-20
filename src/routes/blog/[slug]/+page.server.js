@@ -4,12 +4,10 @@ import { error } from '@sveltejs/kit';
 export async function load({ params }) {
 	try {
 		const postModule = await import(`../../../lib/posts/${params.slug}.md`);
-		// Wrap the returned data in a 'post' object for better structure
+		// Only return serializable data from the server load function
 		return {
-			post: {
-				metadata: postModule.metadata,
-				slug: params.slug
-			}
+			metadata: postModule.metadata,
+			slug: params.slug
 		};
 	} catch (e) {
 		error(404, 'Post not found');
