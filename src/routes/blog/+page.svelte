@@ -4,7 +4,7 @@
 
 <svelte:head>
 	<title>Carbonatik Blog</title> 
-	<meta name="description" content="News, updates, and insights from the Carbonatik team." /> [cite: 3136]
+	<meta name="description" content="News, updates, and insights from the Carbonatik team." /> 
 </svelte:head>
 
 <section class="carbonatik-section">
