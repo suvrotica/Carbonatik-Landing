@@ -1,4 +1,4 @@
-# Context file generated on: Monday, October 20, 2025 at 3:08:16 PM GMT+5:30
+# Context file generated on: Tuesday, October 21, 2025 at 9:30:28 AM GMT+5:30
 ---
 
 # Project File Layout
@@ -42,9 +42,15 @@
 │   │   │   └── team.js
 │   │   ├── index.ts
 │   │   ├── posts
+│   │   │   ├── gemstone-inventory.md
 │   │   │   ├── hello-world.md
 │   │   │   ├── mining-expeditions.md
-│   │   │   └── our-sri-lanka-project.md
+│   │   │   ├── our-sri-lanka-project.md
+│   │   │   ├── segar-sri-lanka-govt-meeting.md
+│   │   │   ├── sri-lanka-mica.md
+│   │   │   ├── sri-lanka-quartz-mine.md
+│   │   │   ├── sri-lanka-vein-graphite.md
+│   │   │   └── tanzania-copper-expedition.md
 │   │   ├── server
 │   │   │   └── galleries.server.ts
 │   │   └── theme.svelte.ts
@@ -62,6 +68,7 @@
 │       │   ├── +page.server.js
 │       │   ├── +page.svelte
 │       │   └── [slug]
+│       │       ├── +page.js
 │       │       ├── +page.server.js
 │       │       └── +page.svelte
 │       └── team
@@ -76,13 +83,49 @@
 │   │   ├── CarbonatikJustLogoImage (2).svg
 │   │   ├── favicon.ico
 │   │   ├── galleries
-│   │   │   └── mining-expedition
-│   │   │       ├── WhatsApp Image 2025-10-19 at 1.53.26 PM (1).jpeg
-│   │   │       ├── WhatsApp Image 2025-10-19 at 1.53.26 PM (2).jpeg
-│   │   │       ├── WhatsApp Image 2025-10-19 at 1.53.26 PM (3).jpeg
-│   │   │       ├── WhatsApp Image 2025-10-19 at 1.53.26 PM (4).jpeg
-│   │   │       ├── WhatsApp Image 2025-10-19 at 1.53.26 PM (5).jpeg
-│   │   │       └── WhatsApp Image 2025-10-19 at 1.53.26 PM.jpeg
+│   │   │   ├── gemstone-inventory
+│   │   │   │   └── WhatsApp Image 2025-10-20 at 12.42.11 PM.jpeg
+│   │   │   ├── mining-expedition
+│   │   │   │   ├── WhatsApp Image 2025-10-19 at 1.53.26 PM (1).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-19 at 1.53.26 PM (2).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-19 at 1.53.26 PM (3).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-19 at 1.53.26 PM (4).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-19 at 1.53.26 PM (5).jpeg
+│   │   │   │   └── WhatsApp Image 2025-10-19 at 1.53.26 PM.jpeg
+│   │   │   ├── segar-sri-lanka-visit
+│   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.35.08 PM (1).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.35.08 PM (2).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.35.08 PM (3).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.35.08 PM.jpeg
+│   │   │   │   └── WhatsApp Image 2025-10-20 at 12.35.09 PM.jpeg
+│   │   │   ├── sri-lanka-graphite
+│   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.36.43 PM (1).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.36.43 PM (2).jpeg
+│   │   │   │   └── WhatsApp Image 2025-10-20 at 12.36.43 PM.jpeg
+│   │   │   ├── sri-lanka-mica
+│   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.38.34 PM (1).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.38.34 PM (2).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.38.34 PM (3).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.38.34 PM (4).jpeg
+│   │   │   │   └── WhatsApp Image 2025-10-20 at 12.38.34 PM.jpeg
+│   │   │   ├── sri-lanka-quartz
+│   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.37.27 PM (1).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.37.27 PM (2).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.37.27 PM (3).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.37.27 PM (4).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.37.27 PM (5).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.37.27 PM (6).jpeg
+│   │   │   │   └── WhatsApp Image 2025-10-20 at 12.37.27 PM.jpeg
+│   │   │   └── tanzania-copper
+│   │   │       ├── WhatsApp Image 2025-10-20 at 12.33.41 PM (1).jpeg
+│   │   │       ├── WhatsApp Image 2025-10-20 at 12.33.41 PM.jpeg
+│   │   │       ├── WhatsApp Image 2025-10-20 at 12.33.42 PM (1).jpeg
+│   │   │       ├── WhatsApp Image 2025-10-20 at 12.33.42 PM (2).jpeg
+│   │   │       ├── WhatsApp Image 2025-10-20 at 12.33.42 PM (3).jpeg
+│   │   │       ├── WhatsApp Image 2025-10-20 at 12.33.42 PM (4).jpeg
+│   │   │       ├── WhatsApp Image 2025-10-20 at 12.33.42 PM (5).jpeg
+│   │   │       ├── WhatsApp Image 2025-10-20 at 12.33.42 PM (6).jpeg
+│   │   │       └── WhatsApp Image 2025-10-20 at 12.33.42 PM.jpeg
 │   │   ├── joseph-kamalesh-swaminathan-ceo - Copy.jpg
 │   │   ├── joseph-kamalesh-swaminathan-ceo.jpg
 │   │   ├── logo-icon.svg
@@ -91,6 +134,16 @@
 │   │   └── whatsapp.png
 │   ├── robots.txt
 │   └── videos
+│       ├── gems(1).mp4
+│       ├── gems(10).mp4
+│       ├── gems(2).mp4
+│       ├── gems(3).mp4
+│       ├── gems(4).mp4
+│       ├── gems(5).mp4
+│       ├── gems(6).mp4
+│       ├── gems(7).mp4
+│       ├── gems(8).mp4
+│       ├── gems(9).mp4
 │       └── office.mp4
 ├── svelte.config.js
 ├── tailwind.config.js
@@ -671,26 +724,49 @@ export {};
 <script lang="ts">
 	let { galleryId, caption }: { galleryId: string; caption?: string } = $props();
 
-	const imageListPromise = fetch(`/api/gallery/${galleryId}`).then((res) => {
-		if (!res.ok) {
-			throw new Error('Failed to fetch gallery images.');
-		}
-		return res.json();
+	let imageUrls = $state<string[]>([]);
+	let error = $state<Error | null>(null);
+	let loading = $state(true);
+
+	$effect(() => {
+		// This code now runs safely on the client-side after the component is mounted.
+		loading = true;
+		error = null;
+
+		fetch(`/api/gallery/${galleryId}`)
+			.then((res) => {
+				if (!res.ok) {
+					throw new Error('Failed to fetch gallery images.');
+				}
+				return res.json();
+			})
+			.then((data) => {
+				imageUrls = data;
+			})
+			.catch((err) => {
+				error = err;
+			})
+			.finally(() => {
+				loading = false;
+			});
 	});
 </script>
 
 <figure class="gallery-container">
-	{#await imageListPromise}
+	{#if loading}
 		<p class="gallery-loading">Loading gallery...</p>
-	{:then imageUrls}
-		{#each imageUrls as src, i}
-			<div class="gallery-item">
-				<img {src} alt={`Gallery image ${i + 1} for ${galleryId}`} loading="lazy" />
-			</div>
-		{/each}
-	{:catch error}
+	{:else if error}
 		<p class="gallery-error">Could not load gallery: {error.message}</p>
-	{/await}
+	{:else}
+		<div class="gallery-images-wrapper">
+			{#each imageUrls as src, i}
+				<div class="gallery-item">
+					<img {src} alt={`Gallery image ${i + 1} for ${galleryId}`} loading="lazy" />
+				</div>
+			{/each}
+		</div>
+	{/if}
+
 	{#if caption}
 		<figcaption class="gallery-caption">{caption}</figcaption>
 	{/if}
@@ -926,6 +1002,42 @@ export const teamMembers = [
 // place files you want to import through the `$lib` alias in this folder.
 
 
+# File: src/lib/posts/gemstone-inventory.md
+
+---
+title: "From the Earth: A Look at Our Ethically Sourced Gemstone Inventory"
+date: "2025-10-22"
+summary: "Carbonatik is committed to the ethical sourcing of precious gemstones from our extensive mining sites in Sri Lanka. Explore our collection and our sustainable practices."
+---
+
+<script>
+    import PinterestGallery from '$lib/components/PinterestGallery.svelte';
+    import VideoPlayer from '$lib/components/VideoPlayer.svelte';
+</script>
+
+### The Brilliance of Responsibility
+
+Beyond industrial minerals, Carbonatik takes pride in its access to some of Sri Lanka's most treasured natural resources: **precious gemstones**. Our mining rights grant us the ability to ethically source a diverse range of gems, from stunning sapphires to radiant rubies, all while adhering to the highest standards of environmental and social responsibility.
+
+We believe that the true value of a gemstone lies not just in its beauty, but in the integrity of its journey from the earth to the market. Our commitment to sustainable practices ensures that we preserve the delicate ecosystems of our mining regions for generations to come.
+
+### A Video Showcase of Our Gemstone Collection
+
+<VideoPlayer src="/videos/gems(1).mp4" caption="Showcase of gems" />
+<VideoPlayer src="/videos/gems(2).mp4#t=1" caption="Showcase of gems" />
+<VideoPlayer src="/videos/gems(3).mp4" caption="Showcase of gems" />
+<VideoPlayer src="/videos/gems(4).mp4" caption="Showcase of gems" />
+<VideoPlayer src="/videos/gems(5).mp4" caption="Showcase of gems" />
+<VideoPlayer src="/videos/gems(6).mp4" caption="Showcase of gems" />
+<VideoPlayer src="/videos/gems(7).mp4" caption="Showcase of gems" />
+<VideoPlayer src="/videos/gems(8).mp4" caption="Showcase of gems" />
+<VideoPlayer src="/videos/gems(9).mp4" caption="Showcase of gems" />
+<VideoPlayer src="/videos/gems(10).mp4" caption="Showcase of gems" />
+
+The gallery below offers a closer look at the vibrant colors and exceptional quality of the gemstones in our current inventory.
+
+<PinterestGallery galleryId="gemstone-inventory" caption="Showcase of gems" />
+
 # File: src/lib/posts/hello-world.md
 
 ---
@@ -963,7 +1075,6 @@ At Carbonatik, our work takes us to incredible locations around the globe. Our r
 <PinterestGallery galleryId="mining-expedition" caption="Scenes from Carbonatik on the field" />
 
 
-
 # File: src/lib/posts/our-sri-lanka-project.md
 
 ---
@@ -984,6 +1095,108 @@ The acquisition of the KGLL mines is a significant milestone for Carbonatik. The
 -   Immediate availability of **1,000 tons** for sale.
 
 We are committed to revitalizing these historic sites with modern, sustainable practices.
+
+# File: src/lib/posts/segar-sri-lanka-govt-meeting.md
+
+---
+title: "Carbonatik CPO Segar Muthumurugesu Meets with Sri Lankan Officials to Advance Graphite Project"
+date: "2025-10-20"
+summary: "A pivotal meeting between our Chief Product Officer, Segar Muthumurugesu, and key Sri Lankan government officials to finalize the historic 99-year lease on the KGLL graphite mines."
+---
+
+<script>
+    import PinterestGallery from '$lib/components/PinterestGallery.svelte';
+</script>
+
+### Strengthening Partnerships for a Sustainable Future
+
+In a significant step forward for our Sri Lankan operations, Carbonatik's Chief Product Officer, Segar Muthumurugesu, recently held a productive meeting with key government officials. 
+
+This collaboration underscores our commitment to revitalizing these historic sites with modern, sustainable practices while fostering strong relationships with local authorities. We are excited about the mutual benefits this partnership will bring to the region and the global market.
+
+<PinterestGallery galleryId="segar-sri-lanka-visit" caption="Highlights from the meeting with Sri Lankan government officials." />
+
+# File: src/lib/posts/sri-lanka-mica.md
+
+---
+title: "The Luster of Sri Lanka: Carbonatik's Premium Gold Mica"
+date: "2025-10-21"
+summary: "Discover our premium Gold Mica operations in Sri Lanka, where we ethically source high-quality mica for luxury applications and specialized industries."
+---
+
+<script>
+    import PinterestGallery from '$lib/components/PinterestGallery.svelte';
+</script>
+
+### Unearthing Nature's Sheen
+
+Carbonatik holds extensive mineral rights in Sri Lanka, giving us access to exceptional deposits of high-quality mica, including the unique and highly sought-after **Gold Mica**. This premium mineral is prized for its unique luster and physical properties, making it an essential component for luxury applications and high-end industrial uses.
+
+Our operations are founded on a commitment to ethical and sustainable sourcing. We work closely with local partners and communities to ensure that our extraction processes are not only efficient but also environmentally responsible, preserving the natural beauty of Sri Lanka.
+
+The gallery below provides a window into our specialized mica and gold mica mining sites and the brilliant quality of the materials we bring to the global market.
+
+<PinterestGallery galleryId="sri-lanka-mica" caption="Sourcing premium Gold Mica from our sites in Sri Lanka." />
+
+# File: src/lib/posts/sri-lanka-quartz-mine.md
+
+---
+title: "Sourcing Excellence: Inside Our Sri Lankan Quartz Mines"
+date: "2025-10-20"
+summary: "A look into Carbonatik's Sri Lankan operations, where we source ultra-high purity quartz essential for advanced industrial and technological applications."
+---
+
+<script>
+    import PinterestGallery from '$lib/components/PinterestGallery.svelte';
+</script>
+
+### The Clear Choice for Modern Industry
+
+From our extensive mining sites in Sri Lanka, Carbonatik sources some of the world's most **ultra-high purity quartz**. This essential mineral is a critical component in a vast array of modern technologies, from semiconductor manufacturing to high-end optics and specialty glass.
+
+Our rights to these rich deposits allow us to ensure a consistent and ethically sourced supply of premium quartz, meeting the rigorous demands of our global clientele. We employ advanced, sustainable extraction methods to minimize our environmental impact while maximizing the quality of the final product. The gallery below offers a glimpse into the scale and precision of our Sri Lankan quartz operations.
+
+<PinterestGallery galleryId="sri-lanka-quartz" caption="On-site at our high-purity quartz mines in Sri Lanka." />
+
+# File: src/lib/posts/sri-lanka-vein-graphite.md
+
+---
+title: "The Unmatched Purity of Sri Lankan Vein Graphite"
+date: "2025-10-20"
+summary: "An inside look at Carbonatik's historic KGLL mines project in Sri Lanka, home to the world's purest vein graphite with over 99% carbon content."
+---
+
+<script>
+    import PinterestGallery from '$lib/components/PinterestGallery.svelte';
+</script>
+
+### A Legacy of Purity: The KGLL Mines
+
+Carbonatik is proud to be at the forefront of revitalizing Sri Lanka's historic graphite mining industry. Our forthcoming **99-year lease on the renowned KGLL mines** positions us to supply the global market with the world's purest form of natural graphite.
+
+Sri Lankan vein graphite is unique, forming in crystalline veins and boasting a carbon content that consistently **exceeds 99%**. This exceptional purity makes it a critical material for high-tech applications, including advanced battery technologies, fuel cells, and high-performance lubricants. We currently have **1,000 tons ready for immediate sale**.
+
+Our commitment is not just to extraction, but to pioneering sustainable and ethical practices that honor the legacy of these historic sites while protecting the environment for future generations.
+
+<PinterestGallery galleryId="sri-lanka-graphite" caption="A glimpse into our vein graphite operations in Sri Lanka." />
+
+# File: src/lib/posts/tanzania-copper-expedition.md
+
+---
+title: "A Visual Journey: Our Copper Mines in Tanzania"
+date: "2025-10-20"
+summary: "Explore our strategic copper mining operations in Tanzania through a gallery of on-site photographs, showcasing our commitment to ethical and efficient resource extraction."
+---
+
+<script>
+    import PinterestGallery from '$lib/components/PinterestGallery.svelte';
+</script>
+
+### The Heart of Our Copper Operations
+
+Building on our strategic presence in Tanzania, where we control **12 mining licenses** for high-demand Copper and Gold deposits, we are excited to offer a glimpse into the heart of our operations. This gallery showcases the rich potential of the region and the dedicated work of our teams on the ground.
+
+<PinterestGallery galleryId="tanzania-copper" caption="Scenes from our copper expedition in Tanzania" />
 
 # File: src/lib/server/galleries.server.ts
 
@@ -1187,7 +1400,9 @@ Carbonatik operates through a network of registered and fully compliant entities
 
 ## Our Commitment to Quality and Standards
 ---
+
 Trust and quality are the cornerstones of our business. Carbonatik rigorously adheres to **ASTM International standards** across all extraction and processing operations. This commitment ensures that our products consistently meet and exceed the demanding specifications of our global clientele.
+
 ---
 <div class="contact-card">
     <h3>For Business Inquiries & Sales</h3>
@@ -1234,22 +1449,25 @@ export function GET({ params }) {
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load() {
-	const posts_modules = import.meta.glob('/src/lib/posts/*.md', { eager: true });
-
+	const posts_modules = import.meta.glob('/src/lib/posts/*.md', { eager: true }); 
 	/** @type {Post[]} */
 	const posts = Object.entries(posts_modules).map(([filepath, module]) => {
 		const slug = filepath.split('/').pop()?.split('.').shift() ?? '';
-		
-		// This cast tells TypeScript the shape of the imported module's metadata
+
 		const metadata = /** @type {{ metadata: PostMeta }} */ (module).metadata;
-		
+
+		if (!metadata || !metadata.date) {
+			throw new Error(`Blog post at '${filepath}' is missing the required 'date' field in its frontmatter.`);
+		}
+
 		return {
 			slug,
 			...metadata
 		};
 	});
 
-	posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+	// Sort posts by date, descending
+	posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()); 
 
 	return {
 		posts
@@ -1259,22 +1477,22 @@ export async function load() {
 # File: src/routes/blog/+page.svelte
 
 <script>
-	let { data } = $props();
+	let { data } = $props(); 
 </script>
 
 <svelte:head>
-	<title>Carbonatik Blog</title>
-	<meta name="description" content="News, updates, and insights from the Carbonatik team." />
+	<title>Carbonatik Blog</title> 
+	<meta name="description" content="News, updates, and insights from the Carbonatik team." /> 
 </svelte:head>
 
 <section class="carbonatik-section">
 	<div class="blog-grid-container">
-		<h1>Our Blog</h1>
+		<h1>Our Blog</h1> 
 		<div class="blog-grid">
 			{#each data.posts as post (post.slug)}
 				<a href={`/blog/${post.slug}`} class="blog-post-card">
 					<h2 class="blog-post-title">{post.title}</h2>
-					<p class="blog-post-date">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+					<p class="blog-post-date">{new Date(post.date + 'T12:00:00Z').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</p>
 					<p class="blog-post-summary">{post.summary}</p>
 					<span class="blog-post-readmore">Read More &rarr;</span>
 				</a>
@@ -1283,6 +1501,22 @@ export async function load() {
 	</div>
 </section>
 
+# File: src/routes/blog/[slug]/+page.js
+
+/** @type {import('./$types').PageLoad} */
+export async function load({ data }) {
+	// `data` is the serializable result from +page.server.js: { metadata, slug }
+
+	// Dynamically import the component. This runs on the server during SSR
+	// and in the browser during client-side navigation.
+	const postModule = await import(`../../../lib/posts/${data.slug}.md`);
+
+	return {
+		metadata: data.metadata,
+		content: postModule.default // Return the component constructor
+	};
+}
+
 # File: src/routes/blog/[slug]/+page.server.js
 
 import { error } from '@sveltejs/kit';
@@ -1290,9 +1524,10 @@ import { error } from '@sveltejs/kit';
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
 	try {
-		const post = await import(`../../../lib/posts/${params.slug}.md`);
+		const postModule = await import(`../../../lib/posts/${params.slug}.md`);
+		// Only return serializable data from the server load function
 		return {
-			metadata: post.metadata,
+			metadata: postModule.metadata,
 			slug: params.slug
 		};
 	} catch (e) {
@@ -1304,9 +1539,8 @@ export async function load({ params }) {
 
 <script>
 	let { data } = $props();
-
-	// Create a promise that dynamically imports the component
-	const post_promise = import(`../../../lib/posts/${data.slug}.md`);
+	// data now contains { metadata, content } from +page.js
+	const Component = data.content;
 </script>
 
 <svelte:head>
@@ -1317,21 +1551,15 @@ export async function load({ params }) {
 <article class="rich-text-content px-4 py-16 sm:py-24">
 	<h1>{data.metadata.title}</h1>
 	<p class="text-neutral-500 italic mb-8">
-		Published on {new Date(data.metadata.date).toLocaleDateString('en-US', {
+		Published on {new Date(data.metadata.date + 'T12:00:00Z').toLocaleDateString('en-US', {
 			year: 'numeric',
 			month: 'long',
-			day: 'numeric'
+			day: 'numeric',
+			timeZone: 'UTC'
 		})}
 	</p>
 
-	{#await post_promise}
-		<p>Loading post...</p>
-	{:then module}
-		{@const Component = module.default}
-		<Component />
-	{:catch error}
-		<p class="text-red-500">Error loading post: {error.message}</p>
-	{/await}
+	<Component />
 </article>
 
 # File: src/routes/team/+page.server.js
