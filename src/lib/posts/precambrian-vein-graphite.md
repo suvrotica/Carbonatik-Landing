@@ -4,6 +4,16 @@ date: "2025-10-21" # Or adjust date as needed
 summary: "Explore the vast Precambrian era, covering nearly 90% of Earth's history, and understand the geological processes—from the carbon cycle to tectonic activity—that led to the formation of unique vein graphite deposits, particularly in Sri Lanka."
 ---
 
+<script>
+    import ImageEmbed from '$lib/components/ImageEmbed.svelte';
+</script>
+
+<ImageEmbed
+  src="/images/galleries/sri-lanka-graphite/WhatsApp Image 2025-10-20 at 12.36.43 PM.jpeg"
+  alt="vein graphite channel"
+  caption="Vein Graphite Channel"
+/>
+
 ## Setting the Stage for Vein Graphite Formation
 
 The Precambrian era, spanning from the formation of Earth about 4.6 billion years ago to the beginning of the Cambrian period around 541 million years ago, encompasses nearly 90% of our planet's history. This vast expanse of time saw the formation of Earth's crust, the emergence of life, and the development of conditions necessary for the creation of vein graphite deposits.
