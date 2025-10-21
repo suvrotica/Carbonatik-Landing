@@ -14,6 +14,10 @@ summary: "Explore the vast Precambrian era, covering nearly 90% of Earth's histo
   caption="Vein Graphite Channel"
 />
 
+## This Image
+
+This image shows a close-up geological formation featuring a prominent, dark, crystalline vein embedded within the surrounding rock. This depicts vein graphite within a fissure in the bedrock, illustrating the result of the geological processes described here where carbon-rich fluids crystallized under specific temperature and pressure conditions during the late Precambrian era. The image serves as a visual example of the high-purity graphite deposits Carbonatik sources, potentially from locations like Sri Lanka .
+
 ## Setting the Stage for Vein Graphite Formation
 
 The Precambrian era, spanning from the formation of Earth about 4.6 billion years ago to the beginning of the Cambrian period around 541 million years ago, encompasses nearly 90% of our planet's history. This vast expanse of time saw the formation of Earth's crust, the emergence of life, and the development of conditions necessary for the creation of vein graphite deposits.
