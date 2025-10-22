@@ -1,4 +1,4 @@
-# Context file generated on: Wednesday, October 22, 2025 at 9:19:55 AM GMT+5:30
+# Context file generated on: Wednesday, October 22, 2025 at 10:46:13 AM GMT+5:30
 ---
 
 # Project File Layout
@@ -43,16 +43,26 @@
 │   │   │   └── team.js
 │   │   ├── index.ts
 │   │   ├── posts
+│   │   │   ├── anand-ap-minister-meeting.md
+│   │   │   ├── anand-india-africa-trade-meeting.md
+│   │   │   ├── anand-namibia-ambassador-meeting.md
+│   │   │   ├── anand-rao-inderjit-singh-meeting.md
+│   │   │   ├── anand-segar-cambodia-visit.md
+│   │   │   ├── anand-segar-dubai-meeting.md
 │   │   │   ├── gemstone-inventory.md
 │   │   │   ├── hello-world.md
 │   │   │   ├── mining-expeditions.md
 │   │   │   ├── our-sri-lanka-project.md
 │   │   │   ├── precambrian-vein-graphite.md
 │   │   │   ├── segar-sri-lanka-govt-meeting.md
+│   │   │   ├── segar-sri-lanka-leader-meeting.md
+│   │   │   ├── sri-lanka-gold-mica-product.md
 │   │   │   ├── sri-lanka-mica.md
+│   │   │   ├── sri-lanka-nppd-uda-meeting.md
 │   │   │   ├── sri-lanka-quartz-mine.md
 │   │   │   ├── sri-lanka-vein-graphite.md
-│   │   │   └── tanzania-copper-expedition.md
+│   │   │   ├── tanzania-copper-expedition.md
+│   │   │   └── zambia-tanzania-copper-logistics.md
 │   │   ├── server
 │   │   │   └── galleries.server.ts
 │   │   └── theme.svelte.ts
@@ -81,12 +91,41 @@
 │               └── +page.svelte
 ├── static
 │   ├── images
+│   │   ├── anand-malaimegam-coo.png
 │   │   ├── brendan-t-fitzpatrick-president.jpg
 │   │   ├── CarbonatikJustLogoImage (2).svg
 │   │   ├── favicon.ico
 │   │   ├── galleries
+│   │   │   ├── ap-minister-meeting
+│   │   │   │   └── WhatsApp Image 2025-10-21 at 11.53.27 AM.jpeg
+│   │   │   ├── cambodia-visit
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.38.24 AM (1).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.38.24 AM (2).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.38.24 AM (3).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.38.24 AM (4).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.38.24 AM (5).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.38.24 AM (6).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.38.24 AM.jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.38.25 AM (1).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.38.25 AM (2).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.38.25 AM (3).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.38.25 AM (4).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.38.25 AM (6).jpeg
+│   │   │   │   └── WhatsApp Image 2025-10-21 at 11.38.25 AM.jpeg
+│   │   │   ├── copper-cathodes
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.51.21 AM.jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.51.22 AM (1).jpeg
+│   │   │   │   └── WhatsApp Image 2025-10-21 at 11.51.22 AM.jpeg
+│   │   │   ├── dubai-meeting
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.40.06 AM (1).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.40.06 AM (2).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.40.06 AM (3).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.40.06 AM (4).jpeg
+│   │   │   │   └── WhatsApp Image 2025-10-21 at 11.40.06 AM.jpeg
 │   │   │   ├── gemstone-inventory
 │   │   │   │   └── WhatsApp Image 2025-10-20 at 12.42.11 PM.jpeg
+│   │   │   ├── india-africa-trade-commissioner
+│   │   │   │   └── WhatsApp Image 2025-10-21 at 11.55.50 AM.jpeg
 │   │   │   ├── mining-expedition
 │   │   │   │   ├── WhatsApp Image 2025-10-19 at 1.53.26 PM (1).jpeg
 │   │   │   │   ├── WhatsApp Image 2025-10-19 at 1.53.26 PM (2).jpeg
@@ -94,6 +133,10 @@
 │   │   │   │   ├── WhatsApp Image 2025-10-19 at 1.53.26 PM (4).jpeg
 │   │   │   │   ├── WhatsApp Image 2025-10-19 at 1.53.26 PM (5).jpeg
 │   │   │   │   └── WhatsApp Image 2025-10-19 at 1.53.26 PM.jpeg
+│   │   │   ├── namibia-ambassador-meeting
+│   │   │   │   └── WhatsApp Image 2025-10-21 at 11.55.06 AM.jpeg
+│   │   │   ├── rao-inderjit-singh-meeting
+│   │   │   │   └── WhatsApp Image 2025-10-21 at 11.54.13 AM.jpeg
 │   │   │   ├── segar-sri-lanka-visit
 │   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.35.08 PM (1).jpeg
 │   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.35.08 PM (2).jpeg
@@ -104,12 +147,36 @@
 │   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.36.43 PM (1).jpeg
 │   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.36.43 PM (2).jpeg
 │   │   │   │   └── WhatsApp Image 2025-10-20 at 12.36.43 PM.jpeg
+│   │   │   ├── sri-lanka-leader-meeting
+│   │   │   │   └── WhatsApp Image 2025-10-21 at 11.41.13 AM.jpeg
 │   │   │   ├── sri-lanka-mica
 │   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.38.34 PM (1).jpeg
 │   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.38.34 PM (2).jpeg
 │   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.38.34 PM (3).jpeg
 │   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.38.34 PM (4).jpeg
 │   │   │   │   └── WhatsApp Image 2025-10-20 at 12.38.34 PM.jpeg
+│   │   │   ├── sri-lanka-nppd-uda-meeting
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.50 AM (1).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.50 AM (2).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.50 AM (3).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.50 AM.jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.51 AM (1).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.51 AM (2).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.51 AM (3).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.51 AM (4).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.51 AM (5).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.51 AM (6).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.51 AM (7).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.51 AM (8).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.51 AM (9).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.51 AM.jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.52 AM (1).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.52 AM (2).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.52 AM (3).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.52 AM (4).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.52 AM (5).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.52 AM (6).jpeg
+│   │   │   │   └── WhatsApp Image 2025-10-21 at 11.46.52 AM.jpeg
 │   │   │   ├── sri-lanka-quartz
 │   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.37.27 PM (1).jpeg
 │   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.37.27 PM (2).jpeg
@@ -133,9 +200,11 @@
 │   │   ├── logo-icon.svg
 │   │   ├── logo.png
 │   │   ├── logo.svg
+│   │   ├── segar-muthumurugesu-cpo.jpg
 │   │   └── whatsapp.png
 │   ├── robots.txt
 │   └── videos
+│       ├── copper-cathodes.mp4
 │       ├── gems(1).mp4
 │       ├── gems(10).mp4
 │       ├── gems(2).mp4
@@ -146,7 +215,8 @@
 │       ├── gems(7).mp4
 │       ├── gems(8).mp4
 │       ├── gems(9).mp4
-│       └── office.mp4
+│       ├── office.mp4
+│       └── placeholder-gold-mica.mp4
 ├── svelte.config.js
 ├── tailwind.config.js
 ├── TheApp.txt
@@ -939,7 +1009,7 @@ export const teamMembers = [
 		slug: 'anand-malaimegam',
 		name: 'Anand Malaimegam',
 		title: 'Chief Operating Officer',
-		imageUrl: '/images/anand-malaimegam-coo.jpg',
+		imageUrl: '/images/anand-malaimegam-coo.png',
 		introduction: [
 			"Anand Malaimegam leads Carbonatik's operations, overseeing our diverse mineral portfolio including graphite, gold mica, ruby granite, quartz, and gemstones."
 		],
@@ -1016,6 +1086,142 @@ export const teamMembers = [
 
 // place files you want to import through the `$lib` alias in this folder.
 
+
+# File: src/lib/posts/anand-ap-minister-meeting.md
+
+---
+title: "Carbonatik COO Anand Malaimegam Meets with Andhra Pradesh Minister for Infrastructure & Investment"
+date: "2025-10-22" 
+summary: "COO Anand Malaimegam held discussions with Hon'ble Minister B. C. Janardhan Reddy of Andhra Pradesh, focusing on infrastructure development, investment opportunities, and sustainable resource management within the state."
+---
+
+<script>
+    import PinterestGallery from '$lib/components/PinterestGallery.svelte';
+</script>
+
+### Exploring Opportunities in Andhra Pradesh: Carbonatik Engages with State Leadership
+
+Carbonatik continues to explore strategic growth opportunities within India. Our Chief Operating Officer, Anand Malaimegam, recently had the privilege of meeting with the Hon'ble Minister for Infrastructure and Investment of Andhra Pradesh, Mr. B. C. Janardhan Reddy.
+
+The meeting provided a valuable platform to discuss Andhra Pradesh's infrastructure development plans and investment landscape. Discussions revolved around potential areas where Carbonatik's expertise in sustainable resource management and innovative technologies could align with the state's vision for growth.
+
+We appreciate Minister Reddy's time and insights and look forward to potential future collaborations in Andhra Pradesh.
+
+<PinterestGallery galleryId="ap-minister-meeting" caption="Carbonatik COO Anand Malaimegam meeting with Hon'ble Minister B. C. Janardhan Reddy of Andhra Pradesh." />
+
+# File: src/lib/posts/anand-india-africa-trade-meeting.md
+
+---
+title: "Carbonatik Engages with Indian Trade Commissioner to Africa"
+date: "2025-10-22" 
+summary: "COO Anand Malaimegam met with the Indian Trade Commissioner to Africa, discussing Carbonatik's operations in Africa and exploring avenues to strengthen India-Africa trade relations in the resource sector."
+---
+
+<script>
+    import PinterestGallery from '$lib/components/PinterestGallery.svelte';
+</script>
+
+### Strengthening India-Africa Trade Ties: Carbonatik's Contribution
+
+Carbonatik's Chief Operating Officer, Anand Malaimegam, recently participated in a significant discussion with the Indian Trade Commissioner to Africa. This meeting focused on enhancing trade and investment flows between India and the African continent, particularly within the vital resource sector.
+
+Anand Malaimegam provided insights into Carbonatik's extensive operations in Africa, including our activities in Tanzania, Zambia, and the DRC. The conversation explored how Carbonatik's commitment to sustainable mining and robust logistics can contribute positively to the India-Africa economic partnership.
+
+We believe that strengthening these trade corridors is essential for mutual growth and development, and Carbonatik is poised to play a constructive role in this evolving relationship.
+
+<PinterestGallery galleryId="india-africa-trade-commissioner" caption="Carbonatik COO Anand Malaimegam meeting with the Indian Trade Commissioner to Africa." />
+
+# File: src/lib/posts/anand-namibia-ambassador-meeting.md
+
+---
+title: "Carbonatik Explores Opportunities with Namibian Ambassador to India"
+date: "2025-10-22" 
+summary: "COO Anand Malaimegam met with His Excellency, the Ambassador of Namibia to India, to discuss potential avenues for collaboration in the resource sector and Carbonatik's sustainable practices."
+---
+
+<script>
+    import PinterestGallery from '$lib/components/PinterestGallery.svelte';
+</script>
+
+### Fostering International Dialogue: Carbonatik Meets Namibian Ambassador
+
+In line with Carbonatik's global engagement strategy, Chief Operating Officer Anand Malaimegam recently held a significant meeting with His Excellency, the Ambassador of Namibia to India.
+
+The discussion focused on exploring mutual interests and potential opportunities for collaboration within the resource sector. Anand Malaimegam shared insights into Carbonatik's expertise in sustainable mining and resource management, highlighting how our innovative approaches could align with Namibia's development objectives.
+
+This meeting marks an important step in fostering diplomatic and business ties, opening doors for potential future partnerships in the Southern African region.
+
+<PinterestGallery galleryId="namibia-ambassador-meeting" caption="Carbonatik COO Anand Malaimegam in discussion with the Ambassador of Namibia to India." />
+
+# File: src/lib/posts/anand-rao-inderjit-singh-meeting.md
+
+---
+title: "Carbonatik COO Anand Malaimegam Meets Union Minister Rao Inderjit Singh"
+date: "2025-10-22" 
+summary: "COO Anand Malaimegam held discussions with Hon'ble Union Minister Rao Inderjit Singh (Planning, Statistics and Programme Implementation; Culture), exploring synergies between Carbonatik's initiatives and national development goals."
+---
+
+<script>
+    import PinterestGallery from '$lib/components/PinterestGallery.svelte';
+</script>
+
+### Engaging with National Leadership: Carbonatik's Vision for India
+
+Carbonatik's commitment to contributing to India's strategic development was highlighted in a recent meeting between our Chief Operating Officer, Anand Malaimegam, and the Hon'ble Union Minister Rao Inderjit Singh, who holds portfolios for Planning, Statistics and Programme Implementation, and as Minister of State in the Ministry of Culture.
+
+The discussions encompassed a broad range of topics, including national planning priorities, data-driven approaches to resource management, and the role of sustainable industry in cultural and economic progress. Anand Malaimegam presented Carbonatik's innovative approaches to mining and resource management, emphasizing their potential alignment with the nation's broader development objectives.
+
+This valuable interaction reinforces Carbonatik's dedication to engaging with national leadership to ensure our operations are integrated responsibly within India's long-term vision.
+
+<PinterestGallery galleryId="rao-inderjit-singh-meeting" caption="Carbonatik COO Anand Malaimegam meeting with Hon'ble Union Minister Rao Inderjit Singh." />
+
+# File: src/lib/posts/anand-segar-cambodia-visit.md
+
+---
+title: "Carbonatik Leadership Meets with Cambodian Officials to Explore Opportunities"
+date: "2025-10-22" 
+summary: "Carbonatik's COO Anand Malaimegam and CPO Segar Muthumurugesu held productive discussions with key Cambodian government officials, focusing on potential collaborations and sustainable resource development in the region."
+---
+
+<script>
+    import PinterestGallery from '$lib/components/PinterestGallery.svelte';
+</script>
+
+### Building Bridges: Carbonatik Engages with Cambodia
+
+Carbonatik continues to strengthen its international relationships. Our Chief Operating Officer, Anand Malaimega, and Chief Product Officer, Segar Muthumurugesu, recently met with esteemed government officials in Cambodia.
+
+The discussions centered on exploring avenues for collaboration and identifying opportunities for sustainable resource management within the country. This meeting highlights Carbonatik's commitment to responsible expansion and partnership building in key global regions.
+
+We are enthusiastic about the potential for future projects in Cambodia and appreciate the open dialogue with the officials.
+
+**Images from the meeting**
+
+<PinterestGallery galleryId="cambodia-visit" caption="Key moments from the meeting between Carbonatik leadership and Cambodian government officials." />
+
+# File: src/lib/posts/anand-segar-dubai-meeting.md
+
+---
+title: "Carbonatik Executives Engage with Dubai Leadership"
+date: "2025-10-22" 
+summary: "Carbonatik COO Anand Malaimegam and CPO Segar Muthumurugesu met with a prominent local political leader in Dubai to discuss regional development and potential strategic partnerships."
+---
+
+<script>
+    import PinterestGallery from '$lib/components/PinterestGallery.svelte';
+</script>
+
+### Expanding Horizons: Carbonatik in Dubai
+
+As part of Carbonatik's ongoing global outreach, Chief Operating Officer Anand Malaimegam and Chief Product Officer Segar Muthumurugesu recently held discussions with a key political leader in Dubai.
+
+The meeting focused on understanding the regional landscape, exploring potential strategic partnerships, and discussing how Carbonatik's expertise in sustainable resource management could align with Dubai's development goals.
+
+This engagement reflects Carbonatik's commitment to fostering relationships in major international hubs and exploring opportunities for growth and collaboration worldwide.
+
+**Images from the meeting**
+
+<PinterestGallery galleryId="dubai-meeting" caption="Highlights from the meeting between Carbonatik executives Anand Malaimegam, Segar Muthumurugesu, and local leadership in Dubai." />
 
 # File: src/lib/posts/gemstone-inventory.md
 
@@ -1263,6 +1469,52 @@ This collaboration underscores our commitment to revitalizing these historic sit
 
 <PinterestGallery galleryId="segar-sri-lanka-visit" caption="Highlights from the meeting with Sri Lankan government officials." />
 
+# File: src/lib/posts/segar-sri-lanka-leader-meeting.md
+
+---
+title: "Chief Product Officer Segar Muthumurugesu met with a prominent political leader in Sri Lanka"
+date: "2025-10-22" 
+summary: "Chief Product Officer Segar Muthumurugesu met with a prominent political leader in Sri Lanka"
+---
+
+<script>
+    import PinterestGallery from '$lib/components/PinterestGallery.svelte';
+</script>
+
+### Strengthening Ties: Carbonatik's Commitment to Sri Lanka
+
+Reinforcing our strong presence and commitment in Sri Lanka, Carbonatik's Chief Product Officer, Segar Muthumurugesu, recently held a productive meeting with a respected local political leader.
+
+This meeting underscores the importance of our operations in Sri Lanka and our dedication to working closely with local stakeholders. 
+
+**Images from the meeting**
+
+<PinterestGallery galleryId="sri-lanka-leader-meeting" caption="Carbonatik CPO Segar Muthumurugesu in discussion with a political leader in Sri Lanka." />
+
+# File: src/lib/posts/sri-lanka-gold-mica-product.md
+
+---
+title: "Product Spotlight: Carbonatik's Premium Sri Lankan Gold Mica"
+date: "2025-10-22" 
+summary: "Discover the unique luster and quality of Carbonatik's ethically sourced Gold Mica from Sri Lanka, ideal for luxury finishes and high-performance industrial uses."
+---
+
+<script>
+    import VideoPlayer from '$lib/components/VideoPlayer.svelte';
+</script>
+
+### Unveiling the Radiance of Gold Mica
+
+Carbonatik is pleased to spotlight one of our premium offerings from Sri Lanka: **Gold Mica**. Sourced ethically from our extensive mineral rights in the region, this unique mineral stands out for its exceptional luster and quality.
+
+Gold Mica is highly valued in various industries, particularly for luxury applications and specialized high-end industrial uses where its distinct sheen and physical properties are paramount. Our commitment to sustainable and responsible mining practices ensures that we deliver this exquisite material while preserving the natural environment.
+
+Watch the video below to see the remarkable quality of our Sri Lankan Gold Mica:
+
+<VideoPlayer src="/videos/placeholder-gold-mica.mp4#t=1" caption="Showcasing the unique properties of Carbonatik's Gold Mica." />
+
+Carbonatik's Gold Mica offers unparalleled quality for discerning clients seeking premium materials for their unique applications.
+
 # File: src/lib/posts/sri-lanka-mica.md
 
 ---
@@ -1284,6 +1536,28 @@ Our operations are founded on a commitment to ethical and sustainable sourcing. 
 The gallery below provides a window into our specialized mica and gold mica mining sites and the brilliant quality of the materials we bring to the global market.
 
 <PinterestGallery galleryId="sri-lanka-mica" caption="Sourcing premium Gold Mica from our sites in Sri Lanka." />
+
+# File: src/lib/posts/sri-lanka-nppd-uda-meeting.md
+
+---
+title: "Carbonatik Discusses Sustainable Development with Sri Lanka's NPPD and UDA"
+date: "2025-10-22" 
+summary: "COO Anand Malaimegam and CPO Segar Muthumurugesu engaged with leaders from Sri Lanka's National Physical Planning Department and Urban Development Authority to align Carbonatik's projects with national development frameworks."
+---
+
+<script>
+    import PinterestGallery from '$lib/components/PinterestGallery.svelte';
+</script>
+
+### Aligning Growth with National Vision: Carbonatik Meets Sri Lankan Planning Authorities
+
+Carbonatik's commitment to responsible development in Sri Lanka was further solidified through a recent high-level meeting. Our Chief Operating Officer, Anand Malaimegam, and Chief Product Officer, Segar Muthumurugesu, met with key representatives from the **National Physical Planning Department (NPPD)** and the **Urban Development Authority (UDA)**.
+
+The discussions focused on ensuring Carbonatik's current and future mining and resource management activities are closely aligned with Sri Lanka's national physical planning framework and urban development strategies. Topics included sustainable land use, infrastructure integration, and environmental best practices relevant to our operations.
+
+This collaborative engagement is vital for ensuring our projects contribute positively to Sri Lanka's long-term development goals while upholding the highest standards of sustainability.
+
+<PinterestGallery galleryId="sri-lanka-nppd-uda-meeting" caption="Carbonatik executives meeting with officials from Sri Lanka's National Physical Planning Department and Urban Development Authority." />
 
 # File: src/lib/posts/sri-lanka-quartz-mine.md
 
@@ -1344,6 +1618,30 @@ summary: "Explore our strategic copper mining operations in Tanzania through a g
 Building on our strategic presence in Tanzania, where we control **12 mining licenses** for high-demand Copper and Gold deposits, we are excited to offer a glimpse into the heart of our operations. This gallery showcases the rich potential of the region and the dedicated work of our teams on the ground.
 
 <PinterestGallery galleryId="tanzania-copper" caption="Scenes from our copper expedition in Tanzania" />
+
+# File: src/lib/posts/zambia-tanzania-copper-logistics.md
+
+---
+title: "Logistics Focus: Carbonatik's Copper Cathode Operations in Zambia & Tanzania"
+date: "2025-10-22" 
+summary: "Explore Carbonatik's robust copper cathode logistics network, centered in Zambia and Tanzania"
+---
+
+<script>
+    import PinterestGallery from '$lib/components/PinterestGallery.svelte';
+    import VideoPlayer from '$lib/components/VideoPlayer.svelte';
+
+</script>
+
+<VideoPlayer src="/videos/copper-cathodes.mp4" caption="Showcasing copper cathodes" />
+
+### Powering the Supply Chain: Copper Logistics in Zambia and Tanzania
+
+Ensuring the reliable movement of up to **30,000 tons per month** requires significant infrastructure. Carbonatik utilizes a contracted fleet of over **1,200 trucks** based in Zambia and Tanzania. This large fleet provides efficient and secure transportation from the DRC sourcing points.
+
+A key hub in this operation is our **bonded warehouse facility at Kapiri, Zambia**, operating along the DSM Corridor. This facility allows for secure storage and streamlined preparation for global distribution, showcasing our commitment to managing the supply chain effectively from the heart of Africa.
+
+<PinterestGallery galleryId="copper-cathodes" caption="Carbonatik's copper cathode logistics and warehousing operations in Zambia and Tanzania." />
 
 # File: src/lib/server/galleries.server.ts
 

@@ -55,7 +55,7 @@ export const teamMembers = [
 		slug: 'anand-malaimegam',
 		name: 'Anand Malaimegam',
 		title: 'Chief Operating Officer',
-		imageUrl: '/images/anand-malaimegam-coo.jpg',
+		imageUrl: '/images/anand-malaimegam-coo.png',
 		introduction: [
 			"Anand Malaimegam leads Carbonatik's operations, overseeing our diverse mineral portfolio including graphite, gold mica, ruby granite, quartz, and gemstones."
 		],
