@@ -12,7 +12,7 @@ keywords: "sustainable mining, ethical minerals, vein graphite, copper cathodes,
 
 **CARBONATIK**—an acronym for **CARBON** **A**ssociated **T**echnologies **I**nnovation and **K**nowledge—is a premier global mining and resource management company. We are redefining the industry through our unwavering commitment to sustainability, ethical practices, and technological advancement.
 
-## Our Global Operations
+## Our Global Footprint
 
 Carbonatik operates through a network of registered and fully compliant entities across the globe, ensuring a robust international presence:
 - **USA:** Carbonatik LLC & Carbonatik Global Corporation
@@ -23,7 +23,7 @@ Carbonatik operates through a network of registered and fully compliant entities
 
 ## Our Assets & Capabilities
 
-### Mineral Rights & Mining Sites
+### Mineral Portfolio
 - **Sri Lanka:** We hold rights to extensive mining sites for <ProductLink name="Graphite" />, <ProductLink name="Gold Mica" />, <ProductLink name="Quartz" />, <ProductLink name="Granite" />, and **Monazite**. We are finalizing a **99-year lease** on the historic, 150-year-old KGLL government graphite mines.
 - **Tanzania:** Through our local equity partner, we control **12 mining licenses** for high-demand **Copper** and **Gold** deposits, ready for operational launch.
 
@@ -63,11 +63,3 @@ Carbonatik operates through a network of registered and fully compliant entities
 Trust and quality are the cornerstones of our business. Carbonatik rigorously adheres to **ASTM International standards** across all extraction and processing operations. This commitment ensures that our products consistently meet and exceed the demanding specifications of our global clientele.
 
 ---
-<div class="contact-card">
-    <h3>For Business Inquiries & Sales</h3>
-    <p>Please contact our Business Development team to discuss your mineral requirements or to learn more about our available inventory.</p>
-    <div class="contact-details">
-        <a href="mailto:info@carbonatik.com">info@carbonatik.com</a>
-        <a href="tel:+19545521251">+1 (954) 552-1251</a>
-    </div>
-</div>

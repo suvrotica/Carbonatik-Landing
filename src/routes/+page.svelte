@@ -1,7 +1,8 @@
 <script lang="ts">
 	import Hero from '$lib/components/landing/Hero.svelte';
+	import Mission from '$lib/components/landing/Mission.svelte'; // Added import
 	import CoreProducts from '$lib/components/landing/CoreProducts.svelte';
-	import GlobalOperations from '$lib/components/landing/GlobalOperations.svelte'; // New component
+	import GlobalOperations from '$lib/components/landing/GlobalOperations.svelte';
 	import CallToAction from '$lib/components/landing/CallToAction.svelte';
 </script>
 
@@ -14,6 +15,7 @@
 </svelte:head>
 
 <Hero />
+<Mission /> 
 <CoreProducts />
 <GlobalOperations />
 <CallToAction />
