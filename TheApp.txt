@@ -1,4 +1,4 @@
-# Context file generated on: Tuesday, October 21, 2025 at 9:30:28 AM GMT+5:30
+# Context file generated on: Wednesday, October 22, 2025 at 9:19:55 AM GMT+5:30
 ---
 
 # Project File Layout
@@ -23,6 +23,7 @@
 │   │   ├── assets
 │   │   │   └── favicon.svg
 │   │   ├── components
+│   │   │   ├── ImageEmbed.svelte
 │   │   │   ├── landing
 │   │   │   │   ├── CallToAction.svelte
 │   │   │   │   ├── CoreProducts.svelte
@@ -46,6 +47,7 @@
 │   │   │   ├── hello-world.md
 │   │   │   ├── mining-expeditions.md
 │   │   │   ├── our-sri-lanka-project.md
+│   │   │   ├── precambrian-vein-graphite.md
 │   │   │   ├── segar-sri-lanka-govt-meeting.md
 │   │   │   ├── sri-lanka-mica.md
 │   │   │   ├── sri-lanka-quartz-mine.md
@@ -482,6 +484,19 @@ export {};
 # File: src/lib/assets/favicon.svg
 
 <svg xmlns="http://www.w3.org/2000/svg" width="107" height="128" viewBox="0 0 107 128"><title>svelte-logo</title><path d="M94.157 22.819c-10.4-14.885-30.94-19.297-45.792-9.835L22.282 29.608A29.92 29.92 0 0 0 8.764 49.65a31.5 31.5 0 0 0 3.108 20.231 30 30 0 0 0-4.477 11.183 31.9 31.9 0 0 0 5.448 24.116c10.402 14.887 30.942 19.297 45.791 9.835l26.083-16.624A29.92 29.92 0 0 0 98.235 78.35a31.53 31.53 0 0 0-3.105-20.232 30 30 0 0 0 4.474-11.182 31.88 31.88 0 0 0-5.447-24.116" style="fill:#ff3e00"/><path d="M45.817 106.582a20.72 20.72 0 0 1-22.237-8.243 19.17 19.17 0 0 1-3.277-14.503 18 18 0 0 1 .624-2.435l.49-1.498 1.337.981a33.6 33.6 0 0 0 10.203 5.098l.97.294-.09.968a5.85 5.85 0 0 0 1.052 3.878 6.24 6.24 0 0 0 6.695 2.485 5.8 5.8 0 0 0 1.603-.704L69.27 76.28a5.43 5.43 0 0 0 2.45-3.631 5.8 5.8 0 0 0-.987-4.371 6.24 6.24 0 0 0-6.698-2.487 5.7 5.7 0 0 0-1.6.704l-9.953 6.345a19 19 0 0 1-5.296 2.326 20.72 20.72 0 0 1-22.237-8.243 19.17 19.17 0 0 1-3.277-14.502 17.99 17.99 0 0 1 8.13-12.052l26.081-16.623a19 19 0 0 1 5.3-2.329 20.72 20.72 0 0 1 22.237 8.243 19.17 19.17 0 0 1 3.277 14.503 18 18 0 0 1-.624 2.435l-.49 1.498-1.337-.98a33.6 33.6 0 0 0-10.203-5.1l-.97-.294.09-.968a5.86 5.86 0 0 0-1.052-3.878 6.24 6.24 0 0 0-6.696-2.485 5.8 5.8 0 0 0-1.602.704L37.73 51.72a5.42 5.42 0 0 0-2.449 3.63 5.79 5.79 0 0 0 .986 4.372 6.24 6.24 0 0 0 6.698 2.486 5.8 5.8 0 0 0 1.602-.704l9.952-6.342a19 19 0 0 1 5.295-2.328 20.72 20.72 0 0 1 22.237 8.242 19.17 19.17 0 0 1 3.277 14.503 18 18 0 0 1-8.13 12.053l-26.081 16.622a19 19 0 0 1-5.3 2.328" style="fill:#fff"/></svg>
+
+# File: src/lib/components/ImageEmbed.svelte
+
+<script lang="ts">
+  let { src, alt, caption }: { src: string; alt: string; caption?: string } = $props();
+</script>
+
+<figure class="my-4">
+  <img {src} {alt} class="w-full h-auto rounded-lg border border-neutral-800" loading="lazy" />
+  {#if caption}
+    <figcaption class="mt-2 text-center text-sm text-neutral-500 italic">{caption}</figcaption>
+  {/if}
+</figure>
 
 # File: src/lib/components/landing/CallToAction.svelte
 
@@ -1095,6 +1110,138 @@ The acquisition of the KGLL mines is a significant milestone for Carbonatik. The
 -   Immediate availability of **1,000 tons** for sale.
 
 We are committed to revitalizing these historic sites with modern, sustainable practices.
+
+# File: src/lib/posts/precambrian-vein-graphite.md
+
+---
+title: "Laying the Foundation: How the Precambrian Era Forged Vein Graphite"
+date: "2025-10-21" # Or adjust date as needed
+summary: "Explore the vast Precambrian era, covering nearly 90% of Earth's history, and understand the geological processes—from the carbon cycle to tectonic activity—that led to the formation of unique vein graphite deposits, particularly in Sri Lanka."
+---
+
+<script>
+    import ImageEmbed from '$lib/components/ImageEmbed.svelte';
+</script>
+
+<ImageEmbed
+  src="/images/galleries/sri-lanka-graphite/WhatsApp Image 2025-10-20 at 12.36.43 PM.jpeg"
+  alt="vein graphite channel"
+  caption="Vein Graphite Channel"
+/>
+
+## This Image
+
+This image shows a close-up geological formation featuring a prominent, dark, crystalline vein embedded within the surrounding rock. This depicts vein graphite within a fissure in the bedrock, illustrating the result of the geological processes described here where carbon-rich fluids crystallized under specific temperature and pressure conditions during the late Precambrian era. The image serves as a visual example of the high-purity graphite deposits Carbonatik sources, potentially from locations like Sri Lanka .
+
+## Setting the Stage for Vein Graphite Formation
+
+The Precambrian era, spanning from the formation of Earth about 4.6 billion years ago to the beginning of the Cambrian period around 541 million years ago, encompasses nearly 90% of our planet's history. This vast expanse of time saw the formation of Earth's crust, the emergence of life, and the development of conditions necessary for the creation of vein graphite deposits.
+
+---
+
+## Geological Timeline and Major Events
+
+1.  **Hadean Eon (4.6-4.0 billion years ago):**
+    * Formation of the Earth and Moon
+    * Development of the first solid crust
+    * Intense meteorite bombardment
+
+2.  **Archean Eon (4.0-2.5 billion years ago):**
+    * Formation of first continents
+    * Emergence of primitive life forms
+    * Development of photosynthesis by cyanobacteria
+
+3.  **Proterozoic Eon (2.5 billion-541 million years ago):**
+    * Oxygen accumulation in atmosphere (Great Oxidation Event)
+    * Formation of supercontinent Columbia (Nuna)
+    * Assembly and breakup of supercontinent Rodinia
+    * Snowball Earth episodes
+    * Emergence of complex multicellular life
+
+---
+
+## Carbon Cycle in the Precambrian
+
+The carbon cycle during the Precambrian era played a crucial role in setting the stage for vein graphite formation:
+
+1.  **Early carbon sources:**
+    * Volcanic outgassing of CO2
+    * Delivery of carbon-rich materials by meteorites and comets
+
+2.  **Biological carbon fixation:**
+    * Emergence of photosynthetic organisms around 3.4 billion years ago
+    * Gradual accumulation of organic carbon in sediments
+
+3.  **Metamorphism of carbon-rich sediments:**
+    * Burial and heating of organic-rich sediments
+    * Transformation of organic matter into graphite through metamorphic processes
+
+---
+
+## Tectonic Activity and Metamorphism
+
+The late Precambrian saw intense tectonic activity, crucial for the formation of vein graphite:
+
+1.  **Supercontinent cycles:**
+    * Assembly and breakup of supercontinents caused significant crustal deformation
+    * These processes buried carbon-rich sediments deep within the Earth
+
+2.  **Metamorphism:**
+    * High pressures and temperatures in the Earth's crust transformed organic carbon into crystalline graphite
+    * Metamorphic fluids became enriched with this carbon
+
+---
+
+## Formation of Carbon-Rich Fluids
+
+The carbon-rich fluids that eventually formed vein graphite deposits were the result of several processes:
+
+1.  **Devolatilization:**
+    * As carbon-rich rocks underwent metamorphism, they released fluids rich in CO2 and CH4
+    * These fluids could dissolve additional carbon from surrounding rocks
+
+2.  **Fluid mixing:**
+    * Metamorphic fluids mixed with other crustal fluids, further concentrating carbon content
+
+3.  **Temperature and pressure conditions:**
+    * High temperatures (>750°C) and pressures (>5 kilobars) kept carbon in solution
+
+---
+
+## The Sri Lankan Context
+
+The geological history of Sri Lanka during the late Precambrian was particularly conducive to vein graphite formation:
+
+1.  **Tectonic setting:**
+    * Sri Lanka was part of a larger continental mass including parts of Africa, Madagascar, and India
+    * The region experienced high-grade metamorphism during the assembly of the supercontinent Gondwana
+
+2.  **Rock types:**
+    * The basement rocks of Sri Lanka, primarily high-grade metamorphic rocks like gneisses and granulites, provided the right chemical and physical environment for graphite formation
+
+3.  **Fluid pathways:**
+    * Tectonic activity created an extensive network of faults and fractures in the bedrock
+    * These pathways allowed carbon-rich fluids to circulate and eventually deposit graphite
+
+---
+
+## The Final Steps: Vein Graphite Deposition
+
+As the Precambrian era drew to a close, around 550 million years ago, the stage was set for the formation of vein graphite deposits:
+
+1.  **Fluid movement:**
+    * Carbon-rich fluids, superheated to temperatures exceeding 750°C and under pressures of 5 kilobars or more, were forced through fissures and cracks in the ancient bedrock
+
+2.  **Cooling and depressurization:**
+    * As these fluids moved through cooler rocks and pressure decreased, they became supersaturated with carbon
+
+3.  **Crystallization:**
+    * The excess carbon crystallized out of the fluid, forming the distinctive vein graphite deposits
+
+4.  **Continued metamorphism:**
+    * Ongoing geological processes further refined the crystalline structure of the graphite, resulting in its high purity and crystallinity
+
+The Precambrian era, with its vast timescales and dramatic geological processes, laid the groundwork for the formation of vein graphite. The interplay of biological carbon fixation, tectonic activity, metamorphism, and fluid dynamics over billions of years culminated in the creation of these unique and valuable mineral deposits.
 
 # File: src/lib/posts/segar-sri-lanka-govt-meeting.md
 
