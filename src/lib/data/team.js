@@ -105,7 +105,7 @@ export const teamMembers = [
 		slug: 'jessica-theis',
 		name: 'Jessica Theis',
 		title: 'VP, Business Development',
-		imageUrl: '/images/jessica-jason-vp.jpg', // Note: Using the provided image name.
+		imageUrl: '/images/jessica-jason-vp.png', 
 		introduction: [
 			"Jessica Theis spearheads Carbonatik's business growth strategies and manages the company's public image, playing a crucial role in expanding our market presence and stakeholder relations."
 		],
