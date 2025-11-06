@@ -1,4 +1,4 @@
-# Context file generated on: Wednesday, October 22, 2025 at 10:46:13 AM GMT+5:30
+# Context file generated on: Friday, November 7, 2025 at 12:14:04 AM GMT+5:30
 ---
 
 # Project File Layout
@@ -49,6 +49,7 @@
 │   │   │   ├── anand-rao-inderjit-singh-meeting.md
 │   │   │   ├── anand-segar-cambodia-visit.md
 │   │   │   ├── anand-segar-dubai-meeting.md
+│   │   │   ├── ap-dubai-delegation-meeting.md
 │   │   │   ├── gemstone-inventory.md
 │   │   │   ├── hello-world.md
 │   │   │   ├── mining-expeditions.md
@@ -96,6 +97,14 @@
 │   │   ├── CarbonatikJustLogoImage (2).svg
 │   │   ├── favicon.ico
 │   │   ├── galleries
+│   │   │   ├── ap-dubai-delegation-2025
+│   │   │   │   ├── WhatsApp Image 2025-11-06 at 9.47.35 PM (1).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-11-06 at 9.47.35 PM (2).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-11-06 at 9.47.35 PM (3).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-11-06 at 9.47.35 PM (4).jpeg
+│   │   │   │   ├── WhatsApp Image 2025-11-06 at 9.47.35 PM.jpeg
+│   │   │   │   ├── WhatsApp Image 2025-11-06 at 9.47.36 PM (1).jpeg
+│   │   │   │   └── WhatsApp Image 2025-11-06 at 9.47.36 PM.jpeg
 │   │   │   ├── ap-minister-meeting
 │   │   │   │   └── WhatsApp Image 2025-10-21 at 11.53.27 AM.jpeg
 │   │   │   ├── cambodia-visit
@@ -117,11 +126,7 @@
 │   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.51.22 AM (1).jpeg
 │   │   │   │   └── WhatsApp Image 2025-10-21 at 11.51.22 AM.jpeg
 │   │   │   ├── dubai-meeting
-│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.40.06 AM (1).jpeg
-│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.40.06 AM (2).jpeg
-│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.40.06 AM (3).jpeg
-│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.40.06 AM (4).jpeg
-│   │   │   │   └── WhatsApp Image 2025-10-21 at 11.40.06 AM.jpeg
+│   │   │   │   └── WhatsApp Image 2025-10-21 at 11.40.06 AM (3).jpeg
 │   │   │   ├── gemstone-inventory
 │   │   │   │   └── WhatsApp Image 2025-10-20 at 12.42.11 PM.jpeg
 │   │   │   ├── india-africa-trade-commissioner
@@ -134,7 +139,8 @@
 │   │   │   │   ├── WhatsApp Image 2025-10-19 at 1.53.26 PM (5).jpeg
 │   │   │   │   └── WhatsApp Image 2025-10-19 at 1.53.26 PM.jpeg
 │   │   │   ├── namibia-ambassador-meeting
-│   │   │   │   └── WhatsApp Image 2025-10-21 at 11.55.06 AM.jpeg
+│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.55.06 AM.jpeg
+│   │   │   │   └── WhatsApp Image 2025-10-22 at 4.55.38 PM.jpeg
 │   │   │   ├── rao-inderjit-singh-meeting
 │   │   │   │   └── WhatsApp Image 2025-10-21 at 11.54.13 AM.jpeg
 │   │   │   ├── segar-sri-lanka-visit
@@ -156,25 +162,13 @@
 │   │   │   │   ├── WhatsApp Image 2025-10-20 at 12.38.34 PM (4).jpeg
 │   │   │   │   └── WhatsApp Image 2025-10-20 at 12.38.34 PM.jpeg
 │   │   │   ├── sri-lanka-nppd-uda-meeting
-│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.50 AM (1).jpeg
-│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.50 AM (2).jpeg
 │   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.50 AM (3).jpeg
 │   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.50 AM.jpeg
-│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.51 AM (1).jpeg
 │   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.51 AM (2).jpeg
-│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.51 AM (3).jpeg
-│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.51 AM (4).jpeg
-│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.51 AM (5).jpeg
 │   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.51 AM (6).jpeg
 │   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.51 AM (7).jpeg
 │   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.51 AM (8).jpeg
-│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.51 AM (9).jpeg
 │   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.51 AM.jpeg
-│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.52 AM (1).jpeg
-│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.52 AM (2).jpeg
-│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.52 AM (3).jpeg
-│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.52 AM (4).jpeg
-│   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.52 AM (5).jpeg
 │   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.46.52 AM (6).jpeg
 │   │   │   │   └── WhatsApp Image 2025-10-21 at 11.46.52 AM.jpeg
 │   │   │   ├── sri-lanka-quartz
@@ -195,6 +189,8 @@
 │   │   │       ├── WhatsApp Image 2025-10-20 at 12.33.42 PM (5).jpeg
 │   │   │       ├── WhatsApp Image 2025-10-20 at 12.33.42 PM (6).jpeg
 │   │   │       └── WhatsApp Image 2025-10-20 at 12.33.42 PM.jpeg
+│   │   ├── jessica-jason-vp.jpg
+│   │   ├── jessica-jason-vp.png
 │   │   ├── joseph-kamalesh-swaminathan-ceo - Copy.jpg
 │   │   ├── joseph-kamalesh-swaminathan-ceo.jpg
 │   │   ├── logo-icon.svg
@@ -370,8 +366,6 @@ body {
 .rich-text-content a { @apply text-carbon-gold hover:underline; }
 .rich-text-content ul, .rich-text-content ol { @apply my-4 pl-6 space-y-2; }
 .rich-text-content li { @apply text-neutral-400; }
-.rich-text-content ul { @apply list-disc; }
-.rich-text-content ol { @apply list-decimal; }
 .rich-text-content strong { @apply font-semibold text-neutral-200; }
 .rich-text-content code { @apply bg-neutral-800 text-sm rounded px-1 py-0.5; }
 .rich-text-content blockquote { @apply border-l-4 border-neutral-700 pl-4 italic text-neutral-500 my-6; }
@@ -1059,7 +1053,7 @@ export const teamMembers = [
 		slug: 'jessica-theis',
 		name: 'Jessica Theis',
 		title: 'VP, Business Development',
-		imageUrl: '/images/jessica-jason-vp.jpg', // Note: Using the provided image name.
+		imageUrl: '/images/jessica-jason-vp.png', 
 		introduction: [
 			"Jessica Theis spearheads Carbonatik's business growth strategies and manages the company's public image, playing a crucial role in expanding our market presence and stakeholder relations."
 		],
@@ -1222,6 +1216,33 @@ This engagement reflects Carbonatik's commitment to fostering relationships in m
 **Images from the meeting**
 
 <PinterestGallery galleryId="dubai-meeting" caption="Highlights from the meeting between Carbonatik executives Anand Malaimegam, Segar Muthumurugesu, and local leadership in Dubai." />
+
+# File: src/lib/posts/ap-dubai-delegation-meeting.md
+
+---
+title: "Carbonatik Engages with Andhra Pradesh Delegation in Dubai to Discuss Strategic Investments"
+date: "2025-11-06"
+summary: "Carbonatik leadership met with Andhra Pradesh's Minister for Municipal Administration, Dr. P. Narayana, during his Dubai investment tour to explore strategic opportunities in shipbuilding and aviation."
+---
+
+<script>
+    import PinterestGallery from '$lib/components/PinterestGallery.svelte';
+</script>
+
+Carbonatik was honored to participate in high-level discussions with the esteemed delegation from Andhra Pradesh, led by the Hon'ble Minister for Municipal Administration and Urban Development, Dr. P. Narayana, during his recent investment promotion tour in Dubai.
+
+The dialogue focused on exploring significant investment opportunities within Andhra Pradesh. Representatives from Carbonatik expressed keen interest in the state's **shipbuilding** and **aviation** sectors, where our global expertise in major infrastructure, technology, and mining operations aligns with Andhra Pradesh's ambitious development goals.
+
+We were encouraged by the minister's presentation of the state's investor-friendly policies, commitment to transparent governance, and "Speed of Doing Business" framework.
+
+We thank the Hon'ble Minister and his team for the productive discussion and for the invitation to the upcoming global investors' partnership summit in Visakhapatnam. This meeting reinforces Carbonatik's commitment to strategic growth in India and our enthusiasm for partnering with visionary governments to build world-class infrastructure.
+
+### As Reported By
+
+* <a href="https://timesofindia.indiatimes.com/city/vijayawada/expecting-huge-investments-from-uae-andhra-pradesh-municipal-minister/articleshow/125123426.cms" target="_blank" rel="noopener noreferrer">Times of India</a>
+* <a href="https://www.thehindu.com/news/national/andhra-pradesh/minister-narayana-concludes-three-day-investment-promotion-tour-in-dubai/article70245167.ece" target="_blank" rel="noopener noreferrer">The Hindu</a>
+
+<PinterestGallery galleryId="ap-dubai-delegation-2025" caption="Highlights from the meeting between Carbonatik representatives and the Andhra Pradesh delegation in Dubai." />
 
 # File: src/lib/posts/gemstone-inventory.md
 
@@ -1738,8 +1759,9 @@ export const theme = $derived(currentTheme);
 
 <script lang="ts">
 	import Hero from '$lib/components/landing/Hero.svelte';
+	import Mission from '$lib/components/landing/Mission.svelte'; // Added import
 	import CoreProducts from '$lib/components/landing/CoreProducts.svelte';
-	import GlobalOperations from '$lib/components/landing/GlobalOperations.svelte'; // New component
+	import GlobalOperations from '$lib/components/landing/GlobalOperations.svelte';
 	import CallToAction from '$lib/components/landing/CallToAction.svelte';
 </script>
 
@@ -1752,6 +1774,7 @@ export const theme = $derived(currentTheme);
 </svelte:head>
 
 <Hero />
+<Mission /> 
 <CoreProducts />
 <GlobalOperations />
 <CallToAction />
@@ -1798,7 +1821,7 @@ keywords: "sustainable mining, ethical minerals, vein graphite, copper cathodes,
 
 **CARBONATIK**—an acronym for **CARBON** **A**ssociated **T**echnologies **I**nnovation and **K**nowledge—is a premier global mining and resource management company. We are redefining the industry through our unwavering commitment to sustainability, ethical practices, and technological advancement.
 
-## Our Global Operations
+## Our Global Footprint
 
 Carbonatik operates through a network of registered and fully compliant entities across the globe, ensuring a robust international presence:
 - **USA:** Carbonatik LLC & Carbonatik Global Corporation
@@ -1809,7 +1832,7 @@ Carbonatik operates through a network of registered and fully compliant entities
 
 ## Our Assets & Capabilities
 
-### Mineral Rights & Mining Sites
+### Mineral Portfolio
 - **Sri Lanka:** We hold rights to extensive mining sites for <ProductLink name="Graphite" />, <ProductLink name="Gold Mica" />, <ProductLink name="Quartz" />, <ProductLink name="Granite" />, and **Monazite**. We are finalizing a **99-year lease** on the historic, 150-year-old KGLL government graphite mines.
 - **Tanzania:** Through our local equity partner, we control **12 mining licenses** for high-demand **Copper** and **Gold** deposits, ready for operational launch.
 
@@ -1849,14 +1872,6 @@ Carbonatik operates through a network of registered and fully compliant entities
 Trust and quality are the cornerstones of our business. Carbonatik rigorously adheres to **ASTM International standards** across all extraction and processing operations. This commitment ensures that our products consistently meet and exceed the demanding specifications of our global clientele.
 
 ---
-<div class="contact-card">
-    <h3>For Business Inquiries & Sales</h3>
-    <p>Please contact our Business Development team to discuss your mineral requirements or to learn more about our available inventory.</p>
-    <div class="contact-details">
-        <a href="mailto:info@carbonatik.com">info@carbonatik.com</a>
-        <a href="tel:+19545521251">+1 (954) 552-1251</a>
-    </div>
-</div>
 
 # File: src/routes/api/gallery/[galleryId]/+server.ts
 
