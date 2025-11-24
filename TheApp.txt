@@ -1,4 +1,4 @@
-# Context file generated on: Friday, November 7, 2025 at 12:14:04 AM GMT+5:30
+# Context file generated on: Monday, November 24, 2025 at 2:50:59 PM GMT+5:30
 ---
 
 # Project File Layout
@@ -9,6 +9,7 @@
 ├── .npmrc
 ├── .prettierignore
 ├── .prettierrc
+├── check_output.txt
 ├── eslint.config.js
 ├── package-lock.json
 ├── package.json
@@ -23,6 +24,10 @@
 │   │   ├── assets
 │   │   │   └── favicon.svg
 │   │   ├── components
+│   │   │   ├── APHIE
+│   │   │   │   └── APHIEContent.svelte
+│   │   │   ├── D3
+│   │   │   │   └── ConstellationMap.svelte
 │   │   │   ├── ImageEmbed.svelte
 │   │   │   ├── landing
 │   │   │   │   ├── CallToAction.svelte
@@ -40,6 +45,8 @@
 │   │   │   │   └── StaffProfile.svelte
 │   │   │   └── VideoPlayer.svelte
 │   │   ├── data
+│   │   │   ├── aphie.ts
+│   │   │   ├── mindmap.ts
 │   │   │   └── team.js
 │   │   ├── index.ts
 │   │   ├── posts
@@ -50,6 +57,7 @@
 │   │   │   ├── anand-segar-cambodia-visit.md
 │   │   │   ├── anand-segar-dubai-meeting.md
 │   │   │   ├── ap-dubai-delegation-meeting.md
+│   │   │   ├── ap-partnership-summit-2025.md
 │   │   │   ├── gemstone-inventory.md
 │   │   │   ├── hello-world.md
 │   │   │   ├── mining-expeditions.md
@@ -66,7 +74,9 @@
 │   │   │   └── zambia-tanzania-copper-logistics.md
 │   │   ├── server
 │   │   │   └── galleries.server.ts
-│   │   └── theme.svelte.ts
+│   │   ├── theme.svelte.ts
+│   │   └── types
+│   │       └── d3.ts
 │   └── routes
 │       ├── +layout.svelte
 │       ├── +page.svelte
@@ -84,6 +94,8 @@
 │       │       ├── +page.js
 │       │       ├── +page.server.js
 │       │       └── +page.svelte
+│       ├── hie
+│       │   └── +page.svelte
 │       └── team
 │           ├── +page.server.js
 │           ├── +page.svelte
@@ -91,6 +103,7 @@
 │               ├── +page.server.js
 │               └── +page.svelte
 ├── static
+│   ├── ap-hie-strategic-framework.pdf
 │   ├── images
 │   │   ├── anand-malaimegam-coo.png
 │   │   ├── brendan-t-fitzpatrick-president.jpg
@@ -107,6 +120,8 @@
 │   │   │   │   └── WhatsApp Image 2025-11-06 at 9.47.36 PM.jpeg
 │   │   │   ├── ap-minister-meeting
 │   │   │   │   └── WhatsApp Image 2025-10-21 at 11.53.27 AM.jpeg
+│   │   │   ├── ap-partnership-summit-2025
+│   │   │   │   └── WhatsApp Image 2025-11-16 at 2.47.42 AM.jpeg
 │   │   │   ├── cambodia-visit
 │   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.38.24 AM (1).jpeg
 │   │   │   │   ├── WhatsApp Image 2025-10-21 at 11.38.24 AM (2).jpeg
@@ -264,6 +279,7 @@
 	"dependencies": {
 		"@sveltejs/adapter-vercel": "^5.10.3",
 		"@tailwindcss/vite": "^4.1.14",
+		"d3": "^7.9.0",
 		"tailwindcss": "^4.1.14"
 	}
 }
@@ -548,6 +564,413 @@ export {};
 # File: src/lib/assets/favicon.svg
 
 <svg xmlns="http://www.w3.org/2000/svg" width="107" height="128" viewBox="0 0 107 128"><title>svelte-logo</title><path d="M94.157 22.819c-10.4-14.885-30.94-19.297-45.792-9.835L22.282 29.608A29.92 29.92 0 0 0 8.764 49.65a31.5 31.5 0 0 0 3.108 20.231 30 30 0 0 0-4.477 11.183 31.9 31.9 0 0 0 5.448 24.116c10.402 14.887 30.942 19.297 45.791 9.835l26.083-16.624A29.92 29.92 0 0 0 98.235 78.35a31.53 31.53 0 0 0-3.105-20.232 30 30 0 0 0 4.474-11.182 31.88 31.88 0 0 0-5.447-24.116" style="fill:#ff3e00"/><path d="M45.817 106.582a20.72 20.72 0 0 1-22.237-8.243 19.17 19.17 0 0 1-3.277-14.503 18 18 0 0 1 .624-2.435l.49-1.498 1.337.981a33.6 33.6 0 0 0 10.203 5.098l.97.294-.09.968a5.85 5.85 0 0 0 1.052 3.878 6.24 6.24 0 0 0 6.695 2.485 5.8 5.8 0 0 0 1.603-.704L69.27 76.28a5.43 5.43 0 0 0 2.45-3.631 5.8 5.8 0 0 0-.987-4.371 6.24 6.24 0 0 0-6.698-2.487 5.7 5.7 0 0 0-1.6.704l-9.953 6.345a19 19 0 0 1-5.296 2.326 20.72 20.72 0 0 1-22.237-8.243 19.17 19.17 0 0 1-3.277-14.502 17.99 17.99 0 0 1 8.13-12.052l26.081-16.623a19 19 0 0 1 5.3-2.329 20.72 20.72 0 0 1 22.237 8.243 19.17 19.17 0 0 1 3.277 14.503 18 18 0 0 1-.624 2.435l-.49 1.498-1.337-.98a33.6 33.6 0 0 0-10.203-5.1l-.97-.294.09-.968a5.86 5.86 0 0 0-1.052-3.878 6.24 6.24 0 0 0-6.696-2.485 5.8 5.8 0 0 0-1.602.704L37.73 51.72a5.42 5.42 0 0 0-2.449 3.63 5.79 5.79 0 0 0 .986 4.372 6.24 6.24 0 0 0 6.698 2.486 5.8 5.8 0 0 0 1.602-.704l9.952-6.342a19 19 0 0 1 5.295-2.328 20.72 20.72 0 0 1 22.237 8.242 19.17 19.17 0 0 1 3.277 14.503 18 18 0 0 1-8.13 12.053l-26.081 16.622a19 19 0 0 1-5.3 2.328" style="fill:#fff"/></svg>
+
+# File: src/lib/components/APHIE/APHIEContent.svelte
+
+<script lang="ts">
+    import { onMount } from 'svelte';
+</script>
+
+<svelte:head>
+    <link href="https://fonts.googleapis.com/css2?family=Tiempos+Headline:wght@400;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+</svelte:head>
+
+<div class="aphie-container font-sans text-neutral-400 bg-neutral-950">
+    <!-- Main Content -->
+    <main class="w-full">
+        <!-- Hero Section -->
+        <header class="bg-gradient-to-br from-neutral-900 to-neutral-800 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10 pointer-events-none">
+                <div class="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-teal-400 to-blue-500 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-br from-orange-400 to-red-500 rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="relative z-10 container mx-auto px-4 py-12">
+                <div class="space-y-8">
+                    <div class="space-y-6">
+                        <a href="/ap-hie-strategic-framework.pdf" download class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-teal-600 to-blue-700 text-white rounded-full text-sm font-medium hover:shadow-lg hover:scale-105 transition-all duration-300 group border border-white/10">
+                            <i class="fas fa-download group-hover:animate-bounce"></i>
+                            Download Strategic Framework Document
+                        </a>
+                        <h1 class="serif text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-100 leading-tight">
+                            Andhra Pradesh
+                            <span class="italic text-teal-400 block mt-2">Health Information Exchange</span>
+                        </h1>
+                        <p class="text-base sm:text-lg text-neutral-400 leading-relaxed max-w-2xl">
+                            A comprehensive framework for establishing a secure, interoperable, and on-premise digital health ecosystem connecting Electronic Health Records across Andhra Pradesh.
+                        </p>
+                    </div>
+
+                     <!-- Key Highlights Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                        <div class="bg-neutral-900/80 backdrop-blur-sm p-4 rounded-xl border border-neutral-800">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-network-wired text-teal-400 mr-2"></i>
+                                <h3 class="font-semibold text-neutral-200 text-sm">OpenHIE Architecture</h3>
+                            </div>
+                            <p class="text-neutral-500 text-xs">Globally recognized framework</p>
+                        </div>
+                        <div class="bg-neutral-900/80 backdrop-blur-sm p-4 rounded-xl border border-neutral-800">
+                             <div class="flex items-center mb-2">
+                                <i class="fas fa-shield-alt text-orange-400 mr-2"></i>
+                                <h3 class="font-semibold text-neutral-200 text-sm">On-Premise</h3>
+                            </div>
+                            <p class="text-neutral-500 text-xs">Data sovereignty ensured</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Executive Summary -->
+        <section class="section-anchor py-12 bg-neutral-900" id="executive-summary">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-10">
+                    <h2 class="serif text-3xl font-bold text-neutral-100 mb-4">Executive Summary</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-teal-500 to-blue-600 mx-auto"></div>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="prose prose-invert max-w-none text-neutral-400">
+                        <p>This document serves as a formal request for data and collaboration from the Government of Andhra Pradesh to establish a state-level Health Information Exchange (HIE). The proposed Andhra Pradesh Health Information Exchange (AP-HIE) is envisioned as a secure, interoperable, and scalable digital health platform modeled on the globally recognized OpenHIE framework.</p>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4 class="serif text-lg font-semibold mb-3 text-neutral-200">Request for Government Support</h4>
+                        <ul class="grid md:grid-cols-2 gap-3 text-sm text-neutral-400">
+                            <li class="flex items-start"><i class="fas fa-database text-teal-400 mt-1 mr-2"></i> Access to demographic & facility data</li>
+                            <li class="flex items-start"><i class="fas fa-link text-orange-400 mt-1 mr-2"></i> Integration with ABDM & HMIS</li>
+                            <li class="flex items-start"><i class="fas fa-users-cog text-blue-400 mt-1 mr-2"></i> Governance structure establishment</li>
+                            <li class="flex items-start"><i class="fas fa-handshake text-green-400 mt-1 mr-2"></i> Data sharing agreements</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HIE Overview -->
+        <section class="section-anchor py-12 bg-neutral-950" id="hie-overview">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-10">
+                    <h2 class="serif text-3xl font-bold text-neutral-100 mb-4">HIE System Architecture</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Components -->
+                    <div class="component-card">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-teal-900/30 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-exchange-alt text-teal-400"></i>
+                            </div>
+                            <h3 class="serif font-semibold text-neutral-200">Interoperability Layer</h3>
+                        </div>
+                        <p class="text-neutral-400 text-xs">Central nervous system managing data exchange.</p>
+                    </div>
+                    <div class="component-card">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-blue-900/30 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-user-circle text-blue-400"></i>
+                            </div>
+                            <h3 class="serif font-semibold text-neutral-200">Client Registry</h3>
+                        </div>
+                        <p class="text-neutral-400 text-xs">Single source of truth for patient identity (ABHA).</p>
+                    </div>
+                     <div class="component-card">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-green-900/30 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-hospital text-green-400"></i>
+                            </div>
+                            <h3 class="serif font-semibold text-neutral-200">Facility Registry</h3>
+                        </div>
+                        <p class="text-neutral-400 text-xs">Directory of all healthcare facilities.</p>
+                    </div>
+                     <div class="component-card">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-purple-900/30 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-file-medical text-purple-400"></i>
+                            </div>
+                            <h3 class="serif font-semibold text-neutral-200">Shared Health Record</h3>
+                        </div>
+                        <p class="text-neutral-400 text-xs">Longitudinal clinical data repository.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Requirements -->
+        <section class="section-anchor py-12 bg-neutral-900" id="data-requirements">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-10">
+                    <h2 class="serif text-3xl font-bold text-neutral-100 mb-4">Data Requirements</h2>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-blue-900/10 p-6 rounded-xl border border-blue-900/30">
+                        <h4 class="font-semibold text-blue-400 mb-4">Client Registry Data</h4>
+                        <ul class="space-y-2 text-sm text-neutral-400">
+                            <li class="flex justify-between border-b border-blue-900/30 pb-1"><span>Full Name</span> <span class="text-neutral-600">Aadhaar/Voter ID</span></li>
+                            <li class="flex justify-between border-b border-blue-900/30 pb-1"><span>DOB</span> <span class="text-neutral-600">Aadhaar</span></li>
+                            <li class="flex justify-between border-b border-blue-900/30 pb-1"><span>Gender</span> <span class="text-neutral-600">Aadhaar</span></li>
+                            <li class="flex justify-between border-b border-blue-900/30 pb-1"><span>Address</span> <span class="text-neutral-600">Aadhaar</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- More sections can be added similarly, keeping it concise for the component -->
+
+
+    </main>
+</div>
+
+<style>
+    :global(:root) {
+        --sage: #9CA986;
+        --terracotta: #E67E22;
+        --deep-blue: #2C3E50;
+        --warm-white: #171717; /* Changed to neutral-900 equivalent */
+        --charcoal: #E5E5E5; /* Changed to light gray */
+    }
+
+    .serif { font-family: 'Tiempos Headline', serif; }
+    
+    .highlight-box {
+        background: linear-gradient(135deg, rgba(156, 169, 134, 0.05), rgba(230, 126, 34, 0.02));
+        border-left: 4px solid var(--sage);
+        padding: 1.5rem;
+        border-radius: 0 0.5rem 0.5rem 0;
+    }
+    
+    .component-card {
+        background: #171717; /* neutral-900 */
+        border-radius: 1rem;
+        padding: 1.5rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        border: 1px solid #262626; /* neutral-800 */
+    }
+</style>
+
+
+# File: src/lib/components/D3/ConstellationMap.svelte
+
+<script lang="ts">
+	import { onMount, onDestroy } from 'svelte';
+	import * as d3 from 'd3';
+	import type { GraphNode, GraphLink } from '$lib/types/d3';
+
+	let { nodes, links } = $props();
+
+	// State
+	let width = $state(0);
+	let height = $state(600); // Default height
+	let svgElement = $state<SVGSVGElement>();
+	
+	// We create a local copy of data because D3 mutates it
+	let simulationNodes = $state($state.snapshot(nodes));
+	let simulationLinks = $state($state.snapshot(links));
+
+	// Transform state for zoom/pan
+	let transform = $state({ k: 1, x: 0, y: 0 });
+
+	let simulation: d3.Simulation<GraphNode, undefined>;
+
+	const goldColor = '#D4AF47';
+	const linkColor = '#525252'; // neutral-600
+
+	function initSimulation() {
+		if (!width || !height) return;
+
+		simulation = d3
+			.forceSimulation(simulationNodes as any)
+			.force('link', d3.forceLink(simulationLinks as any).id((d: any) => d.id).distance(100))
+			.force('charge', d3.forceManyBody().strength(-400))
+			.force('center', d3.forceCenter(width / 2, height / 2))
+			.force('collide', d3.forceCollide().radius((d: any) => d.radius + 10).iterations(2));
+
+		simulation.on('tick', () => {
+			// Trigger reactivity by reassigning the arrays. 
+            // In Svelte 5 proxies, this is efficient.
+			simulationNodes = [...simulationNodes];
+			simulationLinks = [...simulationLinks];
+		});
+	}
+
+	$effect(() => {
+		if (width > 0 && height > 0 && !simulation) {
+			initSimulation();
+		}
+	});
+
+	// Update center force on resize
+	$effect(() => {
+		if (simulation && width > 0 && height > 0) {
+			simulation.force('center', d3.forceCenter(width / 2, height / 2));
+			simulation.alpha(0.3).restart();
+		}
+	});
+
+    // Drag logic
+	function drag(event: PointerEvent, node: GraphNode) {
+        if (!simulation) return;
+        
+        event.preventDefault(); // Prevent scrolling on touch
+        const startX = event.clientX;
+        const startY = event.clientY;
+        
+		simulation.alphaTarget(0.3).restart();
+        node.fx = node.x;
+        node.fy = node.y;
+
+        function onPointerMove(e: PointerEvent) {
+            if(!node.fx || !node.fy) return; // TS check
+            // Calculate delta accounting for zoom transform
+            const dx = (e.clientX - startX) / transform.k;
+            const dy = (e.clientY - startY) / transform.k;
+            
+            // Since we re-render on tick, we update the fixed positions directly
+            // We actually need to update the underlying object reference D3 is holding
+            // But since simulationNodes is the source of truth for D3...
+            node.fx = (node.x || 0) + dx; // Simplified drag logic for Svelte-driven SVG
+            node.fy = (node.y || 0) + dy;
+        }
+
+		function onPointerUp() {
+			if (!simulation) return;
+			simulation.alphaTarget(0);
+			node.fx = null;
+			node.fy = null;
+            window.removeEventListener('pointermove', onPointerMove);
+            window.removeEventListener('pointerup', onPointerUp);
+		}
+        
+        // Note: A robust drag in Svelte-D3 hybrid usually uses d3-drag on a bind:this element.
+        // However, using simple pointer events here keeps dependencies low.
+        // For this implementation, let's stick to standard D3 drag attachment via an action 
+        // to ensure smooth performance on the Zenbook.
+	}
+    
+    // D3 Drag Action for elements
+    function draggable(node: SVGGElement, dataNode: GraphNode) {
+        const dragBehavior = d3.drag<SVGGElement, any>()
+            .on("start", (event) => {
+                if (!event.active) simulation.alphaTarget(0.3).restart();
+                dataNode.fx = dataNode.x;
+                dataNode.fy = dataNode.y;
+            })
+            .on("drag", (event) => {
+                dataNode.fx = event.x;
+                dataNode.fy = event.y;
+            })
+            .on("end", (event) => {
+                if (!event.active) simulation.alphaTarget(0);
+                dataNode.fx = null;
+                dataNode.fy = null;
+            });
+            
+        d3.select(node).call(dragBehavior);
+        return {
+            destroy() {
+                d3.select(node).on(".drag", null);
+            }
+        }
+    }
+
+    // D3 Zoom Action
+    let zoom: d3.ZoomBehavior<SVGSVGElement, unknown>;
+
+    function zoomable(node: SVGSVGElement) {
+        zoom = d3.zoom<SVGSVGElement, unknown>()
+            .scaleExtent([0.1, 4])
+            .on('zoom', (event) => {
+                transform = event.transform;
+            });
+        
+        d3.select(node).call(zoom);
+    }
+
+    // Initial Zoom
+    let initialZoomSet = false;
+    $effect(() => {
+        if (!initialZoomSet && width > 0 && height > 0 && svgElement && zoom) {
+            const initialScale = 0.6;
+            // Calculate transform to center the view with the initial scale
+            // Since the force center is at (width/2, height/2), we want that point to stay at (width/2, height/2)
+            // d3.zoomIdentity.translate(tx, ty).scale(k)
+            // tx = cx - k * cx
+            // ty = cy - k * cy
+            const tx = (width / 2) * (1 - initialScale);
+            const ty = (height / 2) * (1 - initialScale);
+            
+            d3.select(svgElement).call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(initialScale));
+            initialZoomSet = true;
+        }
+    });
+
+	onDestroy(() => {
+		if (simulation) simulation.stop();
+	});
+</script>
+
+<div class="interactive-component-wrapper w-full h-[600px] relative overflow-hidden" bind:clientWidth={width} bind:clientHeight={height}>
+	<svg 
+        bind:this={svgElement} 
+        width={width} 
+        height={height} 
+        use:zoomable
+        class="w-full h-full bg-neutral-900 cursor-move"
+    >
+		<g transform="translate({transform.x}, {transform.y}) scale({transform.k})">
+			<g stroke={linkColor} stroke-opacity="0.6">
+				{#each simulationLinks as link}
+                    <line
+						x1={typeof link.source === 'object' ? link.source.x : 0}
+						y1={typeof link.source === 'object' ? link.source.y : 0}
+						x2={typeof link.target === 'object' ? link.target.x : 0}
+						y2={typeof link.target === 'object' ? link.target.y : 0}
+						stroke-width={Math.sqrt(link.value)}
+					/>
+				{/each}
+			</g>
+
+			<g>
+				{#each simulationNodes as node (node.id)}
+					<g 
+                        transform="translate({node.x},{node.y})" 
+                        use:draggable={node}
+                        class="cursor-pointer hover:opacity-80 transition-opacity"
+                        role="group"
+                        aria-label={node.id}
+                    >
+                        <circle r={node.radius + 5} fill={goldColor} opacity="0.2" class="animate-pulse" />
+                        
+						<circle 
+                            r={node.radius} 
+                            fill={node.group === 0 ? goldColor : '#1f2937'} 
+                            stroke={goldColor}
+                            stroke-width={node.group === 0 ? 0 : 1.5}
+                        />
+                        
+						<text
+							dy={node.radius + 15}
+							text-anchor="middle"
+							class="text-[10px] md:text-xs fill-neutral-300 pointer-events-none select-none font-sans font-bold tracking-wide"
+                            style="text-shadow: 0px 1px 2px black;"
+						>
+							{node.id}
+						</text>
+					</g>
+				{/each}
+			</g>
+		</g>
+	</svg>
+    
+    <div class="absolute bottom-4 right-4 bg-neutral-900/80 p-2 rounded text-xs text-neutral-400 pointer-events-none border border-neutral-800">
+        Drag nodes to rearrange • Scroll to zoom
+    </div>
+</div>
+
 
 # File: src/lib/components/ImageEmbed.svelte
 
@@ -944,6 +1367,178 @@ export {};
 	{/if}
 </figure>
 
+# File: src/lib/data/aphie.ts
+
+import type { GraphNode, GraphLink } from '$lib/types/d3';
+
+export const aphieNodes: GraphNode[] = [
+    // Root
+    { id: 'AP-HIE', group: 0, radius: 25 },
+
+    // Level 1: Core Pillars
+    { id: 'Vision & Objectives', group: 1, radius: 15 },
+    { id: 'Architecture', group: 1, radius: 15 },
+    { id: 'Integration', group: 1, radius: 15 },
+    { id: 'Implementation', group: 1, radius: 15 },
+    { id: 'Governance', group: 1, radius: 15 },
+    { id: 'Data Sources', group: 1, radius: 15 },
+
+    // Level 2: Vision
+    { id: 'Patient Care', group: 2, radius: 8 },
+    { id: 'Public Health', group: 2, radius: 8 },
+    { id: 'Policymaking', group: 2, radius: 8 },
+
+    // Level 2: Architecture
+    { id: 'IOL', group: 2, radius: 10 },
+    { id: 'Client Registry', group: 2, radius: 10 },
+    { id: 'Facility Registry', group: 2, radius: 10 },
+    { id: 'Shared Health Record', group: 2, radius: 12 }, // "Heart" of the system
+    { id: 'HMIS', group: 2, radius: 10 },
+    { id: 'Terminology', group: 2, radius: 8 },
+
+    // Level 2: Integration
+    { id: 'ABDM (National)', group: 2, radius: 10 },
+    { id: 'State Systems', group: 2, radius: 8 },
+    { id: 'FHIR R4', group: 2, radius: 8 },
+
+    // Level 2: Implementation
+    { id: 'Phase 1: Public', group: 2, radius: 8 },
+    { id: 'Phase 2: Private', group: 2, radius: 8 },
+    { id: 'Phase 3: Others', group: 2, radius: 8 },
+
+    // Level 2: Governance
+    { id: 'Governing Body', group: 2, radius: 8 },
+    { id: 'Privacy & Security', group: 2, radius: 8 },
+
+    // Level 2: Data Sources
+    { id: 'Demographics', group: 2, radius: 8 },
+    { id: 'Clinical Data', group: 2, radius: 8 },
+    { id: 'Facility Data', group: 2, radius: 8 },
+];
+
+export const aphieLinks: GraphLink[] = [
+    // Root Connections
+    { source: 'Vision & Objectives', target: 'AP-HIE', value: 5 },
+    { source: 'Architecture', target: 'AP-HIE', value: 5 },
+    { source: 'Integration', target: 'AP-HIE', value: 5 },
+    { source: 'Implementation', target: 'AP-HIE', value: 5 },
+    { source: 'Governance', target: 'AP-HIE', value: 5 },
+    { source: 'Data Sources', target: 'AP-HIE', value: 5 },
+
+    // Vision Children
+    { source: 'Patient Care', target: 'Vision & Objectives', value: 3 },
+    { source: 'Public Health', target: 'Vision & Objectives', value: 3 },
+    { source: 'Policymaking', target: 'Vision & Objectives', value: 3 },
+
+    // Architecture Children
+    { source: 'IOL', target: 'Architecture', value: 3 },
+    { source: 'Client Registry', target: 'Architecture', value: 3 },
+    { source: 'Facility Registry', target: 'Architecture', value: 3 },
+    { source: 'Shared Health Record', target: 'Architecture', value: 4 },
+    { source: 'HMIS', target: 'Architecture', value: 3 },
+    { source: 'Terminology', target: 'Architecture', value: 3 },
+
+    // Integration Children
+    { source: 'ABDM (National)', target: 'Integration', value: 3 },
+    { source: 'State Systems', target: 'Integration', value: 3 },
+    { source: 'FHIR R4', target: 'Integration', value: 3 },
+
+    // Implementation Children
+    { source: 'Phase 1: Public', target: 'Implementation', value: 3 },
+    { source: 'Phase 2: Private', target: 'Implementation', value: 3 },
+    { source: 'Phase 3: Others', target: 'Implementation', value: 3 },
+
+    // Governance Children
+    { source: 'Governing Body', target: 'Governance', value: 3 },
+    { source: 'Privacy & Security', target: 'Governance', value: 3 },
+
+    // Data Sources Children
+    { source: 'Demographics', target: 'Data Sources', value: 3 },
+    { source: 'Clinical Data', target: 'Data Sources', value: 3 },
+    { source: 'Facility Data', target: 'Data Sources', value: 3 },
+
+    // Cross-links (Interconnections)
+    { source: 'Client Registry', target: 'ABDM (National)', value: 2 },
+    { source: 'Facility Registry', target: 'ABDM (National)', value: 2 },
+    { source: 'Shared Health Record', target: 'Clinical Data', value: 2 },
+    { source: 'HMIS', target: 'Public Health', value: 2 },
+    { source: 'IOL', target: 'FHIR R4', value: 2 },
+];
+
+
+# File: src/lib/data/mindmap.ts
+
+export type MapNode = {
+    id: string;
+    group: number; // 0 for root, 1 for main branches, 2 for leaves
+    radius: number;
+    fx?: number | null; // Fixed x position (for dragging)
+    fy?: number | null; // Fixed y position
+    x?: number;
+    y?: number;
+    vx?: number;
+    vy?: number;
+    index?: number;
+};
+
+export type MapLink = {
+    source: string | MapNode; // D3 mutates this to object
+    target: string | MapNode;
+    value: number;
+};
+
+export const mindMapNodes: MapNode[] = [
+    // Root
+    { id: 'SuvroGhosh.Blog', group: 0, radius: 20 },
+
+    // Main Branches (Level 1)
+    { id: 'Tech Stack', group: 1, radius: 12 },
+    { id: 'Personal', group: 1, radius: 12 },
+    { id: 'Notebooks', group: 1, radius: 12 },
+    { id: 'Engineering', group: 1, radius: 12 },
+
+    // Tech Stack Children (Level 2)
+    { id: 'SvelteKit', group: 2, radius: 6 },
+    { id: 'Svelte 5 Runes', group: 2, radius: 6 },
+    { id: 'Tailwind 4', group: 2, radius: 6 },
+    { id: 'D3.js', group: 2, radius: 6 },
+    { id: 'Three.js', group: 2, radius: 6 },
+    { id: 'Vercel', group: 2, radius: 6 },
+
+    // Personal Children
+    { id: 'Reflections', group: 2, radius: 6 },
+    { id: 'Memories', group: 2, radius: 6 },
+    { id: 'Satire', group: 2, radius: 6 },
+
+    // Engineering Children
+    { id: 'Full Stack', group: 2, radius: 6 },
+    { id: 'System Design', group: 2, radius: 6 },
+    { id: 'Architecture', group: 2, radius: 6 }
+];
+
+export const mindMapLinks: MapLink[] = [
+    { source: 'Tech Stack', target: 'SuvroGhosh.Blog', value: 5 },
+    { source: 'Personal', target: 'SuvroGhosh.Blog', value: 5 },
+    { source: 'Notebooks', target: 'SuvroGhosh.Blog', value: 5 },
+    { source: 'Engineering', target: 'SuvroGhosh.Blog', value: 5 },
+
+    { source: 'SvelteKit', target: 'Tech Stack', value: 2 },
+    { source: 'Svelte 5 Runes', target: 'SvelteKit', value: 2 },
+    { source: 'Tailwind 4', target: 'Tech Stack', value: 2 },
+    { source: 'D3.js', target: 'Tech Stack', value: 2 },
+    { source: 'Three.js', target: 'Tech Stack', value: 2 },
+    { source: 'Vercel', target: 'Tech Stack', value: 2 },
+
+    { source: 'Reflections', target: 'Personal', value: 2 },
+    { source: 'Memories', target: 'Personal', value: 2 },
+    { source: 'Satire', target: 'Personal', value: 2 },
+
+    { source: 'Full Stack', target: 'Engineering', value: 2 },
+    { source: 'System Design', target: 'Engineering', value: 2 },
+    { source: 'Architecture', target: 'Engineering', value: 2 },
+];
+
+
 # File: src/lib/data/team.js
 
 export const teamMembers = [
@@ -1243,6 +1838,39 @@ We thank the Hon'ble Minister and his team for the productive discussion and for
 * <a href="https://www.thehindu.com/news/national/andhra-pradesh/minister-narayana-concludes-three-day-investment-promotion-tour-in-dubai/article70245167.ece" target="_blank" rel="noopener noreferrer">The Hindu</a>
 
 <PinterestGallery galleryId="ap-dubai-delegation-2025" caption="Highlights from the meeting between Carbonatik representatives and the Andhra Pradesh delegation in Dubai." />
+
+# File: src/lib/posts/ap-partnership-summit-2025.md
+
+---
+title: "Carbonatik Commits ₹31,500 Crore Investment in Andhra Pradesh at CII Partnership Summit 2025"
+date: "2025-11-15"
+summary: "At the CII Partnership Summit 2025, Carbonatik LLC signed a landmark MoU with the Government of Andhra Pradesh for a ₹31,500 crore (US $3.75 billion) investment in Maritime, Aviation, and Waterway infrastructure."
+---
+
+<script>
+    import PinterestGallery from '$lib/components/PinterestGallery.svelte';
+</script>
+
+In a landmark move, Carbonatik LLC has formalized a major investment agreement with the Government of Andhra Pradesh by signing a Memorandum of Understanding (MoU) at the prestigious CII Partnership Summit 2025 in Visakhapatnam.
+
+The MoU, valued at **₹31,500 crore (US $3.75 billion)**, was signed in the presence of the Hon'ble Chief Minister Shri Nara Chandrababu Naidu. The Carbonatik delegation included our President, **Brendan T. Fitzpatrick**, COO **Anand Malaimegam**, and CPO **Segar Muthumurugesu**.
+
+This strategic investment is projected to create over **30,000 direct and indirect jobs** and is focused on three core sectors:
+
+1.  **Maritime Infrastructure (₹19,100 crore):** Development of a 5G-enabled Greenfield Port, complete with a yacht yard and bonded warehouse facilities on the state's east coast.
+2.  **Aviation Cluster (₹7,100 crore):** Establishment of India's largest MRO (Maintenance, Repair, and Overhaul) facility, a cargo terminal, a flight training organization, an advanced simulator centre, and manufacturing units for eVTOLs, drones, and lightweight aircraft at Kurnool Airport.
+3.  **Inland Waterways & Water Metro (₹5,300 crore):** Creation of integrated inland waterways for cargo, Ro-Ro/Ro-Pax services, and an Urban Water Metro system for Amaravati and Vijayawada.
+
+Our President, Brendan T. Fitzpatrick, stated that this collaboration reflects Carbonatik's commitment to supporting Andhra Pradesh's “Swarna-Andhra @2047” vision and India’s “Viksit Bharat @2047” goals.
+
+COO Anand Malaimegam noted this significant step was a direct result of the proactive and welcoming response from the state government, which began during our initial meetings in Dubai.
+
+### As Reported By
+
+* <a href="https://timesofindia.indiatimes.com/city/vijayawada/carbonatik-inks-31500-cr-mou-with-ap-government-in-aviation-ports-waterways/articleshow/125305175.cms" target="_blank" rel="noopener noreferrer">Times of India</a>
+* <a href="https://www.thehindu.com/brandhub/carbonatik-llc-inks-massive-investment-agreement-with-andhra-pradesh-at-partnership-summit/article70284380.ece/amp/" target="_blank" rel="noopener noreferrer">The Hindu</a>
+
+<PinterestGallery galleryId="ap-partnership-summit-2025" caption="Key moments from the CII Partnership Summit 2025 in Visakhapatnam." />
 
 # File: src/lib/posts/gemstone-inventory.md
 
@@ -1730,6 +2358,28 @@ export function toggleTheme() {
 
 export const theme = $derived(currentTheme);
 
+# File: src/lib/types/d3.ts
+
+export type GraphNode = {
+    id: string;
+    group: number; // 0 for root, 1 for main branches, 2 for leaves
+    radius: number;
+    fx?: number | null; // Fixed x position (for dragging)
+    fy?: number | null; // Fixed y position
+    x?: number;
+    y?: number;
+    vx?: number;
+    vy?: number;
+    index?: number;
+};
+
+export type GraphLink = {
+    source: string | GraphNode; // D3 mutates this to object
+    target: string | GraphNode;
+    value: number;
+};
+
+
 # File: src/routes/+layout.svelte
 
 <script lang="ts">
@@ -2021,6 +2671,59 @@ export async function load({ params }) {
 
 	<Component />
 </article>
+
+# File: src/routes/hie/+page.svelte
+
+<script lang="ts">
+    import ConstellationMap from '$lib/components/D3/ConstellationMap.svelte';
+    import APHIEContent from '$lib/components/APHIE/APHIEContent.svelte';
+    import { aphieNodes, aphieLinks } from '$lib/data/aphie';
+</script>
+
+<div class="min-h-screen bg-neutral-950 text-neutral-300 font-sans selection:bg-yellow-500/30">
+    <!-- Header -->
+    <header class="border-b border-neutral-800 bg-neutral-900/50 backdrop-blur sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold tracking-tight text-neutral-100 hover:text-yellow-500 transition-colors">
+                AP-HIE
+            </a>
+            <span class="text-xs font-mono text-neutral-500 uppercase tracking-widest">Visualization</span>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8 flex flex-col gap-12">
+        <!-- Visualization Column -->
+        <div class="w-full h-[600px] rounded-xl border border-neutral-800 overflow-hidden bg-neutral-900 shadow-2xl relative">
+            <div class="absolute top-4 left-4 z-10 pointer-events-none">
+                <h2 class="text-sm font-bold text-neutral-400 uppercase tracking-wider">System Map</h2>
+            </div>
+            <ConstellationMap nodes={aphieNodes} links={aphieLinks} />
+        </div>
+
+        <!-- Content Column -->
+        <div class="w-full max-w-4xl mx-auto">
+            <APHIEContent />
+        </div>
+    </main>
+</div>
+
+<style>
+    /* Custom Scrollbar for the content area */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: #171717;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #404040;
+        border-radius: 3px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #525252;
+    }
+</style>
+
 
 # File: src/routes/team/+page.server.js
 
