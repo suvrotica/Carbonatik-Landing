@@ -4,8 +4,9 @@
 
 @theme {
   --color-carbon-gold: #ffc700;
+  --color-carbon-blue: #1e3a8a; /* Deep blue from Carbonatik Logo context */
+  --color-carbon-green: #15803d; /* Sustainable green */
 }
-
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 /* Default theme */
@@ -156,4 +157,64 @@ body {
 .gallery-loading,
 .gallery-error {
 	@apply text-center text-neutral-400 col-span-full; /* col-span-full is fine here if these are direct children of a column container that isn't the image wrapper */
+}
+
+.infra-hero {
+    @apply relative w-full py-24 px-6 bg-neutral-950 overflow-hidden flex flex-col items-center text-center border-b border-neutral-800;
+}
+
+.infra-grid {
+    @apply max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 py-16 px-6;
+}
+
+.infra-card {
+    @apply bg-neutral-900/50 border border-neutral-800 rounded-2xl p-8 transition-all duration-500 hover:border-carbon-gold/50 hover:bg-neutral-900 relative overflow-hidden;
+}
+
+.infra-stat-container {
+    @apply grid grid-cols-2 md:grid-cols-4 gap-8 border-y border-neutral-800 py-12 my-12 bg-neutral-900/30;
+}
+
+.infra-stat-item {
+    @apply flex flex-col items-center justify-center text-center;
+}
+
+.infra-stat-value {
+    @apply text-4xl md:text-5xl font-black text-white mb-2 tabular-nums;
+}
+
+.infra-stat-label {
+    @apply text-sm text-neutral-400 uppercase tracking-widest font-medium;
+}
+
+.section-badge {
+    @apply inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase rounded-full bg-neutral-800 text-carbon-gold border border-neutral-700;
+}
+
+.partner-grid {
+    @apply max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 py-24 px-6;
+}
+
+.form-group {
+    @apply flex flex-col gap-2 mb-6;
+}
+
+.form-label {
+    @apply text-sm font-bold text-neutral-400 uppercase tracking-wider;
+}
+
+.form-input {
+    @apply w-full bg-neutral-900 border border-neutral-800 rounded-lg p-4 text-white transition-colors focus:border-carbon-gold focus:outline-none focus:ring-1 focus:ring-carbon-gold;
+}
+
+.form-select {
+    @apply w-full bg-neutral-900 border border-neutral-800 rounded-lg p-4 text-white appearance-none cursor-pointer focus:border-carbon-gold focus:outline-none;
+}
+
+.contact-info-item {
+    @apply flex items-start gap-6 py-8 border-b border-neutral-800 last:border-0;
+}
+
+.contact-icon {
+    @apply w-12 h-12 flex items-center justify-center rounded-full bg-neutral-900 text-carbon-gold border border-neutral-800 shrink-0;
 }
