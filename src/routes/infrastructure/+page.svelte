@@ -108,7 +108,7 @@
             <p class="text-neutral-400 leading-relaxed mb-8">
                 Our consortium is fully aligned with the "Viksit Bharat @2047" vision. 
                 With MoUs signed, feasibility studies planned, and global partners like 
-                <strong>Avtrac</strong>, <strong>TAAL</strong>, and <strong>Bouygues Construction</strong> onboard, 
+                <strong>Avtrac</strong>, and <strong>TAAL</strong> onboard, 
                 Carbonatik is ready to mobilize immediately upon land acquisition and regulatory clearances.
             </p>
             <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 text-sm font-bold text-black bg-carbon-gold rounded-lg hover:bg-white transition-colors">
