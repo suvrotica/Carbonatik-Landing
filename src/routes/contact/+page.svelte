@@ -49,8 +49,7 @@
             <h4 class="text-carbon-gold font-bold mb-4 uppercase text-xs tracking-widest">Current Partners</h4>
             <div class="flex flex-wrap gap-4 justify-center text-neutral-400 font-mono text-sm">
                 <span>Avtrac</span> • 
-                <span>TAAL</span> • 
-                <span>Bouygues Construction</span> • 
+                <span>TAAL</span> •
                 <span>BluJ Aerospace</span> • 
                 <span>KF Aerospace</span>
             </div>
